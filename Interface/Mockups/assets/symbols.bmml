@@ -1,0 +1,173 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="309" measuredH="516" mockupW="249" mockupH="496">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="60" y="20" w="205" h="496" measuredW="205" measuredH="496" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Cr%E9ation%20semestre</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="205" h="496" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="0"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="53" y="10" w="-1" h="-1" measuredW="113" measuredH="33" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Semestre</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="38" y="53" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Nom</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="38" y="104" w="-1" h="-1" measuredW="99" measuredH="27" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Date%20de%20d%E9but%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="38" y="192" w="-1" h="-1" measuredW="79" measuredH="27" zOrder="4" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Date%20de%20fin%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="78" y="262" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="5" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Ajouter</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::DateChooser" x="38" y="131" w="-1" h="-1" measuredW="136" measuredH="25" zOrder="6" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>02/03/2015%20%20%20%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::DateChooser" x="38" y="219" w="-1" h="-1" measuredW="136" measuredH="25" zOrder="7" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>02/03/2015%20%20%20%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="60" y="80" w="155" h="316" measuredW="155" measuredH="316" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Calendar-symb</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="155" h="316" measuredW="155" measuredH="316" zOrder="0" locked="false" isInGroup="1">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Calendar" x="0" y="159" w="155" h="157" measuredW="96" measuredH="96" zOrder="0" locked="false" isInGroup="0"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="32" y="0" w="-1" h="-1" measuredW="96" measuredH="85" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <size>72</size>
+                <text>23</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="47" y="79" w="-1" h="-1" measuredW="60" measuredH="33" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Lundi</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::SubTitle" x="47" y="117" w="-1" h="-1" measuredW="64" measuredH="26" zOrder="3" locked="false" isInGroup="0">
+              <controlProperties>
+                <size>18</size>
+                <text>F%E9vrier</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="60" y="140" w="249" h="308" measuredW="249" measuredH="308" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Edit_task</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::DateChooser" x="81" y="231" w="161" h="-1" measuredW="134" measuredH="25" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <state>up</state>
+            <text>%2012%20/%2008%20/%2015%20%20%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::ComboBox" x="0" y="0" w="241" h="-1" measuredW="66" measuredH="23" zOrder="1" locked="false" isInGroup="2">
+          <controlProperties>
+            <state>closed</state>
+            <text>Cours%0Acours2%0Acours3%0Acours4</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="74" w="241" h="-1" measuredW="110" measuredH="27" zOrder="2" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Titre%20de%20la%20t%E2che</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextArea" x="0" y="121" w="245" h="84" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Description</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::ButtonBar" x="57" y="283" w="192" h="25" measuredW="164" measuredH="26" zOrder="4" locked="false" isInGroup="2">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <size>11</size>
+            <text>faible%2C%20normal%2C%20haute</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::CheckBox" x="1" y="227" w="112" h="33" measuredW="75" measuredH="22" zOrder="5" locked="false" isInGroup="2">
+          <controlProperties>
+            <state>selected</state>
+            <text>%E9chance</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="1" y="284" w="96" h="-1" measuredW="47" measuredH="21" zOrder="6" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>priorit%E9</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::ButtonBar" x="50" y="34" w="192" h="25" measuredW="207" measuredH="26" zOrder="7" locked="false" isInGroup="2">
+          <controlProperties>
+            <selectedIndex>2</selectedIndex>
+            <size>11</size>
+            <text>Devoirs%2C%20Projet%2C%20Travail%20Ecrit</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="0" y="34" w="50" h="-1" measuredW="36" measuredH="21" zOrder="8" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Type</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="3" controlTypeID="__group__" x="60" y="200" w="246" h="170" measuredW="246" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Le%E7on</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="246" h="170" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Le%E7on%20Laboratoire%20Biologie</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::ButtonBar" x="6" y="103" w="236" h="25" measuredW="236" measuredH="23" zOrder="1" locked="false" isInGroup="3">
+          <controlProperties>
+            <size>8</size>
+            <text>Lun%2CMar%2CMer%2CJeu%2CVen%2CSam%2CDim</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="19" y="28" w="-1" h="-1" measuredW="86" measuredH="27" zOrder="2" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Heure%3Ad%E9but</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="131" y="28" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="3" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Heure%3Afin</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::NumericStepper" x="80" y="63" w="-1" h="-1" measuredW="41" measuredH="24" zOrder="4" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>3</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="19" y="62" w="-1" h="-1" measuredW="56" measuredH="27" zOrder="5" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Priorit%E9</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
