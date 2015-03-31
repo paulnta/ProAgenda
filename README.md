@@ -183,7 +183,7 @@ On utilise soit des espaces soit des indentations, pas les deux.
 Je pense qu'il est mieux d'utiliser 3 espaces comme indentation.
 Configurer l'IDE pour qu'il utilise 3 espace comme tabulation.
 
-## 5.3	N'utiliser que des int ? Ou unsigned int ? (signés – non signés) ##
+## 5.3	N'utiliser que des unsigned int ##
 Comme c'est René je pense qu'il faut utiliser les unsigned quand c'est nécessaire ;)
 
 # 6	Source #
