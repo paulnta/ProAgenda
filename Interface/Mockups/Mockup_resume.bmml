@@ -363,7 +363,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="143" controlTypeID="__group__" x="1718" y="992" w="246" h="170" measuredW="246" measuredH="170" zOrder="55" locked="false" isInGroup="-1">
+    <control controlID="143" controlTypeID="__group__" x="1718" y="991" w="246" h="170" measuredW="246" measuredH="170" zOrder="55" locked="false" isInGroup="-1">
       <controlProperties>
         <controlName>Le%E7on</controlName>
       </controlProperties>
@@ -401,5 +401,15 @@
     <control controlID="145" controlTypeID="com.balsamiq.mockups::RedX" x="1263" y="175" w="240" h="356" measuredW="240" measuredH="104" zOrder="61" locked="false" isInGroup="-1"/>
     <control controlID="146" controlTypeID="com.balsamiq.mockups::ScratchOut" x="1563" y="248" w="301" h="136" measuredW="205" measuredH="107" zOrder="62" locked="false" isInGroup="-1"/>
     <control controlID="147" controlTypeID="com.balsamiq.mockups::RedX" x="888" y="99" w="104" h="19" measuredW="240" measuredH="104" zOrder="63" locked="false" isInGroup="-1"/>
+    <control controlID="148" controlTypeID="com.balsamiq.mockups::Icon" x="1933" y="1007" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="149" controlTypeID="com.balsamiq.mockups::Icon" x="2197" y="1007" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
