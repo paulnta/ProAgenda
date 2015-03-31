@@ -164,7 +164,7 @@ Chaque définition de classe doit avoir un commentaire qui décrit cette classe 
 
 # 5	Autres #
 ## 5.1	Accolades ##
-Je pense qu'on va utiliser les accolades avec cette convention (accolades « du haut » juste après le nom et nom par après un retour à la ligne)..
+Je pense qu'on va utiliser les accolades avec cette convention (accolades « du haut » juste après le nom et non par après un retour à la ligne)..
 ```
 #!c++
 
