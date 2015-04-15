@@ -25,7 +25,9 @@ public:
     void initEditToolBar();
 
 private slots:
-
+    void on_actionGoToTask_triggered();
+    void on_actionGoToCal_triggered();
+    void on_actionGoToResume_triggered();
 
 private:
     Ui::MainWindow *ui;

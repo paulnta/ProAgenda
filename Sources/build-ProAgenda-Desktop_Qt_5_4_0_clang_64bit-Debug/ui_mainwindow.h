@@ -64,7 +64,7 @@ public:
         actionGoToTask->setObjectName(QStringLiteral("actionGoToTask"));
         actionGoToTask->setCheckable(true);
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/icons/img/icons/ic_assignment_48px.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/icons/img/icons/task@2x.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionGoToTask->setIcon(icon1);
         actionGoToCal = new QAction(MainWindow);
         actionGoToCal->setObjectName(QStringLiteral("actionGoToCal"));

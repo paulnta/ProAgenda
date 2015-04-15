@@ -170,7 +170,7 @@
    </property>
    <property name="icon">
     <iconset resource="ressources.qrc">
-     <normaloff>:/icons/img/icons/ic_assignment_48px.svg</normaloff>:/icons/img/icons/ic_assignment_48px.svg</iconset>
+     <normaloff>:/icons/img/icons/task@2x.png</normaloff>:/icons/img/icons/task@2x.png</iconset>
    </property>
    <property name="text">
     <string>Tâches</string>

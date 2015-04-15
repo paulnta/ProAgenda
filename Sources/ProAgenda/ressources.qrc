@@ -4,5 +4,8 @@
         <file>img/icons/ic_account_balance_48px.svg</file>
         <file>img/icons/ic_assignment_48px.svg</file>
         <file>img/icons/ic_today_48px.svg</file>
+        <file>img/icons/account@2x.png</file>
+        <file>img/icons/cal@2x.png</file>
+        <file>img/icons/task@2x.png</file>
     </qresource>
 </RCC>

@@ -563,6 +563,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_ressources.cpp
 qrc_ressources.cpp: ../ProAgenda/ressources.qrc \
 		../ProAgenda/img/icons/ic_account_balance_48px.svg \
+		../ProAgenda/img/icons/task@2x.png \
+		../ProAgenda/img/icons/account@2x.png \
+		../ProAgenda/img/icons/cal@2x.png \
 		../ProAgenda/img/icons/ic_add_to_photos_48px.svg \
 		../ProAgenda/img/icons/ic_assignment_48px.svg \
 		../ProAgenda/img/icons/ic_today_48px.svg
