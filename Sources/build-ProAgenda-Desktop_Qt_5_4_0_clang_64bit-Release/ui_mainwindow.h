@@ -14,10 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -33,23 +33,42 @@ public:
     QAction *actionGoToResume;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
-    QGridLayout *centralGridLayout;
+    QWidget *mainWidget;
+    QVBoxLayout *verticalLayout;
     QWidget *editWidget;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *editLayout;
-    QWidget *contentWidget;
+    QWidget *wrapperContentWidget;
     QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *contentLayout;
+    QHBoxLayout *contentLayout;
+    QWidget *ContentWidget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *mainView;
+    QWidget *sideBarWidget;
+    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *sideBar;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(704, 531);
-        MainWindow->setFocusPolicy(Qt::StrongFocus);
+        MainWindow->setWindowModality(Qt::NonModal);
+        MainWindow->resize(800, 500);
+        MainWindow->setMinimumSize(QSize(800, 500));
+        MainWindow->setFocusPolicy(Qt::WheelFocus);
+        MainWindow->setWindowOpacity(1);
+        MainWindow->setStyleSheet(QLatin1String("QToolBar.EditToolBar {\n"
+"  border-bottom: 1px solid rgb(227, 227, 227);\n"
+"  background-color: rgba(255, 255, 255, 0.75);\n"
+"}\n"
+"\n"
+"QWidget#mainWidget{\n"
+"	  background-color: #efefef;\n"
+"\n"
+"}"));
+        MainWindow->setTabShape(QTabWidget::Rounded);
         actionAddTask = new QAction(MainWindow);
         actionAddTask->setObjectName(QStringLiteral("actionAddTask"));
         actionAddTask->setCheckable(false);
@@ -83,17 +102,32 @@ public:
         actionGoToResume->setIcon(icon3);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setEnabled(true);
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy);
         gridLayout_2 = new QGridLayout(centralWidget);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        centralGridLayout = new QGridLayout();
-        centralGridLayout->setSpacing(6);
-        centralGridLayout->setObjectName(QStringLiteral("centralGridLayout"));
-        centralGridLayout->setContentsMargins(-1, 0, -1, -1);
-        editWidget = new QWidget(centralWidget);
+        mainWidget = new QWidget(centralWidget);
+        mainWidget->setObjectName(QStringLiteral("mainWidget"));
+        verticalLayout = new QVBoxLayout(mainWidget);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        editWidget = new QWidget(mainWidget);
         editWidget->setObjectName(QStringLiteral("editWidget"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(editWidget->sizePolicy().hasHeightForWidth());
+        editWidget->setSizePolicy(sizePolicy1);
+        editWidget->setMinimumSize(QSize(0, 0));
         verticalLayout_3 = new QVBoxLayout(editWidget);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -103,48 +137,93 @@ public:
         editLayout->setSpacing(6);
         editLayout->setObjectName(QStringLiteral("editLayout"));
         editLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+        editLayout->setContentsMargins(-1, -1, -1, 0);
 
         verticalLayout_3->addLayout(editLayout);
 
 
-        centralGridLayout->addWidget(editWidget, 1, 0, 1, 1, Qt::AlignTop);
+        verticalLayout->addWidget(editWidget, 0, Qt::AlignTop);
 
-        contentWidget = new QWidget(centralWidget);
-        contentWidget->setObjectName(QStringLiteral("contentWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(contentWidget->sizePolicy().hasHeightForWidth());
-        contentWidget->setSizePolicy(sizePolicy);
-        verticalLayout_2 = new QVBoxLayout(contentWidget);
+        wrapperContentWidget = new QWidget(mainWidget);
+        wrapperContentWidget->setObjectName(QStringLiteral("wrapperContentWidget"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(wrapperContentWidget->sizePolicy().hasHeightForWidth());
+        wrapperContentWidget->setSizePolicy(sizePolicy2);
+        verticalLayout_2 = new QVBoxLayout(wrapperContentWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        contentLayout = new QVBoxLayout();
+        contentLayout = new QHBoxLayout();
         contentLayout->setSpacing(6);
         contentLayout->setObjectName(QStringLiteral("contentLayout"));
+        ContentWidget = new QWidget(wrapperContentWidget);
+        ContentWidget->setObjectName(QStringLiteral("ContentWidget"));
+        horizontalLayout = new QHBoxLayout(ContentWidget);
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        mainView = new QVBoxLayout();
+        mainView->setSpacing(0);
+        mainView->setObjectName(QStringLiteral("mainView"));
+
+        horizontalLayout->addLayout(mainView);
+
+        sideBarWidget = new QWidget(ContentWidget);
+        sideBarWidget->setObjectName(QStringLiteral("sideBarWidget"));
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(sideBarWidget->sizePolicy().hasHeightForWidth());
+        sideBarWidget->setSizePolicy(sizePolicy3);
+        sideBarWidget->setMinimumSize(QSize(300, 0));
+        sideBarWidget->setAutoFillBackground(false);
+        sideBarWidget->setStyleSheet(QLatin1String("QWidget#sideBarWidget{\n"
+"	background-image: url(:/design/design/ui_blur.png);\n"
+"	background-position: center center;\n"
+"  	border-left: 1px solid rgb(227, 227, 227);\n"
+"}"));
+        verticalLayout_5 = new QVBoxLayout(sideBarWidget);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(1, 0, 0, 0);
+        sideBar = new QVBoxLayout();
+        sideBar->setSpacing(6);
+        sideBar->setObjectName(QStringLiteral("sideBar"));
+
+        verticalLayout_5->addLayout(sideBar);
+
+
+        horizontalLayout->addWidget(sideBarWidget);
+
+
+        contentLayout->addWidget(ContentWidget);
+
 
         verticalLayout_2->addLayout(contentLayout);
 
 
-        centralGridLayout->addWidget(contentWidget, 2, 0, 1, 1);
+        verticalLayout->addWidget(wrapperContentWidget);
 
 
-        gridLayout_2->addLayout(centralGridLayout, 0, 0, 1, 1);
+        gridLayout_2->addWidget(mainWidget, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 704, 22));
+        menuBar->setGeometry(QRect(0, 0, 800, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(mainToolBar->sizePolicy().hasHeightForWidth());
-        mainToolBar->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(mainToolBar->sizePolicy().hasHeightForWidth());
+        mainToolBar->setSizePolicy(sizePolicy4);
         mainToolBar->setMinimumSize(QSize(0, 0));
         mainToolBar->setMaximumSize(QSize(16777215, 16777215));
         mainToolBar->setCursor(QCursor(Qt::ArrowCursor));
@@ -158,9 +237,6 @@ public:
         mainToolBar->setIconSize(QSize(30, 30));
         mainToolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         mainToolBar->addAction(actionGoToTask);
         mainToolBar->addAction(actionGoToCal);
@@ -173,7 +249,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ProAgenda", 0));
         actionAddTask->setText(QApplication::translate("MainWindow", "AddTask", 0));
         actionAddTask->setIconText(QApplication::translate("MainWindow", "Ajouter t\303\242che", 0));
 #ifndef QT_NO_TOOLTIP

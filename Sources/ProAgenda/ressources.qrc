@@ -8,4 +8,7 @@
         <file>img/icons/cal@2x.png</file>
         <file>img/icons/task@2x.png</file>
     </qresource>
+    <qresource prefix="/design">
+        <file>design/ui_blur.png</file>
+    </qresource>
 </RCC>

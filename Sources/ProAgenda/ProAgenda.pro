@@ -15,13 +15,19 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     toolbutton.cpp \
-    edittoolbar.cpp
+    edittoolbar.cpp \
+    testwidget.cpp \
+    testcalendar.cpp
 
 HEADERS  += mainwindow.h \
     toolbutton.h \
-    edittoolbar.h
+    edittoolbar.h \
+    testwidget.h \
+    testcalendar.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    testwidget.ui \
+    testcalendar.ui
 
 RESOURCES += \
     ressources.qrc

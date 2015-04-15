@@ -24,6 +24,7 @@ EditToolBar::EditToolBar()
     // Connexion du menu au bouton
     addButton->setMenu(addMenu);
     addButton->setPopupMode(QToolButton::InstantPopup);
+
 }
 
 EditToolBar::~EditToolBar()
