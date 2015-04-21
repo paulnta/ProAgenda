@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
 #include <QDebug>
 #include <QToolButton>
 #include <toolbutton.h>

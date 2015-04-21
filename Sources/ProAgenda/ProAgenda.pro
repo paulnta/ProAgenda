@@ -17,17 +17,20 @@ SOURCES += main.cpp\
     toolbutton.cpp \
     edittoolbar.cpp \
     testwidget.cpp \
-    testcalendar.cpp
+    testcalendar.cpp \
+    mywidget.cpp
 
 HEADERS  += mainwindow.h \
     toolbutton.h \
     edittoolbar.h \
     testwidget.h \
-    testcalendar.h
+    testcalendar.h \
+    mywidget.h
 
 FORMS    += mainwindow.ui \
     testwidget.ui \
-    testcalendar.ui
+    testcalendar.ui \
+    mywidget.ui
 
 RESOURCES += \
     ressources.qrc

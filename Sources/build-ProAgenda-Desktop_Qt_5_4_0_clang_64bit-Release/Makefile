@@ -53,22 +53,26 @@ SOURCES       = ../ProAgenda/main.cpp \
 		../ProAgenda/toolbutton.cpp \
 		../ProAgenda/edittoolbar.cpp \
 		../ProAgenda/testwidget.cpp \
-		../ProAgenda/testcalendar.cpp qrc_ressources.cpp \
+		../ProAgenda/testcalendar.cpp \
+		../ProAgenda/mywidget.cpp qrc_ressources.cpp \
 		moc_mainwindow.cpp \
 		moc_edittoolbar.cpp \
 		moc_testwidget.cpp \
-		moc_testcalendar.cpp
+		moc_testcalendar.cpp \
+		moc_mywidget.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		toolbutton.o \
 		edittoolbar.o \
 		testwidget.o \
 		testcalendar.o \
+		mywidget.o \
 		qrc_ressources.o \
 		moc_mainwindow.o \
 		moc_edittoolbar.o \
 		moc_testwidget.o \
-		moc_testcalendar.o
+		moc_testcalendar.o \
+		moc_mywidget.o
 DIST          = /Users/paulnta/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/paulnta/Qt/5.4/clang_64/mkspecs/qdevice.pri \
 		/Users/paulnta/Qt/5.4/clang_64/mkspecs/features/device_config.prf \
@@ -201,12 +205,14 @@ DIST          = /Users/paulnta/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../ProAgenda/toolbutton.h \
 		../ProAgenda/edittoolbar.h \
 		../ProAgenda/testwidget.h \
-		../ProAgenda/testcalendar.h ../ProAgenda/main.cpp \
+		../ProAgenda/testcalendar.h \
+		../ProAgenda/mywidget.h ../ProAgenda/main.cpp \
 		../ProAgenda/mainwindow.cpp \
 		../ProAgenda/toolbutton.cpp \
 		../ProAgenda/edittoolbar.cpp \
 		../ProAgenda/testwidget.cpp \
-		../ProAgenda/testcalendar.cpp
+		../ProAgenda/testcalendar.cpp \
+		../ProAgenda/mywidget.cpp
 QMAKE_TARGET  = ProAgenda
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = ProAgenda.app/Contents/MacOS/ProAgenda
@@ -244,7 +250,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_testwidget.h ui_testcalendar.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_testwidget.h ui_testcalendar.h ui_mywidget.h $(OBJECTS)  
 	@test -d ProAgenda.app/Contents/MacOS/ || mkdir -p ProAgenda.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -545,9 +551,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../ProAgenda/ressources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProAgenda/mainwindow.h ../ProAgenda/toolbutton.h ../ProAgenda/edittoolbar.h ../ProAgenda/testwidget.h ../ProAgenda/testcalendar.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProAgenda/main.cpp ../ProAgenda/mainwindow.cpp ../ProAgenda/toolbutton.cpp ../ProAgenda/edittoolbar.cpp ../ProAgenda/testwidget.cpp ../ProAgenda/testcalendar.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProAgenda/mainwindow.ui ../ProAgenda/testwidget.ui ../ProAgenda/testcalendar.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProAgenda/mainwindow.h ../ProAgenda/toolbutton.h ../ProAgenda/edittoolbar.h ../ProAgenda/testwidget.h ../ProAgenda/testcalendar.h ../ProAgenda/mywidget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProAgenda/main.cpp ../ProAgenda/mainwindow.cpp ../ProAgenda/toolbutton.cpp ../ProAgenda/edittoolbar.cpp ../ProAgenda/testwidget.cpp ../ProAgenda/testcalendar.cpp ../ProAgenda/mywidget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProAgenda/mainwindow.ui ../ProAgenda/testwidget.ui ../ProAgenda/testcalendar.ui ../ProAgenda/mywidget.ui $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -584,9 +590,9 @@ qrc_ressources.cpp: ../ProAgenda/ressources.qrc \
 		../ProAgenda/design/ui_blur.png
 	/Users/paulnta/Qt/5.4/clang_64/bin/rcc -name ressources ../ProAgenda/ressources.qrc -o qrc_ressources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_edittoolbar.cpp moc_testwidget.cpp moc_testcalendar.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_edittoolbar.cpp moc_testwidget.cpp moc_testcalendar.cpp moc_mywidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_edittoolbar.cpp moc_testwidget.cpp moc_testcalendar.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_edittoolbar.cpp moc_testwidget.cpp moc_testcalendar.cpp moc_mywidget.cpp
 moc_mainwindow.cpp: /Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
@@ -607,6 +613,10 @@ moc_mainwindow.cpp: /Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versi
 		../ProAgenda/testcalendar.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QLabel \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDirModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
 		../ProAgenda/mainwindow.h
 	/Users/paulnta/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/paulnta/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/paulnta/Documents/HEIG3/PRO/Repo/Sources/ProAgenda -I/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/paulnta/Qt/5.4/clang_64/lib ../ProAgenda/mainwindow.h -o moc_mainwindow.cpp
 
@@ -633,14 +643,23 @@ moc_testcalendar.cpp: /Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Ver
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QLabel \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDirModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
 		../ProAgenda/testcalendar.h
 	/Users/paulnta/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/paulnta/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/paulnta/Documents/HEIG3/PRO/Repo/Sources/ProAgenda -I/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/paulnta/Qt/5.4/clang_64/lib ../ProAgenda/testcalendar.h -o moc_testcalendar.cpp
 
+moc_mywidget.cpp: /Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		../ProAgenda/mywidget.h
+	/Users/paulnta/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/paulnta/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/paulnta/Documents/HEIG3/PRO/Repo/Sources/ProAgenda -I/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/paulnta/Qt/5.4/clang_64/lib ../ProAgenda/mywidget.h -o moc_mywidget.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_testwidget.h ui_testcalendar.h
+compiler_uic_make_all: ui_mainwindow.h ui_testwidget.h ui_testcalendar.h ui_mywidget.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_testwidget.h ui_testcalendar.h
+	-$(DEL_FILE) ui_mainwindow.h ui_testwidget.h ui_testcalendar.h ui_mywidget.h
 ui_mainwindow.h: ../ProAgenda/mainwindow.ui
 	/Users/paulnta/Qt/5.4/clang_64/bin/uic ../ProAgenda/mainwindow.ui -o ui_mainwindow.h
 
@@ -649,6 +668,9 @@ ui_testwidget.h: ../ProAgenda/testwidget.ui
 
 ui_testcalendar.h: ../ProAgenda/testcalendar.ui
 	/Users/paulnta/Qt/5.4/clang_64/bin/uic ../ProAgenda/testcalendar.ui -o ui_testcalendar.h
+
+ui_mywidget.h: ../ProAgenda/mywidget.ui
+	/Users/paulnta/Qt/5.4/clang_64/bin/uic ../ProAgenda/mywidget.ui -o ui_mywidget.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -683,6 +705,10 @@ main.o: ../ProAgenda/main.cpp ../ProAgenda/mainwindow.h \
 		../ProAgenda/testcalendar.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QLabel \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDirModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
@@ -710,7 +736,19 @@ mainwindow.o: ../ProAgenda/mainwindow.cpp ../ProAgenda/mainwindow.h \
 		../ProAgenda/testcalendar.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QLabel \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
-		ui_mainwindow.h
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDirModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
+		ui_mainwindow.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistview.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidget \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QStringListModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstringlistmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../ProAgenda/mainwindow.cpp
 
 toolbutton.o: ../ProAgenda/toolbutton.cpp ../ProAgenda/toolbutton.h \
@@ -745,8 +783,18 @@ testcalendar.o: ../ProAgenda/testcalendar.cpp ../ProAgenda/testcalendar.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QLabel \
 		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDirModel \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
 		ui_testcalendar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o testcalendar.o ../ProAgenda/testcalendar.cpp
+
+mywidget.o: ../ProAgenda/mywidget.cpp ../ProAgenda/mywidget.h \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Users/paulnta/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		ui_mywidget.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mywidget.o ../ProAgenda/mywidget.cpp
 
 qrc_ressources.o: qrc_ressources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_ressources.o qrc_ressources.cpp
@@ -762,6 +810,9 @@ moc_testwidget.o: moc_testwidget.cpp
 
 moc_testcalendar.o: moc_testcalendar.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_testcalendar.o moc_testcalendar.cpp
+
+moc_mywidget.o: moc_mywidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mywidget.o moc_mywidget.cpp
 
 ####### Install
 

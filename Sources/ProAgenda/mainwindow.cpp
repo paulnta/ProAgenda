@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 
 #include <QListView>
+#include <QListWidget>
+#include <QPushButton>
 #include <QStringListModel>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -20,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     testWidget = new TestWidget();
     testWidget2 = new TestWidget();
+    testWidget3 = new QWidget();
     initResume();
 
     testWidget->setName("task");
@@ -61,7 +64,12 @@ void MainWindow::initResume(){
 
 void MainWindow::initSideBar(){
     miniCalendar = new TestCalendar;
+    QListWidget* list = new QListWidget;
+    QPushButton* button = new QPushButton("Pushbutton");
+    QListWidgetItem* item = new QListWidgetItem(QIcon(":/icons/img/icons/ic_assignment_48px.svg"),"My task",list);
+
     this->ui->sideBar->addWidget(miniCalendar);
+    this->ui->sideBar->addWidget(list);
 }
 
 void MainWindow::initEditToolBar(){
