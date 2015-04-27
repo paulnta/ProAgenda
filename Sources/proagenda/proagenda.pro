@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     viewTask/taskwidget.cpp \
     viewTask/type.cpp \
     viewCalendar/calendarwidget.cpp \
-    database.cpp
 
 HEADERS  += mainwindow.h \
     edittoolbar.h \
@@ -35,7 +34,6 @@ HEADERS  += mainwindow.h \
     viewTask/type.h \
     viewCalendar/calendarwidget.h \
     viewTask/tristatebutton.h \
-    database.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \
