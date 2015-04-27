@@ -10,7 +10,7 @@
 #include <QDebug>
 #include <QMouseEvent>
 
-#include "taskmodel.h"
+#include "models/task.h"
 
 namespace Ui {
 class taskWidget;
@@ -22,10 +22,10 @@ class taskWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit taskWidget(SideBarTask* sidebar, QWidget *parent = 0, TaskModel* task = 0);
+    explicit taskWidget(SideBarTask* sidebar, QWidget *parent = 0, Task* task = 0);
 
 protected:
-    virtual void mousePressEvent(QMouseEvent* event){ emit editTask(task); }
+    virtual void mousePressEvent(QMouseEvent* event);
 
     ~taskWidget();
 
@@ -33,11 +33,11 @@ private:
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
     QWidget* taskName;
-    TaskModel* task;
+    Task* task;
     SideBarTask* sidebar;
 
 signals:
-    void editTask(TaskModel* task);
+    void editTask(Task* task);
 
 };
 

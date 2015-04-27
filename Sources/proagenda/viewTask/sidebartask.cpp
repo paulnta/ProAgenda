@@ -1,6 +1,6 @@
 #include "sidebartask.h"
 #include "ui_sidebartask.h"
-#include "taskmodel.h"
+#include "models/task.h"
 #include "QDebug"
 
 SideBarTask::SideBarTask(QWidget *parent) :
@@ -64,7 +64,7 @@ SideBarTask::~SideBarTask()
     delete ui;
 }
 
-void SideBarTask::loadTask(TaskModel* task)
+void SideBarTask::loadTask(Task* task)
 {
     this->taskName->setText(task->getName());
     this->description->setText(task->getDescription());

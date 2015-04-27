@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QLayout>
 #include <QStringListModel>
-#include "taskmodel.h"
 #include "taskwidget.h"
 
 namespace Ui {

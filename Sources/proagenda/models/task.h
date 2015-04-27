@@ -1,16 +1,16 @@
 #ifndef TASKMODEL_H
 #define TASKMODEL_H
 
-#include "viewTask/type.h"
+#include "models/tasktype.h"
 #include <QDate>
 #include <QString>
 #include <QLayout>
 
-class TaskModel
+class Task
 {
 public:
-    TaskModel(QString name, QString description, QDate termDate);
-    ~TaskModel();
+    Task(QString name, QString description, QDate termDate);
+    ~Task();
     QString getName();
     bool isFinished();
     QString getDescription() const;
@@ -31,8 +31,8 @@ public:
     double getCoefficient() const;
     void setCoefficient(double value);
 
-    Type getType() const;
-    void setType(const Type &value);
+    TaskType getType() const;
+    void setType(const TaskType &value);
 
 private:
     QString name;
@@ -42,7 +42,7 @@ private:
     int priority;
     bool finished;
     double coefficient;
-    Type type;
+    TaskType type;
 };
 
 #endif // TASKMODEL_H

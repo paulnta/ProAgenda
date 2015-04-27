@@ -13,7 +13,7 @@
 
 #include "viewTask/tristatebutton.h"
 
-class TaskModel;
+class Task;
 
 namespace Ui {
 class sideBarTask;
@@ -41,7 +41,7 @@ private:
     TriStateButton* taskType;
 
 private slots:
-    void loadTask(TaskModel*);
+    void loadTask(Task*);
 };
 
 #endif // SIDEBARTASK_H

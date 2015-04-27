@@ -19,13 +19,13 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 
     tasks = new QList<QWidget*>;
 
-    TaskModel* pco = new TaskModel("TE PCO", "Mutex, Semaphore Echec", QDate(2015,05,9));
+    Task* pco = new Task("TE PCO", "Mutex, Semaphore Echec", QDate(2015,05,9));
     pco->setPriority(1);
 
     taskWidget* t1 = new taskWidget(main_ui->getSideBarTask(), 0, pco );
-    taskWidget* t2 = new taskWidget(main_ui->getSideBarTask(), 0, new TaskModel("PRO", "Rapport Interme", QDate(2015,05,20)));
-    taskWidget* t3 = new taskWidget(main_ui->getSideBarTask(), 0, new TaskModel("TE MBT", "Intégrales", QDate(2015,05,11)));
-    taskWidget* t4 = new taskWidget(main_ui->getSideBarTask(), 0, new TaskModel("TE SLO", "Piratage", QDate(2015,05,12)));
+    taskWidget* t2 = new taskWidget(main_ui->getSideBarTask(), 0, new Task("PRO", "Rapport Interme", QDate(2015,05,20)));
+    taskWidget* t3 = new taskWidget(main_ui->getSideBarTask(), 0, new Task("TE MBT", "Intégrales", QDate(2015,05,11)));
+    taskWidget* t4 = new taskWidget(main_ui->getSideBarTask(), 0, new Task("TE SLO", "Piratage", QDate(2015,05,12)));
 
     tasks->append(t1);
     tasks->append(t2);

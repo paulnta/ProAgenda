@@ -3,7 +3,7 @@
 #include "sidebartask.h"
 
 
-taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, TaskModel* task) :
+taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
     QWidget(parent),
     ui(new Ui::taskWidget),task(task), sidebar(sidebar)
 {
@@ -20,7 +20,14 @@ taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, TaskModel* task) :
     ui->taskLayout->addWidget(taskName,10);
     ui->taskLayout->addWidget(new QLabel(""));
 
-    connect(this,SIGNAL(editTask(TaskModel*)), sidebar, SLOT(loadTask(TaskModel*)));
+    connect(this,SIGNAL(editTask(Task*)), sidebar, SLOT(loadTask(Task*)));
+}
+
+void taskWidget::mousePressEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::LeftButton){  // click button left
+        emit editTask(task);
+    }
 }
 
 taskWidget::~taskWidget()
