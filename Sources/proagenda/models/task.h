@@ -1,7 +1,7 @@
-#ifndef TASKMODEL_H
-#define TASKMODEL_H
+#ifndef TASK_H
+#define TASK_H
 
-#include "models/tasktype.h"
+#include "taskType.h"
 #include <QDate>
 #include <QString>
 #include <QLayout>
@@ -10,12 +10,8 @@ class Task
 {
 public:
     Task(QString name, QString description, QDate termDate);
+    Task(const Task& task);
     ~Task();
-//=======
-//    TaskModel(QString name, QString description, QDate termDate);
-//    TaskModel(const TaskModel& task);
-//    ~TaskModel();
-//>>>>>>> 7fb8b79ef52971f33d1de09529af348cdd88b578:Sources/proagenda/viewTask/taskmodel.h
     QString getName();
     bool isFinished();
     QString getDescription() const;
@@ -36,8 +32,8 @@ public:
     double getCoefficient() const;
     void setCoefficient(double value);
 
-    TaskType getType() const;
-    void setType(const TaskType &value);
+    TaskType getTaskType() const;
+    void setTaskType(const TaskType &value);
 
 private:
     int id;
@@ -48,7 +44,7 @@ private:
     int priority;
     bool finished;
     double coefficient;
-    TaskType type;
+    TaskType taskType;
 };
 
-#endif // TASKMODEL_H
+#endif // TASK_H

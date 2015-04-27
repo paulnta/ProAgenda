@@ -2,7 +2,7 @@
 #define SQLCONNECTION_H
 
 #include <QtSql/QtSql>
-//#include "viewTask/taskmodel.h"
+#include "models/task.h"
 
 class SqlConnection
 {
@@ -38,15 +38,15 @@ public:
     /*
      * Ecriture et lecture des tâches dans la base de donnée
      */
-//    QList<TaskModel*>getAllTasks();
+    QList<Task*>getAllTasks();
 
     //Cree et/ou modifie une tâche
-//    void modifyTask(TaskModel*);
+    void modifyTask(Task*);
 
-//    void eraseTask(TaskModel*);
+    void eraseTask(Task*);
 private:
-//    TaskModel* findTask(int id);
-//    QString taskToQuery(TaskModel*);
+    Task* findTask(int id);
+    QString taskToQuery(Task*);
 
 
 

@@ -1,8 +1,12 @@
-#include "models/task.h"
+#include "task.h"
 
 Task::Task(QString name, QString description, QDate termDate):
     name(name), description(description),termDate(termDate)
 {
+
+}
+
+Task::Task(const Task& task){
 
 }
 
@@ -75,19 +79,13 @@ void Task::setCoefficient(double value)
     coefficient = value;
 }
 
-TaskType Task::getType() const
+TaskType Task::getTaskType() const
 {
-    return type;
+    return taskType;
 }
 
-void Task::setType(const TaskType &value)
+void Task::setTaskType(const TaskType &value)
 {
-    type = value;
+    taskType = value;
 }
-
-
-
-
-
-
 
