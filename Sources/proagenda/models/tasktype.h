@@ -10,6 +10,7 @@ class TaskType
 
 public:
     TaskType();
+    TaskType(QString name, double weighting);
     ~TaskType();
     QString getName() const;
     void setName(const QString &value);

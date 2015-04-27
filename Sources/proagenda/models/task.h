@@ -9,7 +9,9 @@
 class Task
 {
 public:
-    Task(QString name, QString description, QDate termDate);
+    Task(int id, QString name, QString description, QDate termDate,
+         double note, int priority,bool finished, double coefficient,
+         TaskType* taskType, int courseId);
     Task(const Task& task);
     ~Task();
     QString getName();
@@ -44,7 +46,8 @@ private:
     int priority;
     bool finished;
     double coefficient;
-    TaskType taskType;
+    TaskType* taskType;
+    int courseId;
 };
 
 #endif // TASK_H
