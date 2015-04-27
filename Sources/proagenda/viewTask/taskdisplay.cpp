@@ -4,6 +4,7 @@
 #include <QStandardItemModel>
 #include <QTableView>
 #include "mainwindow.h"
+#include "sqlconnection.h"
 
 
 
@@ -27,7 +28,14 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     taskWidget* t3 = new taskWidget(main_ui->getSideBarTask(), 0, new Task("TE MBT", "Intégrales", QDate(2015,05,11)));
     taskWidget* t4 = new taskWidget(main_ui->getSideBarTask(), 0, new Task("TE SLO", "Piratage", QDate(2015,05,12)));
 
+//    QList<TaskModel*>taskList = SqlConnection::getInstance()->getAllTasks();
+
+//    for(int i = 0; i < taskList.size(); i++){
+//         tasks->append( new taskWidget(main_ui->getSideBarTask(), 0, taskList.at(i) ));
+//    }
+
     tasks->append(t1);
+    tasks->append(t2);
     tasks->append(t2);
     tasks->append(t3);
     tasks->append(t4);

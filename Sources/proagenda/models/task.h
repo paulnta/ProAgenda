@@ -11,6 +11,11 @@ class Task
 public:
     Task(QString name, QString description, QDate termDate);
     ~Task();
+//=======
+//    TaskModel(QString name, QString description, QDate termDate);
+//    TaskModel(const TaskModel& task);
+//    ~TaskModel();
+//>>>>>>> 7fb8b79ef52971f33d1de09529af348cdd88b578:Sources/proagenda/viewTask/taskmodel.h
     QString getName();
     bool isFinished();
     QString getDescription() const;
@@ -35,6 +40,7 @@ public:
     void setType(const TaskType &value);
 
 private:
+    int id;
     QString name;
     QString description;
     QDate termDate;
