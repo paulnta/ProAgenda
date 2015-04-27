@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VSummary</class>
+ <widget class="QWidget" name="VSummary">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1008</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Résumé</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="widgetMainView" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="layoutMainView">
+          <item>
+           <widget class="QWidget" name="widgetFill" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>100</height>
+             </size>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <layout class="QHBoxLayout" name="layoutFill"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widgetDisplay" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="layoutDisplay"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widgetSideBar" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget#widgetSideBar{
+	background-color: rgb(200, 200, 200);
+  	border-left: 1px solid rgb(227, 227, 227);
+}</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="layoutSideBar">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -8,8 +8,8 @@ EditToolBar::EditToolBar()
 
     // Menu du bouton add
     QMenu* addMenu = new QMenu();
-    addUnit = new QAction("Ajouter un cours",addMenu);
-    addTask = new QAction("Ajouter une tâche",addMenu);
+    addUnit = new QAction("Ajouter un cours", addMenu);
+    addTask = new QAction("Ajouter une tâche", addMenu);
     addMenu->addAction(addUnit);
     addMenu->addAction(addTask);
 
