@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,19 +19,29 @@ SOURCES += main.cpp\
     edittoolbar.cpp \
     testwidget.cpp \
     testcalendar.cpp \
-    mywidget.cpp
+    mywidget.cpp \
+    vsemesterfill.cpp \
+    vsummary.cpp \
+    sqlconnection.cpp
 
 HEADERS  += mainwindow.h \
     toolbutton.h \
     edittoolbar.h \
     testwidget.h \
     testcalendar.h \
-    mywidget.h
+    mywidget.h \
+    vsemesterfill.h \
+    sqlconnection.h \
+    vsummary.h
 
 FORMS    += mainwindow.ui \
     testwidget.ui \
     testcalendar.ui \
-    mywidget.ui
+    mywidget.ui \
+    vsemesterfill.ui \
+    vsummary.ui
 
 RESOURCES += \
     ressources.qrc
+
+CONFIG += c++11

@@ -6,6 +6,9 @@
 #include <QPushButton>
 #include <QStringListModel>
 
+#include <QDebug>
+#include <QtSql/QtSql>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -23,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     testWidget = new TestWidget();
     testWidget2 = new TestWidget();
     testWidget3 = new QWidget();
+
     initResume();
 
     testWidget->setName("task");
@@ -36,18 +40,21 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::initResume(){
 
 
+    vSemesterFill = new VSemesterFill();
+
+    /*
     QVBoxLayout* layout = new QVBoxLayout(testWidget3);
     testWidget3 = new QWidget;
 
     /* First Widget
-    ================*/
+    ================
 
     QDirModel* model = new QDirModel;
     QTreeView* view = new QTreeView;
     view->setModel(model);
 
     /* Second Widget
-    ================*/
+    ================
 
     QStringList listCours;
     listCours << "PRO" << "MBT" << "RES" << "SIO" << "SER";
@@ -59,7 +66,7 @@ void MainWindow::initResume(){
     layout->addWidget(view);
     layout->addWidget(list);
     testWidget3->setLayout(layout);
-
+    */
 }
 
 void MainWindow::initSideBar(){
@@ -160,7 +167,7 @@ void MainWindow::on_actionGoToResume_triggered()
     this->ui->actionGoToTask->setChecked(false);
     this->ui->actionGoToResume->setChecked(true);
 
-    this->ui->mainView->addWidget(testWidget3);
+    this->ui->mainView->addWidget(vSemesterFill);
     this->ui->mainView->removeWidget(testWidget2);
     this->ui->mainView->removeWidget(testWidget);
     testWidget2->setParent(NULL);

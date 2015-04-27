@@ -9,6 +9,7 @@
 #include <edittoolbar.h>
 #include <testwidget.h>
 #include "testcalendar.h"
+#include "vsemesterfill.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,7 @@ class MainWindow : public QMainWindow
     TestWidget* testWidget;
     TestWidget* testWidget2;
     QWidget* testWidget3;
+    VSemesterFill* vSemesterFill;
     TestCalendar* miniCalendar;
 
 
