@@ -6,6 +6,10 @@ TaskModel::TaskModel(QString name, QString description, QDate termDate):
 
 }
 
+TaskModel::TaskModel(const TaskModel& task){
+
+}
+
 TaskModel::~TaskModel()
 {
 

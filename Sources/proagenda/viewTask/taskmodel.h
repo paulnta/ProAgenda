@@ -10,6 +10,7 @@ class TaskModel
 {
 public:
     TaskModel(QString name, QString description, QDate termDate);
+    TaskModel(const TaskModel& task);
     ~TaskModel();
     QString getName();
     bool isFinished();
@@ -35,6 +36,7 @@ public:
     void setType(const Type &value);
 
 private:
+    int id;
     QString name;
     QString description;
     QDate termDate;
