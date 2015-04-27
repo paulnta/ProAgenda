@@ -9,13 +9,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>900</width>
     <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
+    <width>900</width>
     <height>500</height>
    </size>
   </property>
@@ -36,9 +36,7 @@
 
 QWidget#mainWidget{
 	  background-color: #efefef;
-
 }
-
 
 QStackedWidget#stackedWidgetSide{
 	border-left: 1px solid rgb(227, 227, 227);
@@ -50,8 +48,8 @@ QTextEdit, QLineEdit{
 	border:none;
 }
 
-QLineEdit{
-	height: 20px;
+#addTaskWidget QLineEdit{
+	height: 25px;
 	padding: 5px;
 }
 
@@ -177,6 +175,12 @@ TriStateButton QPushButton:checked{
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="currentIndex">
           <number>2</number>
          </property>
@@ -282,7 +286,7 @@ TriStateButton QPushButton:checked{
          </property>
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>300</width>
            <height>0</height>
           </size>
          </property>
@@ -318,6 +322,32 @@ TriStateButton QPushButton:checked{
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="summaryWidget">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="viewSidebarSummary">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -330,7 +360,7 @@ TriStateButton QPushButton:checked{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>900</width>
      <height>22</height>
     </rect>
    </property>

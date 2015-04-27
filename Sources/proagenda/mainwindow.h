@@ -12,6 +12,8 @@
 #include "viewTask/sidebartask.h"
 #include "viewCalendar/calendarwidget.h"
 #include "viewTask/taskdisplay.h"
+#include "viewSummary/vsummary.h"
+#include "viewSummary/sidebarsummary.h"
 
 
 namespace Ui {
@@ -25,10 +27,12 @@ class MainWindow : public QMainWindow
     Ui::MainWindow *ui;
     EditToolBar* editToolBar;
     SideBarTask* sideBarTask;
+    SideBarSummary* sideBarSummary;
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     SideBarTask* getSideBarTask();
+    SideBarSummary* getSideBarSummary();
     ~MainWindow();
 
 private slots:

@@ -23,6 +23,10 @@ SOURCES += main.cpp\
     viewTask/taskwidget.cpp \
     viewTask/type.cpp \
     viewCalendar/calendarwidget.cpp \
+    viewSummary/vsemesterfill.cpp \
+    viewSummary/vsummary.cpp \
+    sqlconnection.cpp \
+    viewSummary/sidebarsummary.cpp
 
 HEADERS  += mainwindow.h \
     edittoolbar.h \
@@ -34,12 +38,19 @@ HEADERS  += mainwindow.h \
     viewTask/type.h \
     viewCalendar/calendarwidget.h \
     viewTask/tristatebutton.h \
+    viewSummary/vsemesterfill.h \
+    viewSummary/vsummary.h \
+    sqlconnection.h \
+    viewSummary/sidebarsummary.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \
     viewTask/taskdisplay.ui \
     viewTask/taskwidget.ui \
-    viewCalendar/calendarwidget.ui
+    viewCalendar/calendarwidget.ui \
+    viewSummary/vsemesterfill.ui \
+    viewSummary/vsummary.ui \
+    viewSummary/sidebarsummary.ui
 
 RESOURCES += \
     ressources.qrc

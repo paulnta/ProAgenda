@@ -21,11 +21,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Initialisation des widgets
     sideBarTask = new SideBarTask;
+    sideBarSummary = new SideBarSummary;
+
+    // Initialisation des Sidebars
     this->ui->viewAddTask->addWidget(sideBarTask);
+    this->ui->viewSidebarSummary->addWidget(sideBarSummary);
+
     this->ui->viewTask->addWidget(new taskDisplay(this));
     this->ui->viewCalendar->addWidget(new CalendarWidget);
-    this->ui->viewResume->addWidget(new QLabel("Remplacez moi par votre widget pour la vue Resume.\nthis->ui->viewResume->addWidget(new MyWidgetClass)")
-                                    ,0,Qt::AlignTop);
+    this->ui->viewResume->addWidget( new VSummary(this));
 
 
     // Widgets Affiché par defaut au démmarge
@@ -36,6 +40,11 @@ MainWindow::MainWindow(QWidget *parent) :
 SideBarTask *MainWindow::getSideBarTask()
 {
     return sideBarTask;
+}
+
+SideBarSummary *MainWindow::getSideBarSummary()
+{
+    return sideBarSummary;
 }
 
 void MainWindow::initEditToolBar(){
@@ -87,6 +96,7 @@ void MainWindow::on_actionGoToTask_triggered()
 
     //On switch vers le widget viewTask
     this->ui->stackedWidgetCentral->setCurrentWidget(this->ui->taskWidget);
+    this->ui->stackedWidgetSide->setCurrentWidget(this->ui->addTaskWidget);
 }
 
 void MainWindow::on_actionGoToCal_triggered()
@@ -113,6 +123,7 @@ void MainWindow::on_actionGoToResume_triggered()
 
     //On affiche le widget ViewResume
     this->ui->stackedWidgetCentral->setCurrentWidget(this->ui->resumeWidget);
+    this->ui->stackedWidgetSide->setCurrentWidget(this->ui->summaryWidget);
 }
 
 MainWindow::~MainWindow()
@@ -120,4 +131,5 @@ MainWindow::~MainWindow()
     delete ui;
     delete sideBarTask;
     delete editToolBar;
+    delete sideBarSummary;
 }
