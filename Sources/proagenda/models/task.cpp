@@ -1,7 +1,11 @@
 #include "task.h"
 
-Task::Task(QString name, QString description, QDate termDate):
-    name(name), description(description),termDate(termDate)
+Task::Task(int id, QString name, QString description, QDate termDate,
+           double note, int priority,bool finished, double coefficient,
+           TaskType* taskType, int courseId):
+    id(id),name(name), description(description),termDate(termDate),
+    note(note), priority(priority), finished(finished), coefficient(coefficient),
+    taskType(taskType), courseId(courseId)
 {
 
 }
@@ -81,11 +85,11 @@ void Task::setCoefficient(double value)
 
 TaskType Task::getTaskType() const
 {
-    return taskType;
+    return *taskType;
 }
 
 void Task::setTaskType(const TaskType &value)
 {
-    taskType = value;
+    *taskType = value;
 }
 
