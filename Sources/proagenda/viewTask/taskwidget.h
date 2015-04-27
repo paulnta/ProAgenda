@@ -9,6 +9,7 @@
 #include <QSignalMapper>
 #include <QDebug>
 #include <QMouseEvent>
+#include <QDateTimeEdit>
 
 #include "models/task.h"
 
@@ -33,6 +34,9 @@ private:
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
     QWidget* taskName;
+    QWidget* priority;
+    QWidget* type;
+    QDateTimeEdit* termDate;
     Task* task;
     SideBarTask* sidebar;
 
