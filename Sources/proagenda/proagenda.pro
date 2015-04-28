@@ -30,7 +30,9 @@ SOURCES += main.cpp\
     models/course.cpp \
     models/module.cpp \
     models/semester.cpp \
-    models/lesson.cpp
+    models/lesson.cpp \
+    viewCalendar/calendarday.cpp \
+    viewCalendar/headerhours.cpp
 
 HEADERS  += mainwindow.h \
     edittoolbar.h \
@@ -49,7 +51,10 @@ HEADERS  += mainwindow.h \
     models/course.h \
     models/module.h \
     models/semester.h \
-    models/lesson.h
+    models/lesson.h \
+    viewCalendar/calendarday.h \
+    viewCalendar/headerhours.h \
+    viewCalendar/hourcal.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \
