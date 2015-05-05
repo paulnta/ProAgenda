@@ -10,6 +10,11 @@
 #include <QTextEdit>
 #include <QCheckBox>
 #include <QDateTimeEdit>
+#include "sqlconnection.h"
+#include <QSqlRelationalTableModel>
+#include <QDataWidgetMapper>
+#include <QItemSelectionModel>
+#include <QSqlRelationalDelegate>
 
 #include "viewTask/tristatebutton.h"
 
@@ -39,6 +44,14 @@ private:
     QDateTimeEdit *termDate;
     TriStateButton* priority;
     TriStateButton* taskType;
+
+    // TEST SQL RELATIONAL
+    QSqlRelationalTableModel *model;
+       QItemSelectionModel *selectionModel;
+       QDataWidgetMapper *mapper;
+       int typeIndex;
+
+       void setupModel();
 
 private slots:
     void loadTask(Task*);

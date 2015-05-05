@@ -54,4 +54,7 @@ void SqlConnection::modifyTask(Task* task){
     query.bindValue(":typeid", "2");
     query.bindValue(":courseid", "3");
     query.exec();
+
 }
+
+

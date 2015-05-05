@@ -2,12 +2,15 @@
 #include "ui_sidebartask.h"
 #include "models/task.h"
 #include "QDebug"
+#include <QSqlQuery>
+
 
 SideBarTask::SideBarTask(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::sideBarTask)
 {
     ui->setupUi(this);
+    setupModel();
     layout = new QVBoxLayout();
 
     // task course
@@ -37,6 +40,17 @@ SideBarTask::SideBarTask(QWidget *parent) :
     connect(hasTerm, SIGNAL(clicked(bool)), termDate, SLOT(setEnabled(bool)) );
     termDate->setEnabled(false);
 
+    QSqlTableModel *relModel = model->relationModel(typeIndex);
+    courseDropDown->setModel(relModel);
+    courseDropDown->setModelColumn(relModel->fieldIndex("name"));
+
+    mapper = new QDataWidgetMapper(this);
+    mapper->setModel(model);
+    mapper->setItemDelegate(new QSqlRelationalDelegate(this));
+//    mapper->addMapping(nameEdit, model->fieldIndex("name"));
+//    mapper->addMapping(addressEdit, model->fieldIndex("course"));
+    mapper->addMapping(courseDropDown, typeIndex);
+
     layout->addWidget(courseDropDown);
     layout->addWidget(taskType);
     layout->addSpacing(10);
@@ -62,6 +76,20 @@ SideBarTask::~SideBarTask()
     delete priority;
     delete taskType;
     delete ui;
+}
+
+void SideBarTask::setupModel(){
+
+    QSqlQuery query("SELECT* FROM course");
+    query.exec();
+    model = new QSqlRelationalTableModel(this, SqlConnection::getInstance()->getDatabase());
+    model->setTable("task");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    typeIndex = model->fieldIndex("courseId");
+    model->setRelation(typeIndex, QSqlRelation("course", "id", "name"));
+    model->select();
+
+
 }
 
 void SideBarTask::loadTask(Task* task)
