@@ -50,10 +50,10 @@ SideBarTask::SideBarTask(QWidget *parent) :
 
 
     QSqlRelationalTableModel *model = Task::getModel();
-    int typeIndex = Task::getTypeIndex();
+    int courseIndex = Task::getTypeIndex();
 
     //SQLRelation set dropdown to search course name in DB
-    QSqlTableModel *relModel = model->relationModel(typeIndex);
+    QSqlTableModel *relModel = model->relationModel(courseIndex);
     courseDropDown->setModel(relModel);
     courseDropDown->setModelColumn(relModel->fieldIndex("name"));
 
@@ -63,9 +63,9 @@ SideBarTask::SideBarTask(QWidget *parent) :
     mapper->setItemDelegate(new QSqlRelationalDelegate(this));
     mapper->addMapping(taskName, model->fieldIndex("name"));
     mapper->addMapping(description, model->fieldIndex("description"));
-    mapper->addMapping(courseDropDown, typeIndex);
+    mapper->addMapping(courseDropDown, courseIndex);
 
-    connect(btnSubmit, SIGNAL(clicked()), mapper , SLOT(submit()));
+    connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
     mapper->toFirst();
 
     layout->addWidget(courseDropDown);

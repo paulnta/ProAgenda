@@ -56,7 +56,7 @@ private:
     TaskType* taskType;
     int courseId;
     const int row;
-    static int typeIndex;
+    static int courseIndex;
 
     // SQL RELATIONAL
     static QSqlRelationalTableModel *model;

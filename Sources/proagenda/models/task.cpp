@@ -2,7 +2,7 @@
 #include "sqlconnection.h"
 
 QSqlRelationalTableModel *Task::model = NULL;
-int Task::typeIndex = 0;
+int Task::courseIndex = 0;
 QString Task::dateFormat = "yyyy-MM-ddTHH:mm:ss.zzz";
 
 
@@ -19,7 +19,7 @@ Task::Task(const QSqlRecord& record, const int& row): row(row)
     courseId    = record.value("courseId").toInt();
 
     // TODO: FIX TASKTYPE and typeIndex
-    typeIndex   = record.value("typeId").toInt();
+    courseIndex   = record.value("typeId").toInt();
     taskType    = new TaskType("type",4);
 
 }
@@ -109,12 +109,12 @@ int Task::getRow()
 }
 int Task::getTypeIndex()
 {
-    return typeIndex;
+    return courseIndex;
 }
 
 void Task::setTypeIndex(int value)
 {
-    typeIndex = value;
+    courseIndex = value;
 }
 
 
@@ -126,8 +126,8 @@ void Task::setupModel(){
     model = new QSqlRelationalTableModel(0);
     model->setTable("Task");
     model->setEditStrategy(QSqlTableModel::OnFieldChange);
-    typeIndex = model->fieldIndex("courseId");
-    model->setRelation(typeIndex, QSqlRelation("Course", "id", "name"));
+    courseIndex = model->fieldIndex("courseId");
+    model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));
 
     model->select();
 
