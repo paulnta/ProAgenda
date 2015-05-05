@@ -2,6 +2,8 @@
 #include "headerhours.h"
 
 int CalendarDay::heightHour = 50;
+int CalendarDay::nbDay = 8;
+int CalendarDay::nbHours = 24;
 
 QList<Lesson> CalendarDay::getLessons() const
 {

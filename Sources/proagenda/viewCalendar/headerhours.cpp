@@ -12,7 +12,6 @@ HeaderHours::HeaderHours(QWidget *parent) : QWidget(parent)
     for(int i = 0; i < HeaderHours::nbHoursPerDay; i++){
         QWidget* gridDay = new QWidget();
         gridDay->setMinimumHeight(50);
-        QLabel* label = new QLabel(QString("%1").arg(i),gridDay);
         layout->addWidget(gridDay,i,0,1,1);
     }
 

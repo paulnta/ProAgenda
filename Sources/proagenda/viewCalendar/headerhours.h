@@ -24,6 +24,7 @@ public:
 
     void paintEvent(QPaintEvent *event)
     {
+        event->accept();
         QPainter painter(this);
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QColor(255, 0, 0, 127));

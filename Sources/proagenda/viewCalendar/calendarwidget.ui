@@ -54,22 +54,49 @@ border:none;
       <widget class="QWidget" name="headerWidget" native="true">
        <layout class="QGridLayout" name="gridLayout_2">
         <property name="leftMargin">
-         <number>0</number>
+         <number>10</number>
         </property>
         <property name="topMargin">
          <number>10</number>
         </property>
         <property name="rightMargin">
-         <number>0</number>
+         <number>10</number>
         </property>
         <property name="bottomMargin">
          <number>10</number>
         </property>
-        <property name="spacing">
+        <property name="horizontalSpacing">
          <number>0</number>
         </property>
-        <item row="0" column="0">
+        <property name="verticalSpacing">
+         <number>10</number>
+        </property>
+        <item row="1" column="0">
          <layout class="QGridLayout" name="gridDays"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QWidget" name="headerWidget_2" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="header"/>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -97,7 +124,7 @@ border:none;
           <x>0</x>
           <y>0</y>
           <width>676</width>
-          <height>394</height>
+          <height>382</height>
          </rect>
         </property>
         <property name="sizePolicy">
