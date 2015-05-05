@@ -67,7 +67,6 @@ SideBarTask::SideBarTask(QWidget *parent) :
 
     connect(btnSubmit, SIGNAL(clicked()), mapper , SLOT(submit()));
     mapper->toFirst();
-    mapper->toNext();
 
     layout->addWidget(courseDropDown);
     layout->addWidget(taskType);
