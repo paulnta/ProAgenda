@@ -14,22 +14,21 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     main_ui(main_ui)
 {
     ui->setupUi(this);
-     Task::setupModel();
+//    Task::setupModel();
 
     layout = new QVBoxLayout(this);
     layout->setContentsMargins(0,0,0,0);
 
-    tasks = new QList<QWidget*>;
+    tasks = new QList<taskWidget*>;
 
-//    QList<Task*>taskList = SqlConnection::getInstance()->getAllTasks();
     QSqlRelationalTableModel *model = Task::getModel();
 
     for(int i = 0; i < model->rowCount();i++){
-//         tasks->append( new taskWidget(main_ui->getSideBarTask(), 0, taskList.at(i) ));
            tasks->append(new taskWidget(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) ));
     }
 
-    foreach(QWidget* task, *tasks) {
+
+    foreach(taskWidget* task, *tasks) {
         layout->addWidget(task,0, Qt::AlignTop);
     }
 

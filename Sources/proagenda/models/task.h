@@ -10,10 +10,8 @@
 class Task
 {
 public:
-    Task(int id, QString name, QString description, QDate termDate,
-         double note, int priority,bool finished, double coefficient,
-         TaskType* taskType, int courseId);
-    Task(const QSqlRecord & values, const int& row);
+
+    Task(const QSqlRecord& record, const int& row);
     ~Task();
     QString getName();
     bool isFinished();
@@ -23,9 +21,8 @@ public:
     static QSqlRelationalTableModel *getModel();
     static void setupModel();
 
-
-    QDate getTermDate() const;
-    void setTermDate(const QDate &value);
+    QDateTime getTermDate() const;
+    void setTermDate(const QDateTime &value);
 
     double getNote() const;
     void setNote(double value);
@@ -42,6 +39,8 @@ public:
     TaskType getTaskType() const;
     void setTaskType(const TaskType &value);
 
+    int getRow();
+
     static int getTypeIndex();
     static void setTypeIndex(int value);
 
@@ -49,7 +48,7 @@ private:
     int id;
     QString name;
     QString description;
-    QDate termDate;
+    QDateTime termDate;
     double note;
     int priority;
     bool finished;
@@ -61,7 +60,7 @@ private:
 
     // SQL RELATIONAL
     static QSqlRelationalTableModel *model;
-
+    static QString dateFormat;
 };
 
 #endif // TASK_H

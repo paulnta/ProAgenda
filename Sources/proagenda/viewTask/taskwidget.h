@@ -45,10 +45,6 @@ private:
     Task* task;
     SideBarTask* sidebar;
 
-    //SQL Relation
-    QSqlRelationalTableModel *model;
-    QItemSelectionModel *selectionModel;
-    QDataWidgetMapper *mapper;
     int typeIndex;
 
     void setupModel();

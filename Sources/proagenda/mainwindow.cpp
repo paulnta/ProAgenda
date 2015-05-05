@@ -14,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //init Database
+    SqlConnection::getInstance();
+
     // Initialisation des Barres d'outils
     initMainToolbar();
     initEditToolBar();

@@ -45,16 +45,13 @@ private:
     TriStateButton* taskType;
     QPushButton *btnSubmit;
 
-
     // SQL RELATIONAL
-//    QSqlRelationalTableModel *model;
     QDataWidgetMapper *mapper;
     int typeIndex;
 
-       void setupModel();
-
 private slots:
     void loadTask(Task*);
+    void submitTask();
 
 };
 

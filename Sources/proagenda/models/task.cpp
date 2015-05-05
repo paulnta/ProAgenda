@@ -3,23 +3,24 @@
 
 QSqlRelationalTableModel *Task::model = NULL;
 int Task::typeIndex = 0;
+QString Task::dateFormat = "yyyy-MM-ddTHH:mm:ss.zzz";
 
-Task::Task(int id, QString name, QString description, QDate termDate,
-           double note, int priority,bool finished, double coefficient,
-           TaskType* taskType, int courseId):
-    id(id),name(name), description(description),termDate(termDate),
-    note(note), priority(priority), finished(finished), coefficient(coefficient),
-    taskType(taskType), courseId(courseId), row(0)
+
+Task::Task(const QSqlRecord& record, const int& row): row(row)
 {
+    id          = record.value("id").toInt();
+    name        = record.value("name").toString();
+    description = record.value("description").toString();
+    termDate    = QDateTime::fromString(record.value("termDate").toString(), Task::dateFormat );
+    note        = record.value("note").toDouble();
+    priority    = record.value("priority").toInt();
+    finished    = record.value("isFinished").toInt();
+    coefficient = record.value("coefficient").toDouble();
+    courseId    = record.value("courseId").toInt();
 
-}
-
-
-Task::Task(const QSqlRecord &values, const int& row):
-    id(values.value("id").toInt()),name(values.value("name").toString()), description(values.value("description").toString()),termDate(values.value("termDate").toDate()),
-    note(values.value("note").toDouble()), priority(values.value("priority").toInt()), finished(values.value("finished").toBool()), coefficient(values.value("coefficient").toDouble()),
-    taskType(NULL), courseId(values.value("courseId").toInt()), row(row)
-{
+    // TODO: FIX TASKTYPE and typeIndex
+    typeIndex   = record.value("typeId").toInt();
+    taskType    = new TaskType("type",4);
 
 }
 
@@ -46,12 +47,12 @@ void Task::setDescription(const QString &value)
 {
     description = value;
 }
-QDate Task::getTermDate() const
+QDateTime Task::getTermDate() const
 {
     return termDate;
 }
 
-void Task::setTermDate(const QDate &value)
+void Task::setTermDate(const QDateTime &value)
 {
     termDate = value;
 }
@@ -101,6 +102,11 @@ void Task::setTaskType(const TaskType &value)
 {
     *taskType = value;
 }
+
+int Task::getRow()
+{
+    return row;
+}
 int Task::getTypeIndex()
 {
     return typeIndex;
@@ -117,11 +123,12 @@ void Task::setTypeIndex(int value)
 
 void Task::setupModel(){
 
-    model = new QSqlRelationalTableModel(0, SqlConnection::getInstance()->getDatabase());
-    model->setTable("task");
+    model = new QSqlRelationalTableModel(0);
+    model->setTable("Task");
     model->setEditStrategy(QSqlTableModel::OnFieldChange);
     typeIndex = model->fieldIndex("courseId");
-    model->setRelation(typeIndex, QSqlRelation("course", "id", "name"));
+    model->setRelation(typeIndex, QSqlRelation("Course", "id", "name"));
+
     model->select();
 
 }

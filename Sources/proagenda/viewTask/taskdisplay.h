@@ -24,7 +24,7 @@ public:
 private:
     Ui::taskDisplay *ui;
     MainWindow* main_ui;
-    QList<QWidget*>* tasks;
+    QList<taskWidget*>* tasks;
     QVBoxLayout* layout;
 
 

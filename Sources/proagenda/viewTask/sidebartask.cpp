@@ -12,7 +12,9 @@ SideBarTask::SideBarTask(QWidget *parent) :
     ui(new Ui::sideBarTask)
 {
     ui->setupUi(this);
+
     Task::setupModel();
+
     layout = new QVBoxLayout();
 
     // task course
@@ -96,25 +98,18 @@ SideBarTask::~SideBarTask()
     delete ui;
 }
 
-//Setting up the relation between the database and the model / view
-//Displaying in the name of the course and not its ID
 
-//void SideBarTask::setupModel(){
-
-//    model = new QSqlRelationalTableModel(this, SqlConnection::getDatabase());
-//    model->setTable("task");
-//    model->setEditStrategy(QSqlTableModel::OnFieldChange);
-//    typeIndex = model->fieldIndex("courseId");
-//    model->setRelation(typeIndex, QSqlRelation("course", "id", "name"));
-//    model->select();
-
-//}
 
 void SideBarTask::loadTask(Task* task)
 {
-    this->taskName->setText(task->getName());
-    this->description->setText(task->getDescription());
-    this->termDate->setDate(task->getTermDate());
-    this->priority->setChoice(task->getPriority());
+    mapper->setCurrentIndex(task->getRow());
+}
+
+void SideBarTask::submitTask()
+{
+    int oldIndex = mapper->currentIndex();
+    mapper->submit();
+    Task::getModel()->select();
+    mapper->setCurrentIndex(oldIndex);
 }
 

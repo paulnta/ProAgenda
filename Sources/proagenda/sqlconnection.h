@@ -35,10 +35,6 @@ public:
         delete instance;
     }
 
-    /*
-     * Ecriture et lecture des tâches dans la base de donnée
-     */
-    QList<Task*>getAllTasks();
 
     //Cree et/ou modifie une tâche
     void modifyTask(Task*);
