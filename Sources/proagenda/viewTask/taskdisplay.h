@@ -6,6 +6,7 @@
 #include <QStringListModel>
 #include "taskwidget.h"
 
+
 namespace Ui {
 class taskDisplay;
 }
@@ -25,6 +26,8 @@ private:
     MainWindow* main_ui;
     QList<QWidget*>* tasks;
     QVBoxLayout* layout;
+
+
 };
 
 #endif // TASKDISPLAY_H

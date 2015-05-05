@@ -1,6 +1,7 @@
 #include "taskwidget.h"
 #include "ui_taskwidget.h"
 #include "sidebartask.h"
+#include <QSqlQuery>
 
 
 taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
@@ -8,6 +9,7 @@ taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
     ui(new Ui::taskWidget),task(task), sidebar(sidebar)
 {
     ui->setupUi(this);
+    setupModel();
 
 
 //    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
@@ -18,6 +20,19 @@ taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
     termDate = new QDateTimeEdit(this->task->getTermDate());
     priority = new QLabel(QString::number(this->task->getPriority()));
     type = new QLabel(this->task->getTaskType().getName());
+
+
+    //SQLRelation set dropdown to search course name in DB
+//    QSqlTableModel *relModel = model->relationModel(typeIndex);
+///*    type->setModel(relModel);
+//    type->setModelColumn(relModel->fieldIndex("name"))*/;
+
+//    mapper = new QDataWidgetMapper(this);
+//    mapper->setModel(model);
+//    mapper->setItemDelegate(new QSqlRelationalDelegate(this));
+////    mapper->addMapping(nameEdit, model->fieldIndex("name"));
+////    mapper->addMapping(addressEdit, model->fieldIndex("course"));
+//    mapper->addMapping(type, typeIndex);
 
 
     ui->taskLayout->addWidget(checkbox,1);
@@ -45,4 +60,18 @@ taskWidget::~taskWidget()
     delete type;
     delete priority;
     delete termDate;
+}
+
+void taskWidget::setupModel(){
+
+    QSqlQuery query("SELECT* FROM Type");
+    query.exec();
+    model = new QSqlRelationalTableModel(this, SqlConnection::getInstance()->getDatabase());
+    model->setTable("task");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    typeIndex = model->fieldIndex("typeId");
+    model->setRelation(typeIndex, QSqlRelation("type", "id", "name"));
+    model->select();
+
+
 }

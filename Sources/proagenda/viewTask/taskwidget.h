@@ -10,6 +10,11 @@
 #include <QDebug>
 #include <QMouseEvent>
 #include <QDateTimeEdit>
+#include "sqlconnection.h"
+#include <QSqlRelationalTableModel>
+#include <QDataWidgetMapper>
+#include <QItemSelectionModel>
+#include <QSqlRelationalDelegate>
 
 #include "models/task.h"
 
@@ -39,6 +44,14 @@ private:
     QDateTimeEdit* termDate;
     Task* task;
     SideBarTask* sidebar;
+
+    //SQL Relation
+    QSqlRelationalTableModel *model;
+    QItemSelectionModel *selectionModel;
+    QDataWidgetMapper *mapper;
+    int typeIndex;
+
+    void setupModel();
 
 signals:
     void editTask(Task* task);

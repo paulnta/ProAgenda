@@ -15,7 +15,6 @@
 #include <QDataWidgetMapper>
 #include <QItemSelectionModel>
 #include <QSqlRelationalDelegate>
-
 #include "viewTask/tristatebutton.h"
 
 class Task;
@@ -44,17 +43,19 @@ private:
     QDateTimeEdit *termDate;
     TriStateButton* priority;
     TriStateButton* taskType;
+    QPushButton *btnSubmit;
 
-    // TEST SQL RELATIONAL
-    QSqlRelationalTableModel *model;
-       QItemSelectionModel *selectionModel;
-       QDataWidgetMapper *mapper;
-       int typeIndex;
+
+    // SQL RELATIONAL
+//    QSqlRelationalTableModel *model;
+    QDataWidgetMapper *mapper;
+    int typeIndex;
 
        void setupModel();
 
 private slots:
     void loadTask(Task*);
+
 };
 
 #endif // SIDEBARTASK_H

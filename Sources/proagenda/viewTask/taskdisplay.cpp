@@ -14,16 +14,19 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     main_ui(main_ui)
 {
     ui->setupUi(this);
+     Task::setupModel();
 
     layout = new QVBoxLayout(this);
     layout->setContentsMargins(0,0,0,0);
 
     tasks = new QList<QWidget*>;
 
-    QList<Task*>taskList = SqlConnection::getInstance()->getAllTasks();
+//    QList<Task*>taskList = SqlConnection::getInstance()->getAllTasks();
+    QSqlRelationalTableModel *model = Task::getModel();
 
-    for(int i = 0; i < taskList.size(); i++){
-         tasks->append( new taskWidget(main_ui->getSideBarTask(), 0, taskList.at(i) ));
+    for(int i = 0; i < model->rowCount();i++){
+//         tasks->append( new taskWidget(main_ui->getSideBarTask(), 0, taskList.at(i) ));
+           tasks->append(new taskWidget(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) ));
     }
 
     foreach(QWidget* task, *tasks) {
@@ -41,3 +44,5 @@ taskDisplay::~taskDisplay()
     delete layout;
     delete tasks;
 }
+
+
