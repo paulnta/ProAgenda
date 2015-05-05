@@ -3,6 +3,8 @@
 #include "models/task.h"
 #include "QDebug"
 #include <QSqlQuery>
+#include <QMessageBox>
+#include <QDialogButtonBox>
 
 
 SideBarTask::SideBarTask(QWidget *parent) :
@@ -10,7 +12,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
     ui(new Ui::sideBarTask)
 {
     ui->setupUi(this);
-    setupModel();
+    Task::setupModel();
     layout = new QVBoxLayout();
 
     // task course
@@ -40,16 +42,30 @@ SideBarTask::SideBarTask(QWidget *parent) :
     connect(hasTerm, SIGNAL(clicked(bool)), termDate, SLOT(setEnabled(bool)) );
     termDate->setEnabled(false);
 
+    //Task Submit
+    btnSubmit = new QPushButton();
+    btnSubmit->setText("Sauver");
+
+
+    QSqlRelationalTableModel *model = Task::getModel();
+    int typeIndex = Task::getTypeIndex();
+
+    //SQLRelation set dropdown to search course name in DB
     QSqlTableModel *relModel = model->relationModel(typeIndex);
     courseDropDown->setModel(relModel);
     courseDropDown->setModelColumn(relModel->fieldIndex("name"));
 
     mapper = new QDataWidgetMapper(this);
     mapper->setModel(model);
+    mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
     mapper->setItemDelegate(new QSqlRelationalDelegate(this));
-//    mapper->addMapping(nameEdit, model->fieldIndex("name"));
-//    mapper->addMapping(addressEdit, model->fieldIndex("course"));
+    mapper->addMapping(taskName, model->fieldIndex("name"));
+    mapper->addMapping(description, model->fieldIndex("description"));
     mapper->addMapping(courseDropDown, typeIndex);
+
+    connect(btnSubmit, SIGNAL(clicked()), mapper , SLOT(submit()));
+    mapper->toFirst();
+    mapper->toNext();
 
     layout->addWidget(courseDropDown);
     layout->addWidget(taskType);
@@ -61,6 +77,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
     layout->addWidget(termDate);
     layout->addSpacing(10);
     layout->addWidget(priority);
+    layout->addWidget(btnSubmit, QDialogButtonBox::AcceptRole);
     layout->addStretch();
     this->setLayout(layout);
 }
@@ -75,22 +92,23 @@ SideBarTask::~SideBarTask()
     delete termDate;
     delete priority;
     delete taskType;
+    delete btnSubmit;
     delete ui;
 }
 
-void SideBarTask::setupModel(){
+//Setting up the relation between the database and the model / view
+//Displaying in the name of the course and not its ID
 
-    QSqlQuery query("SELECT* FROM course");
-    query.exec();
-    model = new QSqlRelationalTableModel(this, SqlConnection::getInstance()->getDatabase());
-    model->setTable("task");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    typeIndex = model->fieldIndex("courseId");
-    model->setRelation(typeIndex, QSqlRelation("course", "id", "name"));
-    model->select();
+//void SideBarTask::setupModel(){
 
+//    model = new QSqlRelationalTableModel(this, SqlConnection::getDatabase());
+//    model->setTable("task");
+//    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+//    typeIndex = model->fieldIndex("courseId");
+//    model->setRelation(typeIndex, QSqlRelation("course", "id", "name"));
+//    model->select();
 
-}
+//}
 
 void SideBarTask::loadTask(Task* task)
 {
@@ -99,3 +117,4 @@ void SideBarTask::loadTask(Task* task)
     this->termDate->setDate(task->getTermDate());
     this->priority->setChoice(task->getPriority());
 }
+

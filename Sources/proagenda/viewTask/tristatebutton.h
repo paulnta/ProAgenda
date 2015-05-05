@@ -11,6 +11,8 @@ class TriStateButton: public QWidget{
 
     Q_OBJECT
 
+    Q_PROPERTY(int choice READ getChoice WRITE setChoice USER true)
+
     QPushButton* button1;
     QPushButton* button2;
     QPushButton* button3;
