@@ -98,6 +98,11 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <kerning>true</kerning>
+        </font>
+       </property>
        <property name="displayFormat">
         <string>dd.MM.yyyy</string>
        </property>

@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent) :
     initMainToolbar();
     initEditToolBar();
 
-
     // Initialisation des widgets
     sideBarTask = new SideBarTask;
     sideBarSummary = new SideBarSummary;

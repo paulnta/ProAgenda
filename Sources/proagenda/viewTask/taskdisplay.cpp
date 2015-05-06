@@ -1,12 +1,8 @@
 #include "taskdisplay.h"
 #include "ui_taskdisplay.h"
-
-#include <QStandardItemModel>
-#include <QTableView>
 #include "mainwindow.h"
 #include "sqlconnection.h"
 
-#include <QDebug>
 
 taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     QWidget(parent),
@@ -14,27 +10,32 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     main_ui(main_ui)
 {
     ui->setupUi(this);
-//    Task::setupModel();
+    selectedWidget = NULL;
+
+    connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), this, SLOT(updateTaskWidget()));
+    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
 
     layout = new QVBoxLayout(this);
     layout->setContentsMargins(0,0,0,0);
 
-    tasks = new QList<taskWidget*>;
+    tasks = new QList<taskCheckBox*>;
 
     QSqlRelationalTableModel *model = Task::getModel();
 
     for(int i = 0; i < model->rowCount();i++){
-           tasks->append(new taskWidget(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) ));
+        taskCheckBox* TWidget = new taskCheckBox(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) );
+        tasks->append(TWidget);
+        connect(this, SIGNAL(isUpdated()), TWidget, SLOT(updateTaskWidget()));
     }
 
+    selectWidget(0);
 
-    foreach(taskWidget* task, *tasks) {
+    foreach(taskCheckBox* task, *tasks) {
         layout->addWidget(task,0, Qt::AlignTop);
     }
 
     layout->addStretch(1);
     layout->setSpacing(0);
-
 }
 
 taskDisplay::~taskDisplay()
@@ -44,4 +45,39 @@ taskDisplay::~taskDisplay()
     delete tasks;
 }
 
+void taskDisplay::updateTaskWidget()
+{
+    emit isUpdated();
+}
+
+void taskDisplay::selectWidget(int row)
+{
+    if(selectedWidget != NULL)
+        selectedWidget->setSelected(false);
+
+    selectedWidget = tasks->at(row);
+    selectedWidget->setSelected(true);
+}
+
+
+void taskDisplay::keyReleaseEvent(QKeyEvent* event)
+{
+    switch (event->key()) {
+    case Qt::Key_Down:
+        main_ui->getSideBarTask()->getMapper()->toNext();
+        break;
+    case Qt::Key_Up:
+        main_ui->getSideBarTask()->getMapper()->toPrevious();
+        break;
+    default:
+        break;
+    }
+}
+
+void taskDisplay::mouseReleaseEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::LeftButton)
+        setFocus();
+
+}
 

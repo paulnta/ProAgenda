@@ -121,10 +121,11 @@ void Task::setTypeIndex(int value)
 //Setting up the relation between the database and the model / view
 //Displaying in the name of the course and not its ID
 
-void Task::setupModel(){
+void Task::setupModel(QString orderbyColumnName){
 
     model = new QSqlRelationalTableModel(0);
     model->setTable("Task");
+    model->setSort(model->fieldIndex(orderbyColumnName),Qt::DescendingOrder);
     model->setEditStrategy(QSqlTableModel::OnFieldChange);
     courseIndex = model->fieldIndex("courseId");
     model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));

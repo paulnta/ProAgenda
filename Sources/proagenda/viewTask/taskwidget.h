@@ -23,35 +23,39 @@ class taskWidget;
 }
 class SideBarTask;
 
-class taskWidget : public QWidget
+class taskCheckBox : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit taskWidget(SideBarTask* sidebar, QWidget *parent = 0, Task* task = 0);
+    explicit taskCheckBox(SideBarTask* sidebar, QWidget *parent = 0, Task* task = 0);
+    void setSelected(bool enable);
 
 protected:
     virtual void mousePressEvent(QMouseEvent* event);
 
-    ~taskWidget();
+    ~taskCheckBox();
 
 private:
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
-    QWidget* taskName;
+    QLabel* taskName;
     QWidget* priority;
     QWidget* type;
     QDateTimeEdit* termDate;
     Task* task;
     SideBarTask* sidebar;
-
+    QDataWidgetMapper* mapper;
     int typeIndex;
 
-    void setupModel();
+    static QString defaultCSS;
+    static QString selectedCSS;
 
 signals:
     void editTask(Task* task);
 
+public slots:
+    void updateTaskWidget();
 };
 
 #endif // TASKWIDGET_H

@@ -13,7 +13,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    Task::setupModel();
+    Task::setupModel("termDate");
 
     layout = new QVBoxLayout();
 
@@ -38,7 +38,8 @@ SideBarTask::SideBarTask(QWidget *parent) :
     priority = new TriStateButton("Priorité: ", "Haute", "Moyenne", "Basse");
 
     // task term
-    termDate = new QDateTimeEdit(QDate(QDate::currentDate()));
+    termDate = new QDateTimeEdit;
+    termDate->setCalendarPopup(true);
     hasTerm = new QCheckBox("Echéance");
     hasTerm->setChecked(false);
     connect(hasTerm, SIGNAL(clicked(bool)), termDate, SLOT(setEnabled(bool)) );
@@ -47,13 +48,15 @@ SideBarTask::SideBarTask(QWidget *parent) :
     //Task Submit
     btnSubmit = new QPushButton();
     btnSubmit->setText("Sauver");
+    btnSubmit->setDefault(false);
+    btnSubmit->setAutoDefault(true);
 
 
     QSqlRelationalTableModel *model = Task::getModel();
-    int courseIndex = Task::getTypeIndex();
+    courseIndex = Task::getTypeIndex();
 
     //SQLRelation set dropdown to search course name in DB
-    QSqlTableModel *relModel = model->relationModel(courseIndex);
+    relModel = model->relationModel(courseIndex);
     courseDropDown->setModel(relModel);
     courseDropDown->setModelColumn(relModel->fieldIndex("name"));
 
@@ -64,8 +67,13 @@ SideBarTask::SideBarTask(QWidget *parent) :
     mapper->addMapping(taskName, model->fieldIndex("name"));
     mapper->addMapping(description, model->fieldIndex("description"));
     mapper->addMapping(courseDropDown, courseIndex);
+    mapper->addMapping(priority, model->fieldIndex("priority"));
+    mapper->addMapping(taskType, model->fieldIndex("typeId"));
+    mapper->addMapping(termDate, model->fieldIndex("termDate"));
 
+    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
     connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
+
     mapper->toFirst();
 
     layout->addWidget(courseDropDown);
@@ -97,6 +105,22 @@ SideBarTask::~SideBarTask()
     delete ui;
 }
 
+QDataWidgetMapper *SideBarTask::getMapper()
+{
+    return mapper;
+}
+
+void SideBarTask::keyReleaseEvent(QKeyEvent* event)
+{
+    switch (event->key()) {
+
+    case Qt::Key_Return:
+        submitTask();
+        break;
+    default:
+        break;
+    }
+}
 
 
 void SideBarTask::loadTask(Task* task)
@@ -110,5 +134,6 @@ void SideBarTask::submitTask()
     mapper->submit();
     Task::getModel()->select();
     mapper->setCurrentIndex(oldIndex);
+    emit isUpdated();
 }
 

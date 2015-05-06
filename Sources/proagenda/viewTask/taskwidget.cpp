@@ -3,18 +3,23 @@
 #include "sidebartask.h"
 #include <QSqlQuery>
 
+QString taskCheckBox::defaultCSS ="QWidget#taskWidgetWrapper:hover{"
+                                "background-color: rgba(153, 153, 153, 20);"
+                                 "}";
 
-taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
+QString taskCheckBox::selectedCSS =   "QWidget#taskWidgetWrapper{"
+                                    "background-color: #ffffff; border-left: 3px solid #2ba3dd;"
+                                    "}";
+
+taskCheckBox::taskCheckBox(SideBarTask* sidebar, QWidget *parent, Task* task) :
     QWidget(parent),
     ui(new Ui::taskWidget),task(task), sidebar(sidebar)
 {
     ui->setupUi(this);
-//    setupModel();
-
 
     checkbox = new QCheckBox();
     checkbox->setChecked(task->isFinished());
-    taskName = new QLabel(this->task->getName());
+    taskName = new QLabel;
     termDate = new QDateTimeEdit(this->task->getTermDate());
     priority = new QLabel(QString::number(this->task->getPriority()));
 //    type = new QLabel(this->task->getTaskType().getName());
@@ -27,17 +32,33 @@ taskWidget::taskWidget(SideBarTask* sidebar, QWidget *parent, Task* task) :
     ui->taskLayout->addWidget(termDate, 0, Qt::AlignLeft);
 //    ui->taskLayout->addWidget(type, 0, Qt::AlignLeft);
 
+    QSqlRelationalTableModel* model = Task::getModel();
+    mapper = new QDataWidgetMapper(this);
+    mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
+    mapper->setModel(model);
+    mapper->addMapping(taskName, model->fieldIndex("name"), "text");
+    mapper->addMapping(termDate, model->fieldIndex("termDate"));
+    mapper->setCurrentIndex(task->getRow());
+
     connect(this,SIGNAL(editTask(Task*)), sidebar, SLOT(loadTask(Task*)));
 }
 
-void taskWidget::mousePressEvent(QMouseEvent *event)
+void taskCheckBox::setSelected(bool enable)
+{
+    if(enable)
+        setStyleSheet(taskCheckBox::selectedCSS);
+    else
+        setStyleSheet(taskCheckBox::defaultCSS);
+}
+
+void taskCheckBox::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton){  // click button left
         emit editTask(task);
     }
 }
 
-taskWidget::~taskWidget()
+taskCheckBox::~taskCheckBox()
 {
     delete ui;
     delete taskName;
@@ -45,5 +66,11 @@ taskWidget::~taskWidget()
 //    delete type;
     delete priority;
     delete termDate;
+    delete mapper;
+}
+
+void taskCheckBox::updateTaskWidget()
+{
+    mapper->setCurrentIndex(task->getRow());
 }
 

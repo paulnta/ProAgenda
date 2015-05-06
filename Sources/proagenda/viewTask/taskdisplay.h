@@ -1,9 +1,13 @@
 #ifndef TASKDISPLAY_H
 #define TASKDISPLAY_H
 
+#include <QDebug>
 #include <QWidget>
 #include <QLayout>
 #include <QStringListModel>
+#include <QStandardItemModel>
+#include <QTableView>
+
 #include "taskwidget.h"
 
 
@@ -22,11 +26,25 @@ public:
     ~taskDisplay();
 
 private:
+    typedef QList<taskCheckBox*> taskList;
+
+    taskCheckBox* selectedWidget;
+    taskList* tasks;
+    QVBoxLayout* layout;
     Ui::taskDisplay *ui;
     MainWindow* main_ui;
-    QList<taskWidget*>* tasks;
-    QVBoxLayout* layout;
 
+protected:
+    void keyReleaseEvent(QKeyEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
+
+signals:
+    void isUpdated();
+
+
+public slots:
+    void updateTaskWidget();
+    void selectWidget(int row);
 
 };
 

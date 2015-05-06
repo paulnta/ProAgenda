@@ -19,7 +19,7 @@ public:
     void setDescription(const QString &value);
 
     static QSqlRelationalTableModel *getModel();
-    static void setupModel();
+    static void setupModel(QString orderbyColumnName);
 
     QDateTime getTermDate() const;
     void setTermDate(const QDateTime &value);

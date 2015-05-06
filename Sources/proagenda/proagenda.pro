@@ -39,7 +39,6 @@ HEADERS  += mainwindow.h \
     toolbutton.h \
     viewTask/sidebartask.h \
     viewTask/taskdisplay.h \
-    viewTask/taskwidget.h \
     viewCalendar/calendarwidget.h \
     viewTask/tristatebutton.h \
     viewSummary/vsemesterfill.h \
@@ -54,7 +53,8 @@ HEADERS  += mainwindow.h \
     models/lesson.h \
     viewCalendar/calendarday.h \
     viewCalendar/headerhours.h \
-    viewCalendar/hourcal.h
+    viewCalendar/hourcal.h \
+    viewTask/taskwidget.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \

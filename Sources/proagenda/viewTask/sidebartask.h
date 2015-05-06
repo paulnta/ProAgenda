@@ -10,12 +10,14 @@
 #include <QTextEdit>
 #include <QCheckBox>
 #include <QDateTimeEdit>
+#include <QKeyEvent>
 #include "sqlconnection.h"
 #include <QSqlRelationalTableModel>
 #include <QDataWidgetMapper>
 #include <QItemSelectionModel>
 #include <QSqlRelationalDelegate>
 #include "viewTask/tristatebutton.h"
+
 
 class Task;
 
@@ -30,6 +32,7 @@ class SideBarTask : public QWidget
 public:
     explicit SideBarTask(QWidget *parent = 0);
     ~SideBarTask();
+    QDataWidgetMapper* getMapper();
 
 private:
     Ui::sideBarTask *ui;
@@ -44,10 +47,17 @@ private:
     TriStateButton* priority;
     TriStateButton* taskType;
     QPushButton *btnSubmit;
+    QSqlTableModel *relModel;
 
     // SQL RELATIONAL
     QDataWidgetMapper *mapper;
-    int typeIndex;
+    int courseIndex;
+
+protected:
+    void keyReleaseEvent(QKeyEvent* event);
+
+signals:
+    void isUpdated();
 
 private slots:
     void loadTask(Task*);
