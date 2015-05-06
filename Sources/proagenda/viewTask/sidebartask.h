@@ -60,7 +60,7 @@ signals:
     void isUpdated();
 
 private slots:
-    void loadTask(Task*);
+    void loadTask(Task* task);
     void submitTask();
 
 };

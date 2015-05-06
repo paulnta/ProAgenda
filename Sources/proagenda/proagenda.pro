@@ -19,7 +19,6 @@ SOURCES += main.cpp\
     toolbutton.cpp \
     viewTask/sidebartask.cpp \
     viewTask/taskdisplay.cpp \
-    viewTask/taskwidget.cpp \
     viewCalendar/calendarwidget.cpp \
     viewSummary/vsemesterfill.cpp \
     viewSummary/vsummary.cpp \
@@ -32,7 +31,9 @@ SOURCES += main.cpp\
     models/semester.cpp \
     models/lesson.cpp \
     viewCalendar/calendarday.cpp \
-    viewCalendar/headerhours.cpp
+    viewCalendar/headerhours.cpp \
+    viewTask/taskcheckbox.cpp \
+    viewTask/termdate.cpp
 
 HEADERS  += mainwindow.h \
     edittoolbar.h \
@@ -54,16 +55,17 @@ HEADERS  += mainwindow.h \
     viewCalendar/calendarday.h \
     viewCalendar/headerhours.h \
     viewCalendar/hourcal.h \
-    viewTask/taskwidget.h
+    viewTask/taskcheckbox.h \
+    viewTask/termdate.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \
     viewTask/taskdisplay.ui \
-    viewTask/taskwidget.ui \
     viewCalendar/calendarwidget.ui \
     viewSummary/vsemesterfill.ui \
     viewSummary/vsummary.ui \
-    viewSummary/sidebarsummary.ui
+    viewSummary/sidebarsummary.ui \
+    viewTask/taskcheckbox.ui
 
 RESOURCES += \
     ressources.qrc

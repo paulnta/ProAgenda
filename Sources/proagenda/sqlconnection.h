@@ -6,47 +6,17 @@
 
 class SqlConnection
 {
+
 private:
     static SqlConnection* instance;
-
     QSqlDatabase database;
-
-    SqlConnection() {
-        database = QSqlDatabase::addDatabase("QSQLITE");
-        database.setDatabaseName("Database.sqlite");  // Placez le fichier  Database.sqlite dans le répertoire de l'exécutable !
-        database.open();
-    }
+    SqlConnection();
 
 public:
-    static SqlConnection* getInstance() {
-        if(instance == NULL) {
-            instance = new SqlConnection;
-        }
 
-        return instance;
-    }
-
-    static QSqlDatabase getDatabase() {
-        return getInstance()->database;
-    }
-
-    ~SqlConnection() {
-        database.close();
-        delete instance;
-    }
-
-
-    //Cree et/ou modifie une tâche
-    void modifyTask(Task*);
-
-    void eraseTask(Task*);
-private:
-    Task* findTask(int id);
-    QString taskToQuery(Task*);
-
-
-
-
+    static SqlConnection* getInstance();
+    static QSqlDatabase getDatabase();
+    ~SqlConnection();
 };
 
 #endif // SQLCONNECTION_H

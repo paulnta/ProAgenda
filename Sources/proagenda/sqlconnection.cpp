@@ -3,21 +3,29 @@
 SqlConnection* SqlConnection::instance = NULL;
 
 
-
-void SqlConnection::modifyTask(Task* task){
-
-    QSqlQuery query;
-    query.prepare("INSERT INTO Task (name,description,termdate,priority,isfinished, typeid, courseid) "\
-                  "VALUES (:name, :description, :termdate, :priority, :isfinished, :typeid, :courseid)");
-    query.bindValue(":name", 'TE PCO');
-    query.bindValue(":description", "TE Mutex");
-    query.bindValue(":termdate", "2015-04-27 12:00");
-    query.bindValue(":priority", "3");
-    query.bindValue(":isfinished", "true");
-    query.bindValue(":typeid", "2");
-    query.bindValue(":courseid", "3");
-    query.exec();
-
+SqlConnection::SqlConnection()
+{
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("Database.sqlite");  // Placez le fichier  Database.sqlite dans le répertoire de l'exécutable !
+    database.open();
 }
 
+SqlConnection *SqlConnection::getInstance()
+{
+    if(instance == NULL){
+        instance = new SqlConnection;
+    }
 
+    return instance;
+}
+
+QSqlDatabase SqlConnection::getDatabase()
+{
+    return getInstance()->database;
+}
+
+SqlConnection::~SqlConnection()
+{
+    database.close();
+    delete instance;
+}

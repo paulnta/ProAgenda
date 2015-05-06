@@ -12,30 +12,44 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     ui->setupUi(this);
     selectedWidget = NULL;
 
-    connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), this, SLOT(updateTaskWidget()));
-    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
-
+    // Layout principale affichant une liste vertical de TaskCheckBox
     layout = new QVBoxLayout(this);
     layout->setContentsMargins(0,0,0,0);
+    layout->setSpacing(0);
 
-    tasks = new QList<taskCheckBox*>;
+    // Liste des tâches
+    tasks = new TypeTaskList;
 
+    // Initialisation de la liste des tâches
+    setUpTaskList();
+
+    connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), this, SLOT(updateTaskWidget()));
+    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
+}
+
+void taskDisplay::setUpTaskList()
+{
     QSqlRelationalTableModel *model = Task::getModel();
 
+    // Création de widget mappé avec le model
     for(int i = 0; i < model->rowCount();i++){
-        taskCheckBox* TWidget = new taskCheckBox(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) );
-        tasks->append(TWidget);
-        connect(this, SIGNAL(isUpdated()), TWidget, SLOT(updateTaskWidget()));
+
+        TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i, new Task(model->record(i),i) );
+        tasks->append(taskCheckBox);
+        connect(this, SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
+
     }
 
+    // Selection de la permière tâche par défaut
     selectWidget(0);
 
-    foreach(taskCheckBox* task, *tasks) {
+    // Ajout des tâches au layout
+    foreach(TaskCheckBox* task, *tasks) {
         layout->addWidget(task,0, Qt::AlignTop);
     }
 
+    // alignement des tâche en haut
     layout->addStretch(1);
-    layout->setSpacing(0);
 }
 
 taskDisplay::~taskDisplay()
@@ -69,6 +83,9 @@ void taskDisplay::keyReleaseEvent(QKeyEvent* event)
     case Qt::Key_Up:
         main_ui->getSideBarTask()->getMapper()->toPrevious();
         break;
+    case Qt::Key_Return:
+        // TODO: set Task DONE !
+        break;
     default:
         break;
     }
@@ -78,6 +95,5 @@ void taskDisplay::mouseReleaseEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
         setFocus();
-
 }
 

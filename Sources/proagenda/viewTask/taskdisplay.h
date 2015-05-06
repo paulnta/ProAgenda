@@ -8,7 +8,7 @@
 #include <QStandardItemModel>
 #include <QTableView>
 
-#include "taskwidget.h"
+#include "taskcheckbox.h"
 
 
 namespace Ui {
@@ -23,19 +23,37 @@ class taskDisplay : public QWidget
 
 public:
     explicit taskDisplay( MainWindow* main_ui, QWidget *parent = 0);
+    void setUpTaskList();
     ~taskDisplay();
 
 private:
-    typedef QList<taskCheckBox*> taskList;
+    typedef QList<TaskCheckBox*> TypeTaskList;
 
-    taskCheckBox* selectedWidget;
-    taskList* tasks;
+    TaskCheckBox* selectedWidget;
+    TypeTaskList* tasks;
     QVBoxLayout* layout;
     Ui::taskDisplay *ui;
     MainWindow* main_ui;
 
 protected:
+
+    /**
+     * Gestion des raccourcis claviers
+     * Touche Up/Down pour parcourir les tâches
+     *
+     * @brief keyReleaseEvent
+     * @param event
+     */
     void keyReleaseEvent(QKeyEvent* event);
+
+    /**
+     * Gestion du click sur la vue principale
+     * En cas d'un clique gauche on donne le focus à la vue
+     * Cela permet d'utiliser les raccourcis claviers
+     *
+     * @brief mouseReleaseEvent
+     * @param event
+     */
     void mouseReleaseEvent(QMouseEvent* event);
 
 signals:
@@ -45,6 +63,7 @@ signals:
 public slots:
     void updateTaskWidget();
     void selectWidget(int row);
+
 
 };
 
