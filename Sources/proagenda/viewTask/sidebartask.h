@@ -59,7 +59,7 @@ protected:
 signals:
     void isUpdated();
 
-private slots:
+public slots:
     void loadTask(Task*);
     void submitTask();
 

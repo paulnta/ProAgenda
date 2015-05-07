@@ -3,6 +3,8 @@
 #include "mainwindow.h"
 #include "sqlconnection.h"
 
+#include <QMessageBox>
+
 
 taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     QWidget(parent),
@@ -20,7 +22,8 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 
     tasks = new QList<taskCheckBox*>;
 
-    QSqlRelationalTableModel *model = Task::getModel();
+    model = Task::getModel();
+
 
     for(int i = 0; i < model->rowCount();i++){
         taskCheckBox* TWidget = new taskCheckBox(main_ui->getSideBarTask(), 0, new Task(model->record(i), i) );
@@ -28,7 +31,8 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
         connect(this, SIGNAL(isUpdated()), TWidget, SLOT(updateTaskWidget()));
     }
 
-    selectWidget(0);
+    if(tasks->size() > 0)
+        selectWidget(0);
 
     foreach(taskCheckBox* task, *tasks) {
         layout->addWidget(task,0, Qt::AlignTop);

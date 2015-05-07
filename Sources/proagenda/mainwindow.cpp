@@ -14,22 +14,26 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //init Database
+
+    //init Database and models
     SqlConnection::getInstance();
+    Task::setupModel("termDate");
+
+    // Initialisation des widgets
+    sideBarTask = new SideBarTask;
+    sideBarSummary = new SideBarSummary;
+    taskDisp = new taskDisplay(this);
 
     // Initialisation des Barres d'outils
     initMainToolbar();
     initEditToolBar();
 
-    // Initialisation des widgets
-    sideBarTask = new SideBarTask;
-    sideBarSummary = new SideBarSummary;
 
     // Initialisation des Sidebars
     this->ui->viewAddTask->addWidget(sideBarTask);
     this->ui->viewSidebarSummary->addWidget(sideBarSummary);
 
-    this->ui->viewTask->addWidget(new taskDisplay(this));
+    this->ui->viewTask->addWidget(taskDisp);
     this->ui->viewCalendar->addWidget(new CalendarWidget);
     this->ui->viewResume->addWidget( new VSummary(this));
 
@@ -134,4 +138,5 @@ MainWindow::~MainWindow()
     delete sideBarTask;
     delete editToolBar;
     delete sideBarSummary;
+    delete taskDisp;
 }

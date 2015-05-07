@@ -125,14 +125,14 @@ void Task::setupModel(QString orderbyColumnName){
 
     model = new QSqlRelationalTableModel(0);
     model->setTable("Task");
+
     model->setSort(model->fieldIndex(orderbyColumnName),Qt::DescendingOrder);
     model->setEditStrategy(QSqlTableModel::OnFieldChange);
     courseIndex = model->fieldIndex("courseId");
     model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));
-
     model->select();
-
 }
+
 QSqlRelationalTableModel* Task::getModel(){
     return model;
 }

@@ -18,10 +18,9 @@ taskCheckBox::taskCheckBox(SideBarTask* sidebar, QWidget *parent, Task* task) :
     ui->setupUi(this);
 
     checkbox = new QCheckBox();
-    checkbox->setChecked(task->isFinished());
     taskName = new QLabel;
     termDate = new QDateTimeEdit(this->task->getTermDate());
-    priority = new QLabel(QString::number(this->task->getPriority()));
+    priority = new QLabel;
 //    type = new QLabel(this->task->getTaskType().getName());
 
 
@@ -38,8 +37,11 @@ taskCheckBox::taskCheckBox(SideBarTask* sidebar, QWidget *parent, Task* task) :
     mapper->setModel(model);
     mapper->addMapping(taskName, model->fieldIndex("name"), "text");
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
+    mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
+    mapper->addMapping(priority, model->fieldIndex("priority"),"text");
     mapper->setCurrentIndex(task->getRow());
 
+    connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
     connect(this,SIGNAL(editTask(Task*)), sidebar, SLOT(loadTask(Task*)));
 }
 
