@@ -28,6 +28,7 @@ class MainWindow : public QMainWindow
     EditToolBar* editToolBar;
     SideBarTask* sideBarTask;
     SideBarSummary* sideBarSummary;
+    taskDisplay* taskDisp;
 
 public:
     explicit MainWindow(QWidget *parent = 0);

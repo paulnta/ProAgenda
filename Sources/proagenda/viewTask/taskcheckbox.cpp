@@ -16,10 +16,12 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *p
 {
     ui->setupUi(this);
 
-    checkbox = new QCheckBox;
+    checkbox = new QCheckBox();
     taskName = new QLabel;
-    termDate = new QDateTimeEdit;
+    termDate = new QDateTimeEdit(this->task->getTermDate());
     priority = new QLabel;
+//    type = new QLabel(this->task->getTaskType().getName());
+
 
     ui->taskLayout->addWidget(checkbox,1);
     ui->taskLayout->addWidget(taskName,10);
@@ -35,11 +37,11 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *p
     mapper->addMapping(taskName, model->fieldIndex("name"), "text");
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
     mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
-    mapper->addMapping(priority, model->fieldIndex("priority"), "text");
 
+    mapper->addMapping(priority, model->fieldIndex("priority"),"text");
     mapper->setCurrentIndex(task->getRow());
 
-//    connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
+    connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
     connect(this,SIGNAL(editTask(Task*)), sidebar, SLOT(loadTask(Task*)));
 }
 

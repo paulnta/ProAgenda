@@ -40,12 +40,15 @@ EditToolBar::~EditToolBar()
 void EditToolBar::onAddtaskTriggered()
 {
 
-    if (ui->stackedWidgetSide->currentWidget() != myLabel){
-        this->ui->stackedWidgetSide->addWidget(myLabel);
-        this->ui->stackedWidgetSide->setCurrentWidget(myLabel);
-    } else {
-        ui->stackedWidgetSide->setCurrentWidget(ui->addTaskWidget);
-    }
+//    if (ui->stackedWidgetSide->currentWidget() != myLabel){
+//        this->ui->stackedWidgetSide->addWidget(myLabel);
+//        this->ui->stackedWidgetSide->setCurrentWidget(myLabel);
+//    } else {
+//        ui->stackedWidgetSide->setCurrentWidget(ui->addTaskWidget);
+//    }
+
+    qDebug() <<" new Task";
+    emit newTask();
 
 }
 

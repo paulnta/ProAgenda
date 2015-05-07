@@ -3,6 +3,8 @@
 #include "mainwindow.h"
 #include "sqlconnection.h"
 
+#include <QMessageBox>
+
 
 taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     QWidget(parent),
@@ -29,7 +31,8 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 
 void taskDisplay::setUpTaskList()
 {
-    QSqlRelationalTableModel *model = Task::getModel();
+
+    model = Task::getModel();
 
     // Création de widget mappé avec le model
     for(int i = 0; i < model->rowCount();i++){
@@ -41,7 +44,8 @@ void taskDisplay::setUpTaskList()
     }
 
     // Selection de la permière tâche par défaut
-    selectWidget(0);
+    if(tasks->size() > 0)
+        selectWidget(0);
 
     // Ajout des tâches au layout
     foreach(TaskCheckBox* task, *tasks) {

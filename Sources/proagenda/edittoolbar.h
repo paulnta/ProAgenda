@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QLabel>
 #include "toolbutton.h"
-
+#include "models/task.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +25,9 @@ class EditToolBar : public QToolBar
 public:
     explicit EditToolBar(Ui::MainWindow *ui);
     ~EditToolBar();
+
+signals:
+    void newTask();
 
 private slots:
     void onAddtaskTriggered();

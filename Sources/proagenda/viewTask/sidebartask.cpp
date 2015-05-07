@@ -13,7 +13,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    Task::setupModel("termDate");
+
 
     layout = new QVBoxLayout();
 
@@ -75,7 +75,6 @@ SideBarTask::SideBarTask(QWidget *parent) :
     connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
 
     mapper->toFirst();
-
     layout->addWidget(courseDropDown);
     layout->addWidget(taskType);
     layout->addSpacing(10);
@@ -121,7 +120,6 @@ void SideBarTask::keyReleaseEvent(QKeyEvent* event)
         break;
     }
 }
-
 
 void SideBarTask::loadTask(Task* task)
 {

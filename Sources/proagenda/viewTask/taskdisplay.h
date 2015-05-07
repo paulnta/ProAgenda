@@ -34,6 +34,7 @@ private:
     QVBoxLayout* layout;
     Ui::taskDisplay *ui;
     MainWindow* main_ui;
+    QSqlRelationalTableModel *model;
 
 protected:
 
