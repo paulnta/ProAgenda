@@ -24,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
     sideBarSummary = new SideBarSummary;
     taskDisp = new taskDisplay(this);
 
+//    connect(sideBarTask, SIGNAL(isUpdated()), taskDisp, SLOT(updateTaskWidget()));
+
     // Initialisation des Barres d'outils
     initMainToolbar();
     initEditToolBar();

@@ -13,8 +13,6 @@ SideBarTask::SideBarTask(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     layout = new QVBoxLayout();
 
     // task course

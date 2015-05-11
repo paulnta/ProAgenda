@@ -10,6 +10,7 @@ QString TaskCheckBox::selectedCSS =   "QWidget#taskWidgetWrapper{"
                                     "background-color: #ffffff; border-left: 3px solid #2ba3dd;"
                                     "}";
 
+
 TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::taskWidget),task(task), sidebar(sidebar)
@@ -20,6 +21,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *p
     taskName = new QLabel;
     termDate = new QDateTimeEdit(this->task->getTermDate());
     priority = new QLabel;
+
 //    type = new QLabel(this->task->getTaskType().getName());
 
 
@@ -72,6 +74,7 @@ TaskCheckBox::~TaskCheckBox()
 
 void TaskCheckBox::updateTaskWidget()
 {
-    mapper->setCurrentIndex(row);
+    mapper->setCurrentIndex(task->getRow());
+    qDebug() << "widget updated " << task->getRow();
 }
 
