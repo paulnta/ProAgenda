@@ -25,9 +25,9 @@ public:
 
         if(index.parent().isValid()){
 
-            painter->setBrush(QBrush(QColor("#000000")));
+            painter->setBrush(QBrush(QColor("#3ab3e2")));
             painter->drawRect(option.rect.left(),option.rect.top(),option.decorationSize.width(),option.decorationSize.height());
-            painter->drawText(option.rect.left() + option.decorationSize.width() + 2, option.rect.top(),option.rect.width(), option.rect.height(),
+            painter->drawText(option.rect.left() + option.decorationSize.width() + 10, option.rect.top(),option.rect.width(), option.rect.height(),
                               Qt::AlignLeft, index.data(Qt::DisplayRole).toString());
 
         } else {

@@ -15,12 +15,11 @@
 TestTreeView::TestTreeView(QWidget *parent) : QWidget(parent)
 {
     SqlConnection::getInstance();
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->setContentsMargins(0,0,0,0);
+
 
     TreeView* treeView = new TreeView;
     QTableView* tableView = new QTableView;
-    tableView->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+
 
     QSqlRelationalTableModel*model = new QSqlRelationalTableModel();
     model->setTable("Course");
@@ -37,18 +36,12 @@ TestTreeView::TestTreeView(QWidget *parent) : QWidget(parent)
         QString SemesterName = relmodel->index(row,1).data().toString();
         QStandardItem* semester = new QStandardItem(SemesterName);
         treeModel->appendRow(semester);
-        treeModel->setItem(row,1,new QStandardItem(relmodel->index(row,0).data().toString()));
 
         for(int i=0; i < model->rowCount(); i++){
             QString s = model->index(i,semesterIndex).data().toString();
 
             if(s == SemesterName){
-
                 QStandardItem* course = new QStandardItem(model->index(i,courseIndex).data().toString());
-                course->setData("course",Qt::EditRole);
-                QStandardItem* id = new QStandardItem(model->index(i,0).data().toString());
-                QList<QStandardItem*> columns;
-                columns << course << id;
                 semester->appendRow(course);
             }
         }
@@ -58,11 +51,14 @@ TestTreeView::TestTreeView(QWidget *parent) : QWidget(parent)
     connect(relmodel, SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(update(QModelIndex,QModelIndex)));
 
 
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    layout->setContentsMargins(0,0,0,0);
+    tableView->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    treeView->setSelectionBehavior(QAbstractItemView::SelectRows);
     treeView->setItemDelegate(new TreeDelegate );
     treeView->setModel(treeModel);
     treeView->hideColumn(1);
     layout->addWidget(treeView);
-    tableView->show();
 
     resize(800,300);
 }
