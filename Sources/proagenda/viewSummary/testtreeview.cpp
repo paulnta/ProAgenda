@@ -16,27 +16,39 @@ TestTreeView::TestTreeView(QWidget *parent) : QWidget(parent)
 {
     SqlConnection::getInstance();
 
-
+    /**
+     * Vue représentant l'arbre
+     * Envoi les signaux Datachanged pour mettre à jour la base de donnée
+     * La vue n'est pas directement connectée au model
+     */
     TreeView* treeView = new TreeView;
-    QTableView* tableView = new QTableView;
 
-
+    /**
+     * Création du model
+     */
     QSqlRelationalTableModel*model = new QSqlRelationalTableModel();
     model->setTable("Course");
     int semesterIndex = model->fieldIndex("semesterId");
     int courseIndex = model->fieldIndex("name");
+
+    // Relation (Liste des semestre)
     model->setRelation(semesterIndex, QSqlRelation("Semester", "id", "name"));
     model->select();
 
     QSqlTableModel* relmodel = model->relationModel(semesterIndex);
-    TreeModel* treeModel = new TreeModel(0,2);
+    TreeModel* treeModel = new TreeModel(0,1);
 
+    /**
+      Construction de l'arbre (treeView)
+      */
     for(int row=0; row < relmodel->rowCount(); row++){
 
+        // Parcours de la liste les semestre
         QString SemesterName = relmodel->index(row,1).data().toString();
         QStandardItem* semester = new QStandardItem(SemesterName);
         treeModel->appendRow(semester);
 
+        // Ajout des fils (cours)
         for(int i=0; i < model->rowCount(); i++){
             QString s = model->index(i,semesterIndex).data().toString();
 
@@ -47,17 +59,22 @@ TestTreeView::TestTreeView(QWidget *parent) : QWidget(parent)
         }
     }
 
+    /**
+     * ces signaux ne marche pas forcément
+     * le but est de détecté si le model change depuis un autre widget
+     * Il faudra mettre à jour l'arbre dans ce cas;
+     */
+    // Si le model change
     connect(model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(update(QModelIndex,QModelIndex)));
+    // si la relation change (ne  marche pas !?)
     connect(relmodel, SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(update(QModelIndex,QModelIndex)));
 
 
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0,0,0,0);
-    tableView->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     treeView->setSelectionBehavior(QAbstractItemView::SelectRows);
     treeView->setItemDelegate(new TreeDelegate );
     treeView->setModel(treeModel);
-    treeView->hideColumn(1);
     layout->addWidget(treeView);
 
     resize(800,300);

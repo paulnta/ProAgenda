@@ -2,6 +2,7 @@
 #include <QApplication>
 
 #include "viewSummary/testtreeview.h"
+#include "viewTask/tasklist.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,6 +15,9 @@ int main(int argc, char *argv[])
 
     TestTreeView t;
     t.show();
+
+//    TaskList t;
+//    t.show();
 
     return a.exec();
 }

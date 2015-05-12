@@ -16,6 +16,10 @@ TreeModel::~TreeModel()
 {
 }
 
+/**
+ * Determiner les valeurs et le type des donnée retournée par le model
+ * permet d'ajouter par example une couleur, une checkbox, etc..
+ */
 QVariant TreeModel::data(const QModelIndex &index, int role) const
 {
 
