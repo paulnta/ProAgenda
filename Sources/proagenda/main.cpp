@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 
+#include "viewSummary/testtreeview.h"
 
 int main(int argc, char *argv[])
 {
@@ -8,8 +9,11 @@ int main(int argc, char *argv[])
 
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
 
-    MainWindow w;
-    w.show();
+//    MainWindow w;
+//    w.show();
+
+    TestTreeView t;
+    t.show();
 
     return a.exec();
 }

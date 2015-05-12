@@ -33,7 +33,9 @@ SOURCES += main.cpp\
     viewCalendar/calendarday.cpp \
     viewCalendar/headerhours.cpp \
     viewTask/taskcheckbox.cpp \
-    viewTask/termdate.cpp
+    viewTask/termdate.cpp \
+    viewSummary/testtreeview.cpp \
+    viewSummary/treemodel.cpp
 
 HEADERS  += mainwindow.h \
     edittoolbar.h \
@@ -56,7 +58,12 @@ HEADERS  += mainwindow.h \
     viewCalendar/headerhours.h \
     viewCalendar/hourcal.h \
     viewTask/taskcheckbox.h \
-    viewTask/termdate.h
+    viewTask/termdate.h \
+    viewSummary/testtreeview.h \
+    viewSummary/custommodel.h \
+    viewSummary/treemodel.h \
+    viewSummary/treeview.h \
+    viewSummary/treedelegate.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \
