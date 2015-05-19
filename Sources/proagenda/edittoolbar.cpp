@@ -41,7 +41,7 @@ EditToolBar::~EditToolBar()
 
 void EditToolBar::onAddtaskTriggered()
 {
-   QSqlRecord& record =  Task::addTask();
+   QSqlRecord record =  Task::addTask();
    emit newTask(record, Task::getModel()->rowCount()-1);
 }
 

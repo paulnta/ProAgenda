@@ -31,7 +31,6 @@ Task::~Task()
 
 }
 
-
 QString Task::getName(){
     return name;
 }
@@ -119,8 +118,8 @@ void Task::setTypeIndex(int value)
     courseIndex = value;
 }
 
-QSqlRecord& Task::addTask(){
-    qDebug() << "old" << model->rowCount();
+QSqlRecord Task::addTask(){
+
     QSqlRecord record = model->record();
 
     record.setValue(1,"new Task");
@@ -133,6 +132,8 @@ QSqlRecord& Task::addTask(){
     if(model->isDirty()){
         QMessageBox::warning(0,"SQL error", model->lastError().text());
     }
+
+    qDebug() << record;
 
     return record;
 }
