@@ -60,12 +60,10 @@ protected:
 signals:
     void isUpdated();
 
-
 public slots:
     void updateTaskWidget();
     void selectWidget(int row);
-
-    void addTask(QSqlRecord newTask, int i);
+    void addTask();
 };
 
 #endif // TASKDISPLAY_H

@@ -27,7 +27,7 @@ public:
     ~EditToolBar();
 
 signals:
-    void newTask(QSqlRecord newTask, int row);
+    void newTask();
 
 private slots:
     void onAddtaskTriggered();

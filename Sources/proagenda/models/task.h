@@ -44,7 +44,7 @@ public:
     static int getTypeIndex();
     static void setTypeIndex(int value);
 
-    static QSqlRecord addTask();
+    static void addTask();
 private:
     int id;
     QString name;

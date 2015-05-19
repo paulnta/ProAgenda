@@ -55,20 +55,11 @@ void taskDisplay::setUpTaskList()
     layout->addStretch(1);
 }
 
-void taskDisplay::addTask(QSqlRecord newTask, int i){
 
-//    TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i, new Task(model->record(i),i) );
-//    tasks->append(taskCheckBox);
-//    connect(this, SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
-//    layout->insertWidget(0,taskCheckBox,0, Qt::AlignTop);
-//    qDebug() << "size" <<  tasks->size();
-//    for(int i=0; i < tasks->size(); i++){
-//        layout->removeWidget(tasks->at(i));
-//        tasks->at(i)->setParent(NULL);
-//    }
+void taskDisplay::addTask(){
 
-//    tasks->clear();
-//    setUpTaskList();
+    tasks->clear();
+    setUpTaskList();
 }
 
 taskDisplay::~taskDisplay()

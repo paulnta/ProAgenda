@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->ui->stackedWidgetCentral->setCurrentIndex(0); // taskWidget (position 0 dans la stackWidget)
     this->ui->stackedWidgetSide->setCurrentIndex(0);    // addtaskWidget (position 0 dans la stackWidget)
 
-    connect(editToolBar, SIGNAL(newTask(QSqlRecord,int)), taskDisp, SLOT(addTask(QSqlRecord,int)));
+//    connect(editToolBar, SIGNAL(newTask(QSqlRecord,int)), taskDisp, SLOT(addTask(QSqlRecord,int)));
 
 }
 

@@ -118,7 +118,7 @@ void Task::setTypeIndex(int value)
     courseIndex = value;
 }
 
-QSqlRecord Task::addTask(){
+void Task::addTask(){
 
     QSqlRecord record = model->record();
 
@@ -132,10 +132,6 @@ QSqlRecord Task::addTask(){
     if(model->isDirty()){
         QMessageBox::warning(0,"SQL error", model->lastError().text());
     }
-
-    qDebug() << record;
-
-    return record;
 }
 
 //Setting up the relation between the database and the model / view
