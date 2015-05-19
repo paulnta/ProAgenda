@@ -45,6 +45,7 @@ public:
     static void setTypeIndex(int value);
 
     static void addTask();
+
 private:
     int id;
     QString name;

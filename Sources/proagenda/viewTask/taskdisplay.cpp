@@ -52,9 +52,18 @@ void taskDisplay::setUpTaskList()
 
     // alignement des tâche en haut
     layout->addStretch(1);
+
 }
 
 void taskDisplay::refreshTaskList(){
+
+    // Clear all Items in layout
+    QLayoutItem* child;
+    while((child = layout->takeAt(0)) != 0){
+        delete child->widget();
+        delete child;
+    }
+
 
     tasks->clear();
     setUpTaskList();

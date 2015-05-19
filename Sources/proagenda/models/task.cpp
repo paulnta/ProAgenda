@@ -132,6 +132,7 @@ void Task::addTask(){
     if(model->isDirty()){
         QMessageBox::warning(0,"SQL error", model->lastError().text());
     }
+
 }
 
 //Setting up the relation between the database and the model / view

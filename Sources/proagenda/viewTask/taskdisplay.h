@@ -30,6 +30,7 @@ public:
 private:
     typedef QList<TaskCheckBox*> TypeTaskList;
 
+    QWidget* listTask;
     TaskCheckBox* selectedWidget;
     TypeTaskList* tasks;
     QVBoxLayout* layout;
