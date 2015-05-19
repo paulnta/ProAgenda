@@ -1,6 +1,8 @@
 #include "task.h"
 #include "sqlconnection.h"
 
+#include <QMessageBox>
+
 QSqlRelationalTableModel *Task::model = NULL;
 int Task::courseIndex = 0;
 QString Task::dateFormat = "yyyy-MM-ddTHH:mm:ss.zzz";
@@ -117,6 +119,23 @@ void Task::setTypeIndex(int value)
     courseIndex = value;
 }
 
+QSqlRecord& Task::addTask(){
+    qDebug() << "old" << model->rowCount();
+    QSqlRecord record = model->record();
+
+    record.setValue(1,"new Task");
+    record.setValue(8,1);
+    record.setValue(9,1);
+
+    model->insertRecord(-1,record);
+    model->submitAll();
+
+    if(model->isDirty()){
+        QMessageBox::warning(0,"SQL error", model->lastError().text());
+    }
+
+    return record;
+}
 
 //Setting up the relation between the database and the model / view
 //Displaying in the name of the course and not its ID
@@ -126,7 +145,7 @@ void Task::setupModel(QString orderbyColumnName){
     model = new QSqlRelationalTableModel(0);
     model->setTable("Task");
     model->setSort(model->fieldIndex(orderbyColumnName),Qt::DescendingOrder);
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     courseIndex = model->fieldIndex("courseId");
     model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));
     model->select();

@@ -13,6 +13,7 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 {
     ui->setupUi(this);
     selectedWidget = NULL;
+    model = Task::getModel();
 
     // Layout principale affichant une liste vertical de TaskCheckBox
     layout = new QVBoxLayout(this);
@@ -31,8 +32,6 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 
 void taskDisplay::setUpTaskList()
 {
-
-    model = Task::getModel();
 
     // Création de widget mappé avec le model
     for(int i = 0; i < model->rowCount();i++){
@@ -54,6 +53,22 @@ void taskDisplay::setUpTaskList()
 
     // alignement des tâche en haut
     layout->addStretch(1);
+}
+
+void taskDisplay::addTask(QSqlRecord newTask, int i){
+
+//    TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i, new Task(model->record(i),i) );
+//    tasks->append(taskCheckBox);
+//    connect(this, SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
+//    layout->insertWidget(0,taskCheckBox,0, Qt::AlignTop);
+//    qDebug() << "size" <<  tasks->size();
+//    for(int i=0; i < tasks->size(); i++){
+//        layout->removeWidget(tasks->at(i));
+//        tasks->at(i)->setParent(NULL);
+//    }
+
+//    tasks->clear();
+//    setUpTaskList();
 }
 
 taskDisplay::~taskDisplay()

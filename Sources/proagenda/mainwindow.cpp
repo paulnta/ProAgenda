@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     sideBarSummary = new SideBarSummary;
     taskDisp = new taskDisplay(this);
 
-//    connect(sideBarTask, SIGNAL(isUpdated()), taskDisp, SLOT(updateTaskWidget()));
 
     // Initialisation des Barres d'outils
     initMainToolbar();
@@ -35,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->ui->viewAddTask->addWidget(sideBarTask);
     this->ui->viewSidebarSummary->addWidget(sideBarSummary);
 
+    // initialisation des vues
     this->ui->viewTask->addWidget(taskDisp);
     this->ui->viewCalendar->addWidget(new CalendarWidget);
     this->ui->viewResume->addWidget( new VSummary(this));
@@ -43,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent) :
     // Widgets Affiché par defaut au démmarge
     this->ui->stackedWidgetCentral->setCurrentIndex(0); // taskWidget (position 0 dans la stackWidget)
     this->ui->stackedWidgetSide->setCurrentIndex(0);    // addtaskWidget (position 0 dans la stackWidget)
+
+    connect(editToolBar, SIGNAL(newTask(QSqlRecord,int)), taskDisp, SLOT(addTask(QSqlRecord,int)));
+
 }
 
 SideBarTask *MainWindow::getSideBarTask()
@@ -64,7 +67,7 @@ void MainWindow::initEditToolBar(){
     font.setPixelSize(11);
     this->editToolBar->setFont(font);
     this->ui->mainToolBar->setFont(font);
-}
+    }
 
 void MainWindow::initMainToolbar(){
 
@@ -83,6 +86,7 @@ void MainWindow::initMainToolbar(){
     this->ui->mainToolBar->insertWidget(this->ui->actionGoToTask,spacerLeft);
     this->ui->mainToolBar->addWidget(spacerRight);
     this->ui->actionGoToTask->setChecked(true);
+
 }
 
 /**

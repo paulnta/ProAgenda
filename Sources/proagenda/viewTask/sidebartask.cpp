@@ -43,12 +43,11 @@ SideBarTask::SideBarTask(QWidget *parent) :
     connect(hasTerm, SIGNAL(clicked(bool)), termDate, SLOT(setEnabled(bool)) );
     termDate->setEnabled(false);
 
-    //Task Submit
+    // Task Submit
     btnSubmit = new QPushButton();
     btnSubmit->setText("Sauver");
     btnSubmit->setDefault(false);
     btnSubmit->setAutoDefault(true);
-
 
     QSqlRelationalTableModel *model = Task::getModel();
     courseIndex = Task::getTypeIndex();
@@ -62,6 +61,8 @@ SideBarTask::SideBarTask(QWidget *parent) :
     mapper->setModel(model);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
     mapper->setItemDelegate(new QSqlRelationalDelegate(this));
+
+    // Mapping
     mapper->addMapping(taskName, model->fieldIndex("name"));
     mapper->addMapping(description, model->fieldIndex("description"));
     mapper->addMapping(courseDropDown, courseIndex);
@@ -69,10 +70,8 @@ SideBarTask::SideBarTask(QWidget *parent) :
     mapper->addMapping(taskType, model->fieldIndex("typeId"));
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
 
-    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
-    connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
 
-    mapper->toFirst();
+    // Ajout des widgets au layout
     layout->addWidget(courseDropDown);
     layout->addWidget(taskType);
     layout->addSpacing(10);
@@ -85,6 +84,11 @@ SideBarTask::SideBarTask(QWidget *parent) :
     layout->addWidget(priority);
     layout->addWidget(btnSubmit, QDialogButtonBox::AcceptRole);
     layout->addStretch();
+
+    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
+    connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
+
+    mapper->toFirst();
     this->setLayout(layout);
 }
 
@@ -126,8 +130,12 @@ void SideBarTask::loadTask(Task* task)
 
 void SideBarTask::submitTask()
 {
+    // On sauvegarde l'index courant
+    // car mis à -1 après un model->select()
     int oldIndex = mapper->currentIndex();
+
     mapper->submit();
+    Task::getModel()->submitAll();
     Task::getModel()->select();
     mapper->setCurrentIndex(oldIndex);
     emit isUpdated();

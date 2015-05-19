@@ -65,7 +65,7 @@ public slots:
     void updateTaskWidget();
     void selectWidget(int row);
 
-
+    void addTask(QSqlRecord newTask, int i);
 };
 
 #endif // TASKDISPLAY_H

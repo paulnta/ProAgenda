@@ -1,6 +1,8 @@
 #include "edittoolbar.h"
 #include "ui_mainwindow.h"
 
+#include <QSqlrecord>
+
 EditToolBar::EditToolBar(Ui::MainWindow* ui) : ui(ui)
 {
     // Paramètres généraux de la ToolBar
@@ -39,17 +41,8 @@ EditToolBar::~EditToolBar()
 
 void EditToolBar::onAddtaskTriggered()
 {
-
-//    if (ui->stackedWidgetSide->currentWidget() != myLabel){
-//        this->ui->stackedWidgetSide->addWidget(myLabel);
-//        this->ui->stackedWidgetSide->setCurrentWidget(myLabel);
-//    } else {
-//        ui->stackedWidgetSide->setCurrentWidget(ui->addTaskWidget);
-//    }
-
-    qDebug() <<" new Task";
-    emit newTask();
-
+   QSqlRecord& record =  Task::addTask();
+   emit newTask(record, Task::getModel()->rowCount()-1);
 }
 
 void EditToolBar::onAddunitTriggered()
