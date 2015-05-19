@@ -26,6 +26,7 @@ public:
     void setUpTaskList();
     ~taskDisplay();
 
+    void refreshTaskList();
 private:
     typedef QList<TaskCheckBox*> TypeTaskList;
 

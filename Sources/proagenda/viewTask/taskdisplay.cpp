@@ -26,7 +26,6 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     // Initialisation de la liste des tâches
     setUpTaskList();
 
-    connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), this, SLOT(updateTaskWidget()));
     connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
 }
 
@@ -36,9 +35,9 @@ void taskDisplay::setUpTaskList()
     // Création de widget mappé avec le model
     for(int i = 0; i < model->rowCount();i++){
 
-        TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i, new Task(model->record(i),i) );
+        TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i);
         tasks->append(taskCheckBox);
-        connect(this, SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
+        connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
 
     }
 
@@ -55,11 +54,14 @@ void taskDisplay::setUpTaskList()
     layout->addStretch(1);
 }
 
-
-void taskDisplay::addTask(){
+void taskDisplay::refreshTaskList(){
 
     tasks->clear();
     setUpTaskList();
+}
+
+void taskDisplay::addTask(){
+    refreshTaskList();
 }
 
 taskDisplay::~taskDisplay()

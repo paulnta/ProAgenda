@@ -85,7 +85,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
     layout->addWidget(btnSubmit, QDialogButtonBox::AcceptRole);
     layout->addStretch();
 
-    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
+//    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
     connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
 
     mapper->toFirst();
@@ -123,9 +123,9 @@ void SideBarTask::keyReleaseEvent(QKeyEvent* event)
     }
 }
 
-void SideBarTask::loadTask(Task* task)
+void SideBarTask::loadTask(int row)
 {
-    mapper->setCurrentIndex(task->getRow());
+    mapper->setCurrentIndex(row);
 }
 
 void SideBarTask::submitTask()

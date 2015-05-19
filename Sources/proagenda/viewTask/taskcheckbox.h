@@ -30,7 +30,7 @@ class TaskCheckBox : public QWidget
     Q_OBJECT
 
 public:
-    explicit TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *parent = 0);
+    explicit TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent = 0);
     void setSelected(bool enable);
 
 protected:
@@ -44,7 +44,6 @@ private:
     QLabel* taskName;
     QWidget* priority;
     QDateTimeEdit  * termDate;
-    Task* task;
     SideBarTask* sidebar;
     QDataWidgetMapper* mapper;
     int typeIndex;
@@ -55,7 +54,7 @@ private:
     static QString selectedCSS;
 
 signals:
-    void editTask(Task* task);
+    void editTask(int);
 
 public slots:
     void updateTaskWidget();

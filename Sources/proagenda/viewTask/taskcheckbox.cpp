@@ -1,5 +1,5 @@
 #include "taskcheckbox.h"
-#include "ui_taskwidget.h"
+#include "ui_taskcheckbox.h"
 #include "sidebartask.h"
 
 QString TaskCheckBox::defaultCSS ="QWidget#taskWidgetWrapper:hover{"
@@ -11,19 +11,18 @@ QString TaskCheckBox::selectedCSS =   "QWidget#taskWidgetWrapper{"
                                     "}";
 
 
-TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *parent) :
+TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::taskWidget),task(task), sidebar(sidebar)
+    ui(new Ui::taskWidget), sidebar(sidebar)
 {
+    this->row = row;
+    qDebug() << row;
     ui->setupUi(this);
 
     checkbox = new QCheckBox();
     taskName = new QLabel;
-    termDate = new QDateTimeEdit(this->task->getTermDate());
+    termDate = new QDateTimeEdit;
     priority = new QLabel;
-
-//    type = new QLabel(this->task->getTaskType().getName());
-
 
     ui->taskLayout->addWidget(checkbox,1);
     ui->taskLayout->addWidget(taskName,10);
@@ -41,10 +40,10 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, Task* task, QWidget *p
     mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
 
     mapper->addMapping(priority, model->fieldIndex("priority"),"text");
-    mapper->setCurrentIndex(task->getRow());
+    mapper->setCurrentIndex(row);
 
     connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
-    connect(this,SIGNAL(editTask(Task*)), sidebar, SLOT(loadTask(Task*)));
+    connect(this,SIGNAL(editTask(int)), sidebar, SLOT(loadTask(int)));
 }
 
 void TaskCheckBox::setSelected(bool enable)
@@ -58,7 +57,7 @@ void TaskCheckBox::setSelected(bool enable)
 void TaskCheckBox::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton){  // click button left
-        emit editTask(task);
+        emit editTask(row);
     }
 }
 
@@ -74,7 +73,6 @@ TaskCheckBox::~TaskCheckBox()
 
 void TaskCheckBox::updateTaskWidget()
 {
-    mapper->setCurrentIndex(task->getRow());
-    qDebug() << "widget updated " << task->getRow();
+    mapper->setCurrentIndex(row);
 }
 
