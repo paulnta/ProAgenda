@@ -59,13 +59,17 @@ protected:
      */
     void mouseReleaseEvent(QMouseEvent* event);
 
+public:
+    static void addTaskTemp();
+
 signals:
     void isUpdated();
+    void newTaskTemp();
 
 public slots:
     void updateTaskWidget();
-    void selectWidget(int row);
     void addTask();
+    void selectWidget(int row);
 };
 
 #endif // TASKDISPLAY_H

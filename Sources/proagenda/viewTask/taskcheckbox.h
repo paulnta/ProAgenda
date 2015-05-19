@@ -14,6 +14,7 @@
 #include "sqlconnection.h"
 #include <QDataWidgetMapper>
 #include <QItemSelectionModel>
+#include <QPushButton>
 #include <QSqlRelationalDelegate>
 #include <QSqlRelationalTableModel>
 
@@ -39,6 +40,7 @@ protected:
     ~TaskCheckBox();
 
 private:
+    QPushButton* removeTaskBtn;
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
     QLabel* taskName;
@@ -55,9 +57,11 @@ private:
 
 signals:
     void editTask(int);
+    void removeTask(int);
 
 public slots:
     void updateTaskWidget();
+    void onRemoveTaskClicked();
 };
 
 #endif // TASKWIDGET_H

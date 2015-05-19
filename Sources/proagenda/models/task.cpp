@@ -2,6 +2,7 @@
 #include "sqlconnection.h"
 
 #include <QMessageBox>
+#include "viewTask/taskdisplay.h"
 
 QSqlRelationalTableModel *Task::model = NULL;
 int Task::courseIndex = 0;
@@ -132,6 +133,8 @@ void Task::addTask(){
     if(model->isDirty()){
         QMessageBox::warning(0,"SQL error", model->lastError().text());
     }
+
+    taskDisplay::addTaskTemp();
 
 }
 

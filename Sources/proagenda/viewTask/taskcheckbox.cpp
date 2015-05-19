@@ -19,6 +19,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     qDebug() << row;
     ui->setupUi(this);
 
+    removeTaskBtn = new QPushButton("X");
     checkbox = new QCheckBox();
     taskName = new QLabel;
     termDate = new QDateTimeEdit;
@@ -29,6 +30,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     ui->taskLayout->addWidget(new QLabel(""));
     ui->taskLayout->addWidget(priority, 0, Qt::AlignLeft);
     ui->taskLayout->addWidget(termDate, 0, Qt::AlignLeft);
+    ui->taskLayout->addWidget(removeTaskBtn, 0, Qt::AlignLeft);
 
     QSqlRelationalTableModel* model = Task::getModel();
     mapper = new QDataWidgetMapper(this);
@@ -44,6 +46,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
 
     connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
     connect(this,SIGNAL(editTask(int)), sidebar, SLOT(loadTask(int)));
+    connect(removeTaskBtn, SIGNAL(clicked()), this, SLOT(onRemoveTaskClicked()));
 }
 
 void TaskCheckBox::setSelected(bool enable)
@@ -59,6 +62,11 @@ void TaskCheckBox::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton){  // click button left
         emit editTask(row);
     }
+}
+
+void TaskCheckBox::onRemoveTaskClicked(){
+    emit removeTask(row);
+    qDebug() << "remove Task";
 }
 
 TaskCheckBox::~TaskCheckBox()

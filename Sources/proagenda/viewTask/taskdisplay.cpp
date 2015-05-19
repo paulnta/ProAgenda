@@ -27,6 +27,7 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     setUpTaskList();
 
     connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
+    connect(this, SIGNAL(newTaskTemp()), this , SLOT(addTask()));
 }
 
 void taskDisplay::setUpTaskList()
@@ -53,6 +54,10 @@ void taskDisplay::setUpTaskList()
     // alignement des tâche en haut
     layout->addStretch(1);
 
+}
+
+void taskDisplay::addTaskTemp(){
+//    emit newTaskTemp();
 }
 
 void taskDisplay::refreshTaskList(){
