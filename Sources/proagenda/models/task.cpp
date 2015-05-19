@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "viewTask/taskdisplay.h"
 
+Task* Task::instance = NULL;
 
 Task::Task()
 {
@@ -12,10 +13,16 @@ Task::Task()
     // De base par termDate, il faudra surement faire une fonction dans le model de tri
     model->setSort(model->fieldIndex("termDate"), Qt::DescendingOrder);
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    int courseIndex = model->fieldIndex("courseId");
+    courseIndex = model->fieldIndex("courseId");
     model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));
     update();
 }
+int Task::getCourseIndex() const
+{
+    return courseIndex;
+}
+
+
 
 void Task::update() {
     model->select();
@@ -38,4 +45,22 @@ QSqlRelationalTableModel* Task::getModel(){
     return model;
 }
 
+void Task::addTask(){
+
+    QSqlRecord record = model->record();
+
+    record.setValue(1,"new Task");
+    record.setValue(8,1);
+    record.setValue(9,1);
+
+    model->insertRecord(-1,record);
+    model->submitAll();
+
+    if(model->isDirty()){
+        QMessageBox::warning(0,"SQL error", model->lastError().text());
+    }
+
+    emit newTask();
+
+}
 

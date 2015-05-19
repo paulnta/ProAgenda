@@ -2,11 +2,11 @@
 #include "ui_taskcheckbox.h"
 #include "sidebartask.h"
 
-QString TaskCheckBox::defaultCSS ="QWidget#taskWidgetWrapper:hover{"
-                                "background-color: rgba(153, 153, 153, 20);"
-                                 "}";
+QString TaskCheckBox::defaultCSS =  "QWidget#taskWidgetWrapper:hover{"
+                                    "background-color: rgba(153, 153, 153, 20);"
+                                    "}";
 
-QString TaskCheckBox::selectedCSS =   "QWidget#taskWidgetWrapper{"
+QString TaskCheckBox::selectedCSS = "QWidget#taskWidgetWrapper{"
                                     "background-color: #ffffff; border-left: 3px solid #2ba3dd;"
                                     "}";
 
@@ -16,9 +16,8 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     ui(new Ui::taskWidget), sidebar(sidebar)
 {
     this->row = row;
-    qDebug() << row;
     ui->setupUi(this);
-
+    setStyleSheet(TaskCheckBox::defaultCSS);
     removeTaskBtn = new QPushButton("X");
     checkbox = new QCheckBox();
     taskName = new QLabel;
@@ -32,7 +31,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     ui->taskLayout->addWidget(termDate, 0, Qt::AlignLeft);
     ui->taskLayout->addWidget(removeTaskBtn, 0, Qt::AlignLeft);
 
-    QSqlRelationalTableModel* model = Task::getModel();
+    QSqlRelationalTableModel* model = Task::getInstance()->getModel();
     mapper = new QDataWidgetMapper(this);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
     mapper->setModel(model);
@@ -51,10 +50,13 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
 
 void TaskCheckBox::setSelected(bool enable)
 {
-    if(enable)
+
+    if(enable){
         setStyleSheet(TaskCheckBox::selectedCSS);
-    else
-        setStyleSheet(TaskCheckBox::defaultCSS);
+    }
+    else{
+        setStyleSheet(TaskCheckBox::selectedCSS);
+    }
 }
 
 void TaskCheckBox::mousePressEvent(QMouseEvent *event)

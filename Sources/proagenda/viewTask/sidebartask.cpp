@@ -49,8 +49,8 @@ SideBarTask::SideBarTask(QWidget *parent) :
     btnSubmit->setDefault(false);
     btnSubmit->setAutoDefault(true);
 
-    QSqlRelationalTableModel *model = Task::getModel();
-    courseIndex = Task::getTypeIndex();
+    QSqlRelationalTableModel *model = Task::getInstance()->getModel();
+    courseIndex = Task::getInstance()->getCourseIndex();
 
     //SQLRelation set dropdown to search course name in DB
     relModel = model->relationModel(courseIndex);
@@ -135,8 +135,8 @@ void SideBarTask::submitTask()
     int oldIndex = mapper->currentIndex();
 
     mapper->submit();
-    Task::getModel()->submitAll();
-    Task::getModel()->select();
+    Task::getInstance()->getModel()->submitAll();
+    Task::getInstance()->getModel()->select();
     mapper->setCurrentIndex(oldIndex);
     emit isUpdated();
 }

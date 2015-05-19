@@ -59,12 +59,8 @@ protected:
      */
     void mouseReleaseEvent(QMouseEvent* event);
 
-public:
-    static void addTaskTemp();
-
 signals:
     void isUpdated();
-    void newTaskTemp();
 
 public slots:
     void updateTaskWidget();

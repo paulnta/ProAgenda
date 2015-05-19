@@ -29,16 +29,6 @@ public:
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QColor(255, 0, 0, 127));
 
-//        int hourHeight = (height()-100)/ HeaderHours::nbHoursPerPage;
-//        int y = 0;
-
-//        for(int i=0; i < HeaderHours::nbHoursPerDay; i++){
-//            QString text = QString("%1:00").arg(i+ HeaderHours::beginHour);
-//            painter.drawText(0,y,width(),hourHeight,0,text);
-//            y += hourHeight;
-//        }
-
-//         qDebug() << "Grid heu" << hourHeight*nbHoursPerDay;
     }
 
 signals:

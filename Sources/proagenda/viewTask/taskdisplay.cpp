@@ -13,7 +13,7 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 {
     ui->setupUi(this);
     selectedWidget = NULL;
-    model = Task::getModel();
+    model = Task::getInstance()->getModel();
 
     // Layout principale affichant une liste vertical de TaskCheckBox
     layout = new QVBoxLayout(this);
@@ -27,19 +27,15 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     setUpTaskList();
 
     connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
-    connect(this, SIGNAL(newTaskTemp()), this , SLOT(addTask()));
 }
 
 void taskDisplay::setUpTaskList()
 {
-
     // Création de widget mappé avec le model
     for(int i = 0; i < model->rowCount();i++){
-
         TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i);
         tasks->append(taskCheckBox);
         connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
-
     }
 
     // Selection de la permière tâche par défaut
@@ -56,9 +52,6 @@ void taskDisplay::setUpTaskList()
 
 }
 
-void taskDisplay::addTaskTemp(){
-//    emit newTaskTemp();
-}
 
 void taskDisplay::refreshTaskList(){
 
@@ -69,8 +62,9 @@ void taskDisplay::refreshTaskList(){
         delete child;
     }
 
-
+    selectedWidget = NULL;
     tasks->clear();
+
     setUpTaskList();
 }
 
@@ -92,9 +86,13 @@ void taskDisplay::updateTaskWidget()
 
 void taskDisplay::selectWidget(int row)
 {
-    if(selectedWidget != NULL)
-        selectedWidget->setSelected(false);
 
+    // On remet le style par defaut à l'ancien widget selectionné
+    if(selectedWidget != NULL){
+        selectedWidget->setSelected(false);
+    }
+
+    // On selectionne le widget voulu
     selectedWidget = tasks->at(row);
     selectedWidget->setSelected(true);
 }

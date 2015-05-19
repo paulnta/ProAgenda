@@ -41,7 +41,7 @@ EditToolBar::~EditToolBar()
 
 void EditToolBar::onAddtaskTriggered()
 {
-   emit newTask();
+   Task::getInstance()->addTask();
 }
 
 void EditToolBar::onAddunitTriggered()

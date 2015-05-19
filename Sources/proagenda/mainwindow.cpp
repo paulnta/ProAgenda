@@ -17,13 +17,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //init Database and models
     SqlConnection::getInstance();
-    Task::setupModel("termDate");
+
 
     // Initialisation des widgets
     sideBarTask = new SideBarTask;
     sideBarSummary = new SideBarSummary;
     taskDisp = new taskDisplay(this);
 
+    connect(Task::getInstance(),SIGNAL(newTask()), taskDisp, SLOT(addTask()));
 
     // Initialisation des Barres d'outils
     initMainToolbar();
