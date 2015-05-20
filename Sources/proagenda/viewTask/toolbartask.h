@@ -1,9 +1,8 @@
-#ifndef EDITTOOLBAR_H
-#define EDITTOOLBAR_H
+#ifndef TOOLBARTASK_H
+#define TOOLBARTASK_H
 
 #include <QObject>
 #include <QToolBar>
-#include <QDebug>
 #include <QLabel>
 #include "toolbutton.h"
 #include "models/task.h"
@@ -12,19 +11,20 @@ namespace Ui {
 class MainWindow;
 }
 
-class EditToolBar : public QToolBar
+
+class ToolBarTask : public QToolBar
 {
     Q_OBJECT // Macro Qt : Nécéssaire pour ajouter des Slot
 
     ToolButton* addButton;
     QAction* addTask;
     QAction* addUnit;
-    Ui::MainWindow *ui;
     QLabel* myLabel;
+    Ui::MainWindow *ui;
 
 public:
-    explicit EditToolBar(Ui::MainWindow *ui);
-    ~EditToolBar();
+    explicit ToolBarTask(Ui::MainWindow *ui);
+    ~ToolBarTask();
 
 signals:
     void newTask();
@@ -34,4 +34,5 @@ private slots:
     void onAddunitTriggered();
 };
 
-#endif // EDITTOOLBAR_H
+
+#endif // TOOLBARTASK_H

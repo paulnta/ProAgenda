@@ -7,6 +7,14 @@
 #include <QHBoxLayout>
 #include <QDateTimeEdit>
 
+/**
+ * Indication de la date d'échance d'une tâche
+ * nb jours  = 1 : demain
+ * nb jours  = 2 : après-demain
+ * nb jours > 2  : lundi, mardi, etc..
+ *
+ * @brief The TermDate class
+ */
 class TermDate : public QWidget
 {
     Q_OBJECT
@@ -20,12 +28,11 @@ public:
     QString termDate;
     QLabel* label;
     QHBoxLayout* layout;
+    QFont font;
 
     QString getTermDate() const;
     void setTermDate(QString value);
 
-signals:
-    void termDateChanged();
 
 public slots:
 

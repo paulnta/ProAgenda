@@ -20,6 +20,8 @@
 
 #include "models/task.h"
 #include "termdate.h"
+#include "priority.h"
+
 
 namespace Ui {
 class taskWidget;
@@ -44,7 +46,7 @@ private:
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
     QLabel* taskName;
-    QLabel* priority;
+    Priority* priority;
     TermDate  * termDate;
     SideBarTask* sidebar;
     QDataWidgetMapper* mapper;

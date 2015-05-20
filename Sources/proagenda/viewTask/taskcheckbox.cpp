@@ -22,12 +22,12 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     checkbox = new QCheckBox();
     taskName = new QLabel;
     termDate = new TermDate;
-    priority = new QLabel;
+    priority = new Priority;
 
     ui->taskLayout->addWidget(checkbox,1);
+    ui->taskLayout->addWidget(priority, 0, Qt::AlignLeft);
     ui->taskLayout->addWidget(taskName,10);
     ui->taskLayout->addWidget(new QLabel(""));
-    ui->taskLayout->addWidget(priority, 0, Qt::AlignLeft);
     ui->taskLayout->addWidget(termDate, 0, Qt::AlignLeft);
     ui->taskLayout->addWidget(removeTaskBtn, 0, Qt::AlignLeft);
 
@@ -39,7 +39,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     mapper->addMapping(taskName, model->fieldIndex("name"), "text");
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
     mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
-    mapper->addMapping(priority, model->fieldIndex("priority"), "text");
+    mapper->addMapping(priority, model->fieldIndex("priority"));
 
 
 //    priority->setText(QString::number(row)); // DEBUG

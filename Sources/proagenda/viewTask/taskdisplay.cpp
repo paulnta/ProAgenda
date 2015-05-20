@@ -30,7 +30,7 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     if(tasks->size() > 0)
         selectWidget(0);
 
-    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
+//    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
 }
 
 void taskDisplay::setUpTaskList()

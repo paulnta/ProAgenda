@@ -29,7 +29,7 @@
    <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">QToolBar.EditToolBar {
+   <string notr="true">QToolBar.ToolBarTask, QToolBar.ToolBarSummary, QToolBar.ToolBarCalendar {
   border-bottom: 1px solid rgb(227, 227, 227);
   background-color: rgba(255, 255, 255, 0.9);
 }

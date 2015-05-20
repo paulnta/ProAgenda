@@ -15,7 +15,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    edittoolbar.cpp \
     toolbutton.cpp \
     viewTask/sidebartask.cpp \
     viewTask/taskdisplay.cpp \
@@ -35,10 +34,12 @@ SOURCES += main.cpp\
     viewTask/taskcheckbox.cpp \
     viewTask/termdate.cpp \
     viewSummary/testtreeview.cpp \
-    viewSummary/treemodel.cpp
+    viewSummary/treemodel.cpp \
+    viewTask/toolbartask.cpp \
+    viewSummary/toolbarsummary.cpp \
+    viewCalendar/toolbarcalendar.cpp
 
 HEADERS  += mainwindow.h \
-    edittoolbar.h \
     toolbutton.h \
     viewTask/sidebartask.h \
     viewTask/taskdisplay.h \
@@ -63,7 +64,11 @@ HEADERS  += mainwindow.h \
     viewSummary/custommodel.h \
     viewSummary/treemodel.h \
     viewSummary/treeview.h \
-    viewSummary/treedelegate.h
+    viewSummary/treedelegate.h \
+    viewTask/priority.h \
+    viewTask/toolbartask.h \
+    viewSummary/toolbarsummary.h \
+    viewCalendar/toolbarcalendar.h
 
 FORMS    += mainwindow.ui \
     viewTask/sidebartask.ui \

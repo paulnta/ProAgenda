@@ -7,13 +7,18 @@
 #include <QWidget>
 #include <QDebug>
 #include <QToolButton>
+#include <QStackedWidget>
 
-#include "edittoolbar.h"
-#include "viewTask/sidebartask.h"
 #include "viewCalendar/calendarwidget.h"
-#include "viewTask/taskdisplay.h"
+#include "viewCalendar/toolbarcalendar.h"
+
 #include "viewSummary/vsummary.h"
 #include "viewSummary/sidebarsummary.h"
+#include "viewSummary/toolbarsummary.h"
+
+#include "viewTask/sidebartask.h"
+#include "viewTask/taskdisplay.h"
+#include "viewTask/toolbartask.h"
 
 
 namespace Ui {
@@ -25,16 +30,29 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
     Ui::MainWindow *ui;
-    EditToolBar* editToolBar;
+
+    // Views
+    taskDisplay* taskDisp;
+    CalendarWidget* calendarWidget;
+    VSummary* viewSummary;
+
+    // Sidebars
     SideBarTask* sideBarTask;
     SideBarSummary* sideBarSummary;
-    taskDisplay* taskDisp;
+
+    // ToolBars
+    QToolBar* toolBarTask;
+    QToolBar* toolBarCalendar;
+    QToolBar* toolBarSummary;
+    QStackedWidget* toolBarStackedWidget;
 
 public:
+
     explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
     SideBarTask* getSideBarTask();
     SideBarSummary* getSideBarSummary();
-    ~MainWindow();
 
 private slots:
     void on_actionGoToTask_triggered();

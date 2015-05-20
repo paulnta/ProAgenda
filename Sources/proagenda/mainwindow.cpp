@@ -14,61 +14,54 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
     //init Database and models
     SqlConnection::getInstance();
 
-
-    // Initialisation des widgets
+    // Initialisation des sidebars
     sideBarTask = new SideBarTask;
     sideBarSummary = new SideBarSummary;
-    taskDisp = new taskDisplay(this);
+    viewSummary = new VSummary(this);
 
-    connect(Task::getInstance(),SIGNAL(newTask()), taskDisp, SLOT(addTask()));
+    // Initialisation des vues
+    taskDisp = new taskDisplay(this);
+    calendarWidget = new CalendarWidget;
 
     // Initialisation des Barres d'outils
     initMainToolbar();
     initEditToolBar();
 
-
     // Initialisation des Sidebars
-    this->ui->viewAddTask->addWidget(sideBarTask);
-    this->ui->viewSidebarSummary->addWidget(sideBarSummary);
+    ui->viewAddTask->addWidget(sideBarTask);
+    ui->viewSidebarSummary->addWidget(sideBarSummary);
 
     // initialisation des vues
-    this->ui->viewTask->addWidget(taskDisp);
-    this->ui->viewCalendar->addWidget(new CalendarWidget);
-    this->ui->viewResume->addWidget( new VSummary(this));
-
+    ui->viewTask->addWidget(taskDisp);
+    ui->viewCalendar->addWidget(calendarWidget);
+    ui->viewResume->addWidget(viewSummary);
 
     // Widgets Affiché par defaut au démmarge
-    this->ui->stackedWidgetCentral->setCurrentIndex(0); // taskWidget (position 0 dans la stackWidget)
-    this->ui->stackedWidgetSide->setCurrentIndex(0);    // addtaskWidget (position 0 dans la stackWidget)
+    ui->stackedWidgetCentral->setCurrentIndex(0); // taskWidget (position 0 dans la stackWidget)
+    ui->stackedWidgetSide->setCurrentIndex(0);    // addtaskWidget (position 0 dans la stackWidget)
+    toolBarStackedWidget->setCurrentIndex(0);     // toolBarTask (position 0 dans la toolBarStackedWidget)
 
-//    connect(editToolBar, SIGNAL(newTask(QSqlRecord,int)), taskDisp, SLOT(addTask(QSqlRecord,int)));
-
-}
-
-SideBarTask *MainWindow::getSideBarTask()
-{
-    return sideBarTask;
-}
-
-SideBarSummary *MainWindow::getSideBarSummary()
-{
-    return sideBarSummary;
+    connect(Task::getInstance(),SIGNAL(newTask()), taskDisp, SLOT(addTask()));
+    connect(sideBarTask->getMapper(), SIGNAL(currentIndexChanged(int)), taskDisp, SLOT(selectWidget(int)));
 }
 
 void MainWindow::initEditToolBar(){
 
-    editToolBar = new EditToolBar(ui);
-    this->ui->editLayout->addWidget(editToolBar);
-    QFont font("Helvetica");
-    font.setWeight(QFont::Light);
-    font.setPixelSize(11);
-    this->editToolBar->setFont(font);
-    this->ui->mainToolBar->setFont(font);
-    }
+    toolBarStackedWidget = new QStackedWidget;
+    this->ui->editLayout->addWidget(toolBarStackedWidget);
+
+    toolBarTask = new ToolBarTask(ui);
+    toolBarCalendar = new ToolBarCalendar(ui);
+    toolBarSummary = new ToolBarSummary(ui);
+
+    toolBarStackedWidget->addWidget(toolBarTask);
+    toolBarStackedWidget->addWidget(toolBarCalendar);
+    toolBarStackedWidget->addWidget(toolBarSummary);
+
+}
 
 void MainWindow::initMainToolbar(){
 
@@ -110,6 +103,7 @@ void MainWindow::on_actionGoToTask_triggered()
     //On switch vers le widget viewTask
     this->ui->stackedWidgetCentral->setCurrentWidget(this->ui->taskWidget);
     this->ui->stackedWidgetSide->setCurrentWidget(this->ui->addTaskWidget);
+    toolBarStackedWidget->setCurrentWidget(toolBarTask);
 }
 
 void MainWindow::on_actionGoToCal_triggered()
@@ -123,6 +117,7 @@ void MainWindow::on_actionGoToCal_triggered()
 
     //On switch vers le widget viewCalendar
     this->ui->stackedWidgetCentral->setCurrentWidget(this->ui->calendarWidget);
+    toolBarStackedWidget->setCurrentWidget(toolBarCalendar);
 }
 
 void MainWindow::on_actionGoToResume_triggered()
@@ -137,13 +132,32 @@ void MainWindow::on_actionGoToResume_triggered()
     //On affiche le widget ViewResume
     this->ui->stackedWidgetCentral->setCurrentWidget(this->ui->resumeWidget);
     this->ui->stackedWidgetSide->setCurrentWidget(this->ui->summaryWidget);
+    toolBarStackedWidget->setCurrentWidget(toolBarSummary);
+}
+
+SideBarTask *MainWindow::getSideBarTask()
+{
+    return sideBarTask;
+}
+
+SideBarSummary *MainWindow::getSideBarSummary()
+{
+    return sideBarSummary;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete sideBarTask;
-    delete editToolBar;
-    delete sideBarSummary;
+
     delete taskDisp;
+    delete viewSummary;
+    delete calendarWidget;
+
+    delete sideBarTask;
+    delete sideBarSummary;
+
+    delete toolBarTask;
+    delete toolBarCalendar;
+    delete toolBarSummary;
+    delete toolBarStackedWidget;
 }

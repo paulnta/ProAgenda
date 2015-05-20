@@ -33,7 +33,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
     description->setMaximumHeight(100);
 
     // task priority
-    priority = new TriStateButton("Priorité: ", "Haute", "Moyenne", "Basse");
+    priority = new TriStateButton("Priorité: ", "Basse", "Moyenne", "Haute");
 
     // task term
     termDate = new QDateTimeEdit;

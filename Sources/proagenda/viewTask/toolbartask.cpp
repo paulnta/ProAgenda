@@ -1,9 +1,8 @@
-#include "edittoolbar.h"
 #include "ui_mainwindow.h"
+#include "toolbartask.h"
 
-#include <QSqlrecord>
 
-EditToolBar::EditToolBar(Ui::MainWindow* ui) : ui(ui)
+ToolBarTask::ToolBarTask(Ui::MainWindow* ui) : ui(ui)
 {
     // Paramètres généraux de la ToolBar
     setIconSize(QSize(20,20));
@@ -31,7 +30,7 @@ EditToolBar::EditToolBar(Ui::MainWindow* ui) : ui(ui)
     myLabel = new QLabel("Add your widget in StackedWidgetSide !\nSo easy");
 }
 
-EditToolBar::~EditToolBar()
+ToolBarTask::~ToolBarTask()
 {
     delete addButton;
     delete addTask;
@@ -39,12 +38,12 @@ EditToolBar::~EditToolBar()
     delete addUnit;
 }
 
-void EditToolBar::onAddtaskTriggered()
+void ToolBarTask::onAddtaskTriggered()
 {
    Task::getInstance()->addTask();
 }
 
-void EditToolBar::onAddunitTriggered()
+void ToolBarTask::onAddunitTriggered()
 {
 
     if (ui->stackedWidgetSide->currentWidget() != myLabel){
