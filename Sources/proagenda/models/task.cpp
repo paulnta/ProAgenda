@@ -11,18 +11,21 @@ Task::Task()
     model = new QSqlRelationalTableModel(0);
     model->setTable("Task");
     // De base par termDate, il faudra surement faire une fonction dans le model de tri
-    model->setSort(model->fieldIndex("termDate"), Qt::DescendingOrder);
+
+    /// Le Tris Pose problème l'aura de la modification d'une tâche,
+    /// Les numéros de lignes (row) deviennent du grand n'importe quoi!
+    //model->setSort(model->fieldIndex("termDate"), Qt::DescendingOrder);
+
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     courseIndex = model->fieldIndex("courseId");
     model->setRelation(courseIndex, QSqlRelation("Course", "id", "name"));
     update();
 }
+
 int Task::getCourseIndex() const
 {
     return courseIndex;
 }
-
-
 
 void Task::update() {
     model->select();

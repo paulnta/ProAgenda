@@ -65,6 +65,7 @@ SideBarTask::SideBarTask(QWidget *parent) :
     // Mapping
     mapper->addMapping(taskName, model->fieldIndex("name"));
     mapper->addMapping(description, model->fieldIndex("description"));
+
     mapper->addMapping(courseDropDown, courseIndex);
     mapper->addMapping(priority, model->fieldIndex("priority"));
     mapper->addMapping(taskType, model->fieldIndex("typeId"));
@@ -84,6 +85,9 @@ SideBarTask::SideBarTask(QWidget *parent) :
     layout->addWidget(priority);
     layout->addWidget(btnSubmit, QDialogButtonBox::AcceptRole);
     layout->addStretch();
+
+    rowTest = new QLabel();
+    layout->addWidget(rowTest);
 
 //    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
     connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
@@ -126,6 +130,7 @@ void SideBarTask::keyReleaseEvent(QKeyEvent* event)
 void SideBarTask::loadTask(int row)
 {
     mapper->setCurrentIndex(row);
+    rowTest->setText("row: " + QString::number(row));
 }
 
 void SideBarTask::submitTask()
@@ -133,11 +138,13 @@ void SideBarTask::submitTask()
     // On sauvegarde l'index courant
     // car mis à -1 après un model->select()
     int oldIndex = mapper->currentIndex();
+    qDebug() << endl << "we are submitting row: "<< oldIndex << "current Index is "<< mapper->currentIndex();
 
     mapper->submit();
     Task::getInstance()->getModel()->submitAll();
-    Task::getInstance()->getModel()->select();
+//    Task::getInstance()->getModel()->select();
     mapper->setCurrentIndex(oldIndex);
+    rowTest->setText("row: " + QString::number(oldIndex));
     emit isUpdated();
 }
 

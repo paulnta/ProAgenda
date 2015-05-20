@@ -7,6 +7,7 @@
 class TestTreeView : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit TestTreeView(QWidget *parent = 0);
     ~TestTreeView();

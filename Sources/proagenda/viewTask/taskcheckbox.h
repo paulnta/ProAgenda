@@ -33,10 +33,10 @@ class TaskCheckBox : public QWidget
 public:
     explicit TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent = 0);
     void setSelected(bool enable);
+    int getRow();
 
 protected:
     virtual void mousePressEvent(QMouseEvent* event);
-
     ~TaskCheckBox();
 
 private:
@@ -44,7 +44,7 @@ private:
     Ui::taskWidget *ui;
     QCheckBox* checkbox;
     QLabel* taskName;
-    QWidget* priority;
+    QLabel* priority;
     QDateTimeEdit  * termDate;
     SideBarTask* sidebar;
     QDataWidgetMapper* mapper;

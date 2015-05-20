@@ -49,6 +49,7 @@ private:
     QPushButton *btnSubmit;
     QSqlTableModel *relModel;
 
+     QLabel* rowTest;
     // SQL RELATIONAL
     QDataWidgetMapper *mapper;
     int courseIndex;

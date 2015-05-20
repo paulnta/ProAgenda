@@ -40,7 +40,8 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
     mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
 
-    mapper->addMapping(priority, model->fieldIndex("priority"),"text");
+//    mapper->addMapping(priority, model->fieldIndex("priority"),"text");
+    priority->setText(QString::number(row));
     mapper->setCurrentIndex(row);
 
     connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
@@ -55,8 +56,13 @@ void TaskCheckBox::setSelected(bool enable)
         setStyleSheet(TaskCheckBox::selectedCSS);
     }
     else{
-        setStyleSheet(TaskCheckBox::selectedCSS);
+        setStyleSheet(TaskCheckBox::defaultCSS);
     }
+}
+
+int TaskCheckBox::getRow()
+{
+    return row;
 }
 
 void TaskCheckBox::mousePressEvent(QMouseEvent *event)

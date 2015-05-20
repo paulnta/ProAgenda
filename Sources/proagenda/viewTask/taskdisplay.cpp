@@ -16,7 +16,7 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     model = Task::getInstance()->getModel();
 
     // Layout principale affichant une liste vertical de TaskCheckBox
-    layout = new QVBoxLayout(this);
+    layout = new QVBoxLayout(ui->mainContent);
     layout->setContentsMargins(0,0,0,0);
     layout->setSpacing(0);
 
@@ -25,6 +25,10 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
 
     // Initialisation de la liste des tâches
     setUpTaskList();
+
+    // Selection de la permière tâche par défaut
+    if(tasks->size() > 0)
+        selectWidget(0);
 
     connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
 }
@@ -38,10 +42,6 @@ void taskDisplay::setUpTaskList()
         connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
     }
 
-    // Selection de la permière tâche par défaut
-    if(tasks->size() > 0)
-        selectWidget(0);
-
     // Ajout des tâches au layout
     foreach(TaskCheckBox* task, *tasks) {
         layout->addWidget(task,0, Qt::AlignTop);
@@ -49,7 +49,6 @@ void taskDisplay::setUpTaskList()
 
     // alignement des tâche en haut
     layout->addStretch(1);
-
 }
 
 
@@ -95,6 +94,7 @@ void taskDisplay::selectWidget(int row)
     // On selectionne le widget voulu
     selectedWidget = tasks->at(row);
     selectedWidget->setSelected(true);
+    qDebug() << "Selected widget: " << row;
 }
 
 
