@@ -39,9 +39,10 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     mapper->addMapping(taskName, model->fieldIndex("name"), "text");
     mapper->addMapping(termDate, model->fieldIndex("termDate"));
     mapper->addMapping(checkbox, model->fieldIndex("isFinished"));
+    mapper->addMapping(priority, model->fieldIndex("priority"), "text");
 
-//    mapper->addMapping(priority, model->fieldIndex("priority"),"text");
-    priority->setText(QString::number(row));
+
+//    priority->setText(QString::number(row)); // DEBUG
     mapper->setCurrentIndex(row);
 
     connect(checkbox, SIGNAL(stateChanged(int)), mapper, SLOT(submit()));
@@ -74,7 +75,6 @@ void TaskCheckBox::mousePressEvent(QMouseEvent *event)
 
 void TaskCheckBox::onRemoveTaskClicked(){
     emit removeTask(row);
-    qDebug() << "remove Task";
 }
 
 TaskCheckBox::~TaskCheckBox()

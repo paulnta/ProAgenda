@@ -86,10 +86,6 @@ SideBarTask::SideBarTask(QWidget *parent) :
     layout->addWidget(btnSubmit, QDialogButtonBox::AcceptRole);
     layout->addStretch();
 
-    rowTest = new QLabel();
-    layout->addWidget(rowTest);
-
-//    connect(taskName,SIGNAL(returnPressed()), this, SLOT(submitTask()));
     connect(btnSubmit, SIGNAL(clicked()), this , SLOT(submitTask()));
 
     mapper->toFirst();
@@ -130,7 +126,6 @@ void SideBarTask::keyReleaseEvent(QKeyEvent* event)
 void SideBarTask::loadTask(int row)
 {
     mapper->setCurrentIndex(row);
-    rowTest->setText("row: " + QString::number(row));
 }
 
 void SideBarTask::submitTask()
@@ -144,7 +139,6 @@ void SideBarTask::submitTask()
     Task::getInstance()->getModel()->submitAll();
 //    Task::getInstance()->getModel()->select();
     mapper->setCurrentIndex(oldIndex);
-    rowTest->setText("row: " + QString::number(oldIndex));
     emit isUpdated();
 }
 

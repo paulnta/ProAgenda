@@ -31,6 +31,8 @@ public:
 
     int getCourseIndex() const;
     void addTask();
+    void removeTask(int);
+    int rowCount();
 
 signals:
     void newTask();

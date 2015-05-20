@@ -66,6 +66,7 @@ public slots:
     void updateTaskWidget();
     void addTask();
     void selectWidget(int row);
+    void removeTask(int row);
 };
 
 #endif // TASKDISPLAY_H

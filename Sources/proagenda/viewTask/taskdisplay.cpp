@@ -40,6 +40,7 @@ void taskDisplay::setUpTaskList()
         TaskCheckBox* taskCheckBox = new TaskCheckBox(main_ui->getSideBarTask(), i);
         tasks->append(taskCheckBox);
         connect(main_ui->getSideBarTask(), SIGNAL(isUpdated()), taskCheckBox, SLOT(updateTaskWidget()));
+        connect(taskCheckBox, SIGNAL(removeTask(int)), this, SLOT(removeTask(int)));
     }
 
     // Ajout des tâches au layout
@@ -65,9 +66,16 @@ void taskDisplay::refreshTaskList(){
     tasks->clear();
 
     setUpTaskList();
+    main_ui->getSideBarTask()->getMapper()->setCurrentIndex(Task::getInstance()->rowCount()-1);
 }
 
 void taskDisplay::addTask(){
+    refreshTaskList();
+}
+
+void taskDisplay::removeTask(int row){
+    qDebug() << "will remove no: " << row;
+    Task::getInstance()->removeTask(row);
     refreshTaskList();
 }
 

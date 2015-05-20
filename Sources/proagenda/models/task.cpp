@@ -67,3 +67,17 @@ void Task::addTask(){
 
 }
 
+void Task::removeTask(int row)
+{
+    model->removeRow(row);
+    model->submitAll();
+    if(model->isDirty()){
+        QMessageBox::warning(0,"SQL error", model->lastError().text());
+    }
+}
+
+int Task::rowCount()
+{
+    return model->rowCount();
+}
+
