@@ -25,7 +25,7 @@ void TermDate::setTermDate(QString value)
     termDate = value;
 
     QDateTime dateTime = QDateTime::fromString(value, "yyyy-MM-ddTHH:mm:ss.z");
-    label->setText(dateTime.daysTo(QDateTime::currentDateTime()));
+    label->setText("date");
 }
 
 //void TermDate::termDateChanged()

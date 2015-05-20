@@ -12,27 +12,41 @@
 class Task : public QObject
 {
     Q_OBJECT
-
 private:
-
+    // Instance unique du modèle
+    static Task *instance;
+    // Constructeur
     Task();
-    static Task* instance;
+    // Index du champ de la Foreign Key
     int courseIndex;
 
-    // SQL RELATIONAL
+    // Modèle de liaison entre cette classe et la base de données
     QSqlRelationalTableModel *model;
 
 public:
     ~Task();
 
+    // Mettre à jour les données
     void update();
+    // Récupérer l'instance
     static Task* getInstance();
-    QSqlRelationalTableModel* getModel();
+    // Récupérer le modèle de liaison
+    QSqlRelationalTableModel *getModel() const;
 
+    // Récupérer l'index du champ de la Foreign Key
     int getCourseIndex() const;
+
+    // Ajouter une tâche
     void addTask();
+
     void removeTask(int);
     int rowCount();
+
+    // Trier les données
+    void sortBy(const QString &field, const Qt::SortOrder &order);
+    // Ajouter des filtres aux données
+    void filterBy(const QString &filter);
+
 
 signals:
     void newTask();
