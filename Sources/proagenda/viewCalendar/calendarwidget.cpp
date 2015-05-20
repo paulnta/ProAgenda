@@ -106,7 +106,3 @@ void CalendarWidget::changeHeightHours(int height)
     }
 }
 
-void CalendarWidget::slotTest(int value)
-{
-    qDebug() << "Slot test" << value;
-}

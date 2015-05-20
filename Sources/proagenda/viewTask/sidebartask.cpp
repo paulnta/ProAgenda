@@ -133,11 +133,9 @@ void SideBarTask::submitTask()
     // On sauvegarde l'index courant
     // car mis à -1 après un model->select()
     int oldIndex = mapper->currentIndex();
-    qDebug() << endl << "we are submitting row: "<< oldIndex << "current Index is "<< mapper->currentIndex();
 
     mapper->submit();
     Task::getInstance()->getModel()->submitAll();
-//    Task::getInstance()->getModel()->select();
     mapper->setCurrentIndex(oldIndex);
     emit isUpdated();
 }

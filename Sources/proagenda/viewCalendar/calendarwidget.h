@@ -37,7 +37,6 @@ public:
 
  public slots:
     void changeHeightHours(int height);
-    void slotTest(int);
 
 private:
     Ui::CalendarWidget *ui;

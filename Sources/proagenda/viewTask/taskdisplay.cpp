@@ -29,8 +29,6 @@ taskDisplay::taskDisplay( MainWindow* main_ui, QWidget *parent) :
     // Selection de la permière tâche par défaut
     if(tasks->size() > 0)
         selectWidget(0);
-
-//    connect(main_ui->getSideBarTask()->getMapper(), SIGNAL(currentIndexChanged(int)), this, SLOT(selectWidget(int)));
 }
 
 void taskDisplay::setUpTaskList()
@@ -74,7 +72,6 @@ void taskDisplay::addTask(){
 }
 
 void taskDisplay::removeTask(int row){
-    qDebug() << "will remove no: " << row;
     Task::getInstance()->removeTask(row);
     refreshTaskList();
 }
@@ -102,7 +99,6 @@ void taskDisplay::selectWidget(int row)
     // On selectionne le widget voulu
     selectedWidget = tasks->at(row);
     selectedWidget->setSelected(true);
-    qDebug() << "Selected widget: " << row;
 }
 
 

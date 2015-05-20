@@ -80,7 +80,6 @@ void MainWindow::initMainToolbar(){
     this->ui->mainToolBar->insertWidget(this->ui->actionGoToTask,spacerLeft);
     this->ui->mainToolBar->addWidget(spacerRight);
     this->ui->actionGoToTask->setChecked(true);
-
 }
 
 /**

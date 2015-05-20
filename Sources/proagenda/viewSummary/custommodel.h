@@ -19,8 +19,6 @@ public:
         model = new QSqlTableModel(this);
         model->setTable("Course");
         model->select();
-
-        qDebug() << "DisplayRole =" << Qt::DisplayRole;
     }
 
     ~CustomModel(){
@@ -41,7 +39,6 @@ public:
 
 
     QVariant data(const QModelIndex &index, int role) const{
-        qDebug() << "role =" << role;
         model->index(index.row(),index.column(),QModelIndex());
         return model->data(index, role);
     }

@@ -1,14 +1,14 @@
 #include "termdate.h"
 #include <QDebug>
 
-TermDate::TermDate(QWidget *parent) : QWidget(parent)
+TermDate::TermDate(QWidget *parent) :
+    QWidget(parent),
+    STYLE_DEFAULT("QLabel {color : #2ba3dd; font-size: 12px}"),  // Tâche Pas en retard
+    STYLE_WARNING("QLabel {color : #dc4144; font-size: 12px}")  // Tâche En retard
 {
     layout = new QHBoxLayout(this);
     label = new QLabel;
-    font = label->font();
-    font.setPixelSize(12);
-    label->setStyleSheet("QLabel {color : #2ba3dd}");
-    label->setFont(font);
+    label->setStyleSheet(STYLE_DEFAULT);
     layout->addWidget(label);
     setLayout(layout);
 }
@@ -23,15 +23,25 @@ QString TermDate::getTermDate() const
     return termDate;
 }
 
+/**
+ * Affichage friendly de la date d'échance dans la liste des tâches
+ * aujourd'hui, demain, après-demain ou dans x jours
+ *
+ * @brief TermDate::setTermDate
+ * @param value
+ */
 void TermDate::setTermDate(QString value)
 {
-    qDebug() << "SetTermdate" << value;
     termDate = value;
 
+    // Création d'un objet date à partir d'une string
     QDateTime dateTime = QDateTime::fromString(value, "yyyy-MM-ddTHH:mm:ss.z");
+
+    // Différence entre aujourd'hui et la date d'échance (nb jours)
     int nbDays = QDateTime::currentDateTime().daysTo(dateTime);
 
     switch (nbDays) {
+
     case 0:
         label->setText("aujourd'hui");
         break;
@@ -42,20 +52,20 @@ void TermDate::setTermDate(QString value)
         label->setText("après-demain");
         break;
     default:
+
         if(nbDays > 0){
-            label->setStyleSheet("QLabel {color : #2ba3dd}");
+            label->setStyleSheet(STYLE_DEFAULT);
             label->setText(QString("dans %1 jours").arg(nbDays));
             label->setFont(font);
         }
         else{
-            label->setStyleSheet("QLabel {color : #dc4144}");
+            label->setStyleSheet(STYLE_WARNING);
             label->setText(QString("en retard de %1 jour%2").arg(-nbDays).arg(-nbDays > 1 ? "s": ""));
             label->setFont(font);
         }
 
         break;
     }
-
 }
 
 

@@ -30,6 +30,10 @@ public:
     QHBoxLayout* layout;
     QFont font;
 
+     // Style du texte (date d'échéance)
+    const QString STYLE_DEFAULT;
+    const QString STYLE_WARNING;
+
     QString getTermDate() const;
     void setTermDate(QString value);
 
