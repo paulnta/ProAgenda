@@ -38,9 +38,10 @@ public:
 
     // Ajouter une tâche
     void addTask();
-
-    void removeTask(int);
-    int rowCount();
+    // Supprimer une tâche
+    void removeTask(const int row);
+    // Nombre de tâches
+    int rowCount() const;
 
     // Trier les données
     void sortBy(const QString &field, const Qt::SortOrder &order);

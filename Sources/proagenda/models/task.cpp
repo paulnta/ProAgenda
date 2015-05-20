@@ -12,7 +12,7 @@ Task::Task()
     model->setTable("Task");
     // De base par termDate, il faudra surement faire une fonction dans le model de tri
 
-    /// Le Tris Pose problème l'aura de la modification d'une tâche,
+    /// Le Tris Pose problème lors de la modification d'une tâche,
     /// Les numéros de lignes (row) deviennent du grand n'importe quoi!
     //model->setSort(model->fieldIndex("termDate"), Qt::DescendingOrder);
 
@@ -27,7 +27,8 @@ int Task::getCourseIndex() const
     return courseIndex;
 }
 
-void Task::update() {
+void Task::update()
+{
     model->select();
 }
 
@@ -41,7 +42,8 @@ Task::~Task()
     delete model;
 }
 
-Task* Task::getInstance() {
+Task* Task::getInstance()
+{
     if(instance == NULL) {
         instance = new Task;
     }
@@ -49,12 +51,13 @@ Task* Task::getInstance() {
     return instance;
 }
 
-QSqlRelationalTableModel* Task::getModel() const{
+QSqlRelationalTableModel* Task::getModel() const
+{
     return model;
 }
 
-void Task::addTask(){
-
+void Task::addTask()
+{
     QSqlRecord record = model->record();
 
     record.setValue(1,"Nouvelle tâche ...");
@@ -65,13 +68,16 @@ void Task::addTask(){
     model->submitAll();
 
     if(model->isDirty()){
-        QMessageBox::warning(0,"SQL error", model->lastError().text());
+        QMessageBox::warning(0,"SQL error : ", model->lastError().text());
     }
 
     emit newTask();
 }
 
-void Task::sortBy(const QString &field,const Qt::SortOrder &order) {
+/// Le Tris Pose problème lors de la modification d'une tâche,
+/// Les numéros de lignes (row) deviennent du grand n'importe quoi!
+void Task::sortBy(const QString &field,const Qt::SortOrder &order)
+{
     model->setSort(model->fieldIndex(field), order);
     update();
 }
@@ -81,16 +87,18 @@ void Task::filterBy(const QString &filter) {
     update();
 }
 
-void Task::removeTask(int row)
+void Task::removeTask(const int row)
 {
     model->removeRow(row);
     model->submitAll();
+
+    // Affichage d'erreur
     if(model->isDirty()){
-        QMessageBox::warning(0,"SQL error", model->lastError().text());
+        QMessageBox::warning(0,"SQL error : ", model->lastError().text());
     }
 }
 
-int Task::rowCount()
+int Task::rowCount() const
 {
     return model->rowCount();
 }
