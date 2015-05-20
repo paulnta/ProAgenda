@@ -1,11 +1,12 @@
 #include "termdate.h"
+#include <QDebug>
 
 TermDate::TermDate(QWidget *parent) : QWidget(parent)
 {
-//    layout = new QHBoxLayout(this);
-//    label = new QLabel("date",this);
-//    layout->addWidget(label);
-//    setLayout(layout);
+    layout = new QHBoxLayout(this);
+    label = new QLabel;
+    layout->addWidget(label);
+    setLayout(layout);
 }
 
 TermDate::~TermDate()
@@ -13,15 +14,18 @@ TermDate::~TermDate()
     delete label;
     delete layout;
 }
-QDateTime TermDate::getTermDate() const
+QString TermDate::getTermDate() const
 {
     return termDate;
 }
 
-void TermDate::setTermDate(const QDateTime &value)
+void TermDate::setTermDate(QString value)
 {
+    qDebug() << "SetTermdate" << value;
     termDate = value;
-    label->setText(termDate.toString());
+
+    QDateTime dateTime = QDateTime::fromString(value, "yyyy-MM-ddTHH:mm:ss.z");
+    label->setText(dateTime.daysTo(QDateTime::currentDateTime()));
 }
 
 //void TermDate::termDateChanged()

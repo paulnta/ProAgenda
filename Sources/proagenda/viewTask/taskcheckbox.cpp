@@ -21,7 +21,7 @@ TaskCheckBox::TaskCheckBox(SideBarTask* sidebar, int row, QWidget *parent) :
     removeTaskBtn = new QPushButton("X");
     checkbox = new QCheckBox();
     taskName = new QLabel;
-    termDate = new QDateTimeEdit;
+    termDate = new TermDate;
     priority = new QLabel;
 
     ui->taskLayout->addWidget(checkbox,1);

@@ -11,18 +11,18 @@ class TermDate : public QWidget
 {
     Q_OBJECT
 
-    Q_PROPERTY(QDateTime termDate READ getTermDate WRITE setTermDate NOTIFY termDateChanged)
+    Q_PROPERTY(QString termDate READ getTermDate WRITE setTermDate USER true)
 
 public:
     explicit TermDate(QWidget *parent = 0);
     ~TermDate();
 
-    QDateTime termDate;
+    QString termDate;
     QLabel* label;
     QHBoxLayout* layout;
 
-    QDateTime getTermDate() const;
-    void setTermDate(const QDateTime &value);
+    QString getTermDate() const;
+    void setTermDate(QString value);
 
 signals:
     void termDateChanged();

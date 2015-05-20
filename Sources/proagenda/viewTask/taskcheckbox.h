@@ -45,7 +45,7 @@ private:
     QCheckBox* checkbox;
     QLabel* taskName;
     QLabel* priority;
-    QDateTimeEdit  * termDate;
+    TermDate  * termDate;
     SideBarTask* sidebar;
     QDataWidgetMapper* mapper;
     int typeIndex;
