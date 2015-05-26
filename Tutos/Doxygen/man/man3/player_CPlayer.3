@@ -1,0 +1,103 @@
+.TH "player::CPlayer" 3 "Tue May 26 2015" "Version 1.0" "Player" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+player::CPlayer \- classe representant le lecteur  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <player\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCPlayer\fP (std::list< string > listSongs)"
+.br
+.RI "\fIConstructeur\&. \fP"
+.ti -1c
+.RI "virtual \fB~CPlayer\fP ()"
+.br
+.RI "\fIDestructeur\&. \fP"
+.ti -1c
+.RI "bool \fBadd\fP (std::string strSong)"
+.br
+.RI "\fIAjout d'un morceau\&. \fP"
+.ti -1c
+.RI "void \fBnext\fP ()"
+.br
+.RI "\fIMorceau suivant\&. \fP"
+.ti -1c
+.RI "void \fBprevious\fP ()"
+.br
+.RI "\fIMorceau precedent\&. \fP"
+.ti -1c
+.RI "void \fBplay\fP ()"
+.br
+.RI "\fILecture\&. \fP"
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.RI "\fIArret\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+classe representant le lecteur 
+
+La classe gere la lecture d'une liste de morceaux 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "player::CPlayer::CPlayer (std::list< string > listSongs)"
+
+.PP
+Constructeur\&. Constructeur de la classe \fBCPlayer\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistSongs\fP : liste initial des morceaux 
+.RE
+.PP
+
+.SS "virtual player::CPlayer::~CPlayer ()\fC [virtual]\fP"
+
+.PP
+Destructeur\&. Destructeur de la classe \fBCPlayer\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool player::CPlayer::add (std::string strSong)"
+
+.PP
+Ajout d'un morceau\&. Methode qui permet d'ajouter un morceau a liste de lecture
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrSong\fP : le morceau a ajouter 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true si morceau deja present dans la liste, false sinon 
+.RE
+.PP
+
+.SS "void player::CPlayer::next ()"
+
+.PP
+Morceau suivant\&. Passage au morceau suivant 
+.SS "void player::CPlayer::play ()"
+
+.PP
+Lecture\&. Lance la lecture de la liste 
+.SS "void player::CPlayer::previous ()"
+
+.PP
+Morceau precedent\&. Passage au morceau precedent 
+.SS "void player::CPlayer::stop ()"
+
+.PP
+Arret\&. Arrete la lecture 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Player from the source code\&.
