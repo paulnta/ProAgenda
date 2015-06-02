@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/mainwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mainwindow.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mainwindow_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDirModel&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QTreeView&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QToolButton&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QStackedWidget&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calendarwidget_8h.html">viewCalendar/calendarwidget.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="toolbarcalendar_8h.html">viewCalendar/toolbarcalendar.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sidebarcalendar_8h.html">viewCalendar/sidebarcalendar.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vsummary_8h.html">viewSummary/vsummary.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sidebarsummary_8h.html">viewSummary/sidebarsummary.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="toolbarsummary_8h.html">viewSummary/toolbarsummary.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sidebartask_8h.html">viewTask/sidebartask.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="taskdisplay_8h.html">viewTask/taskdisplay.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="toolbartask_8h.html">viewTask/toolbartask.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespace_ui.html">   26</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_main_window.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Ui::MainWindow *ui;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Views</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classtask_display.html">taskDisplay</a>* taskDisp;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_calendar_widget.html">CalendarWidget</a>* calendarWidget;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_v_summary.html">VSummary</a>* viewSummary;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Sidebars</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_side_bar_task.html">SideBarTask</a>* sideBarTask;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_side_bar_summary.html">SideBarSummary</a>* sideBarSummary;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_side_bar_calendar.html">SideBarCalendar</a>* sideBarCalendar;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// ToolBars</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QToolBar* toolBarTask;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_tool_bar_calendar.html">ToolBarCalendar</a>* toolBarCalendar;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QToolBar* toolBarSummary;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QStackedWidget* toolBarStackedWidget;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_side_bar_task.html">SideBarTask</a>* <a class="code" href="class_main_window.html#af21e5d69a73dd0ba14665d9569405e99">getSideBarTask</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="class_side_bar_summary.html">SideBarSummary</a>* <a class="code" href="class_main_window.html#a3bf4b2a7263442564a3120edcff02cd7">getSideBarSummary</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_side_bar_calendar.html">SideBarCalendar</a>* <a class="code" href="class_main_window.html#a1acc1ef526e2dcaf0f343439cd403ff9">getSideBarCalendar</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="class_tool_bar_calendar.html">ToolBarCalendar</a> *<a class="code" href="class_main_window.html#a1e2afe1d34b2fe05504ad5466d5460e6">getToolBarCalendar</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a16935c25e208d9e138ff345bfd60ce7d">hideSidebar</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ae90378acaefdb014ff3be433e086b83a">showSidebar</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> on_actionGoToTask_triggered();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> on_actionGoToCal_triggered();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> on_actionGoToResume_triggered();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> initMainToolbar();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> initEditToolBar();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> initStyleSheet();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;signals:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aef5b265a537da963f4bf4dbac0820f62">to_cal_triggered</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
+<div class="ttc" id="sidebarsummary_8h_html"><div class="ttname"><a href="sidebarsummary_8h.html">sidebarsummary.h</a></div></div>
+<div class="ttc" id="class_main_window_html_af21e5d69a73dd0ba14665d9569405e99"><div class="ttname"><a href="class_main_window.html#af21e5d69a73dd0ba14665d9569405e99">MainWindow::getSideBarTask</a></div><div class="ttdeci">SideBarTask * getSideBarTask()</div><div class="ttdoc">Récupère un pointeur sur une SideBarTask. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:150</div></div>
+<div class="ttc" id="class_v_summary_html"><div class="ttname"><a href="class_v_summary.html">VSummary</a></div><div class="ttdoc">Classe représentant l&#39;affichage lors du clique sur l&#39;ongle résumé (vue résumé). </div><div class="ttdef"><b>Definition:</b> vsummary.h:25</div></div>
+<div class="ttc" id="toolbarsummary_8h_html"><div class="ttname"><a href="toolbarsummary_8h.html">toolbarsummary.h</a></div></div>
+<div class="ttc" id="sidebarcalendar_8h_html"><div class="ttname"><a href="sidebarcalendar_8h.html">sidebarcalendar.h</a></div></div>
+<div class="ttc" id="namespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:26</div></div>
+<div class="ttc" id="toolbarcalendar_8h_html"><div class="ttname"><a href="toolbarcalendar_8h.html">toolbarcalendar.h</a></div></div>
+<div class="ttc" id="class_main_window_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:188</div></div>
+<div class="ttc" id="classtask_display_html"><div class="ttname"><a href="classtask_display.html">taskDisplay</a></div><div class="ttdef"><b>Definition:</b> taskdisplay.h:24</div></div>
+<div class="ttc" id="class_side_bar_summary_html"><div class="ttname"><a href="class_side_bar_summary.html">SideBarSummary</a></div><div class="ttdoc">Classe représentant la side bar (barre à droite) dans la vue résumé </div><div class="ttdef"><b>Definition:</b> sidebarsummary.h:17</div></div>
+<div class="ttc" id="calendarwidget_8h_html"><div class="ttname"><a href="calendarwidget_8h.html">calendarwidget.h</a></div></div>
+<div class="ttc" id="class_main_window_html_a1e2afe1d34b2fe05504ad5466d5460e6"><div class="ttname"><a href="class_main_window.html#a1e2afe1d34b2fe05504ad5466d5460e6">MainWindow::getToolBarCalendar</a></div><div class="ttdeci">ToolBarCalendar * getToolBarCalendar()</div><div class="ttdoc">Récupère un pointeur sur une ToolBarCalendar. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:165</div></div>
+<div class="ttc" id="class_calendar_widget_html"><div class="ttname"><a href="class_calendar_widget.html">CalendarWidget</a></div><div class="ttdoc">La class CalendarWidget gère l&#39;affichage des leçons et des tâches dans un calendrier. Ces informations sont affichées par semaine. Il est possible de naviguer entre les semaines en choisissant un jour depuis le mini calendrier de la sidebar. </div><div class="ttdef"><b>Definition:</b> calendarwidget.h:28</div></div>
+<div class="ttc" id="class_tool_bar_calendar_html"><div class="ttname"><a href="class_tool_bar_calendar.html">ToolBarCalendar</a></div><div class="ttdoc">ToolBarCalendar est la barre d&#39;outil de la vue Calendrier. Elle affiche le slider permettant de zoome...</div><div class="ttdef"><b>Definition:</b> toolbarcalendar.h:20</div></div>
+<div class="ttc" id="toolbartask_8h_html"><div class="ttname"><a href="toolbartask_8h.html">toolbartask.h</a></div></div>
+<div class="ttc" id="class_side_bar_calendar_html"><div class="ttname"><a href="class_side_bar_calendar.html">SideBarCalendar</a></div><div class="ttdoc">Sidebar de la vue Calendrier. </div><div class="ttdef"><b>Definition:</b> sidebarcalendar.h:25</div></div>
+<div class="ttc" id="class_main_window_html_ae90378acaefdb014ff3be433e086b83a"><div class="ttname"><a href="class_main_window.html#ae90378acaefdb014ff3be433e086b83a">MainWindow::showSidebar</a></div><div class="ttdeci">void showSidebar()</div><div class="ttdoc">Montre la SideBar Tant qu&#39;il y à des tâches affichée, la SideBar est visible. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:183</div></div>
+<div class="ttc" id="sidebartask_8h_html"><div class="ttname"><a href="sidebartask_8h.html">sidebartask.h</a></div></div>
+<div class="ttc" id="class_main_window_html_a8b244be8b7b7db1b08de2a2acb9409db"><div class="ttname"><a href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=0)</div><div class="ttdoc">Conctructeur. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:13</div></div>
+<div class="ttc" id="vsummary_8h_html"><div class="ttname"><a href="vsummary_8h.html">vsummary.h</a></div></div>
+<div class="ttc" id="class_side_bar_task_html"><div class="ttname"><a href="class_side_bar_task.html">SideBarTask</a></div><div class="ttdef"><b>Definition:</b> sidebartask.h:31</div></div>
+<div class="ttc" id="class_main_window_html_a3bf4b2a7263442564a3120edcff02cd7"><div class="ttname"><a href="class_main_window.html#a3bf4b2a7263442564a3120edcff02cd7">MainWindow::getSideBarSummary</a></div><div class="ttdeci">SideBarSummary * getSideBarSummary()</div><div class="ttdoc">Récupère un pointeur sur une SideBarSummary. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:155</div></div>
+<div class="ttc" id="class_main_window_html_aef5b265a537da963f4bf4dbac0820f62"><div class="ttname"><a href="class_main_window.html#aef5b265a537da963f4bf4dbac0820f62">MainWindow::to_cal_triggered</a></div><div class="ttdeci">void to_cal_triggered()</div><div class="ttdoc">signal emis lorsque la vue Calendrier est appelée </div></div>
+<div class="ttc" id="class_main_window_html_a16935c25e208d9e138ff345bfd60ce7d"><div class="ttname"><a href="class_main_window.html#a16935c25e208d9e138ff345bfd60ce7d">MainWindow::hideSidebar</a></div><div class="ttdeci">void hideSidebar()</div><div class="ttdoc">Cache la SideBar Lorsqu&#39;il n&#39;y a plus de tâche listée, la SideBar est cachée. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:179</div></div>
+<div class="ttc" id="class_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:33</div></div>
+<div class="ttc" id="class_main_window_html_a1acc1ef526e2dcaf0f343439cd403ff9"><div class="ttname"><a href="class_main_window.html#a1acc1ef526e2dcaf0f343439cd403ff9">MainWindow::getSideBarCalendar</a></div><div class="ttdeci">SideBarCalendar * getSideBarCalendar()</div><div class="ttdoc">Récupère un pointeur sur une SideBarCalendar. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:160</div></div>
+<div class="ttc" id="taskdisplay_8h_html"><div class="ttname"><a href="taskdisplay_8h.html">taskdisplay.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

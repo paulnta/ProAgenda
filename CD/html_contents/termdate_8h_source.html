@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewTask/termdate.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_0a90e0dee8d3ba0dc4b6141cbdefa211.html">viewTask</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">termdate.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="termdate_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TERMDATE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TERMDATE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QLayout&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QDateTimeEdit&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_term_date.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_term_date.html">TermDate</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_term_date.html#a3fe6c46bdc1d8c8cb5e6e0626f1ca090">   23</a></span>&#160;    Q_PROPERTY(QString <a class="code" href="class_term_date.html#a3fe6c46bdc1d8c8cb5e6e0626f1ca090">termDate</a> READ <a class="code" href="class_term_date.html#a3b3afe3647c97ec6057aa6ee13ff57ef">getTermDate</a> WRITE <a class="code" href="class_term_date.html#abcd80f08193c8b82b8d73b8cd5dc8f91">setTermDate</a> USER <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_term_date.html#a8d0d279a8d2145fd2795bbe797d9fa40">TermDate</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_term_date.html#a6226d4239c87bd84dc7c9a07c6bfb20c">~TermDate</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QString <a class="code" href="class_term_date.html#a3fe6c46bdc1d8c8cb5e6e0626f1ca090">termDate</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_term_date.html#a52fe690a31e1250ef5b40e3c97559cff">   39</a></span>&#160;    QLabel* <a class="code" href="class_term_date.html#a52fe690a31e1250ef5b40e3c97559cff">label</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_term_date.html#a79d8b9643979f7a820c643fc4ba93f27">   40</a></span>&#160;    QHBoxLayout* <a class="code" href="class_term_date.html#a79d8b9643979f7a820c643fc4ba93f27">layout</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_term_date.html#ae5c41c66cb068b10522d81f8c41c6d49">   41</a></span>&#160;    QFont <a class="code" href="class_term_date.html#ae5c41c66cb068b10522d81f8c41c6d49">font</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     <span class="comment">// Style du texte (date d&#39;échéance)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_term_date.html#a95221fc08c2ff63e8114dd4ab47feecc">   44</a></span>&#160;    <span class="keyword">const</span> QString <a class="code" href="class_term_date.html#a95221fc08c2ff63e8114dd4ab47feecc">STYLE_DEFAULT</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_term_date.html#aeba18b21b95294ebeb4c3501a64a6e76">   45</a></span>&#160;    <span class="keyword">const</span> QString <a class="code" href="class_term_date.html#aeba18b21b95294ebeb4c3501a64a6e76">STYLE_WARNING</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QString <a class="code" href="class_term_date.html#a3b3afe3647c97ec6057aa6ee13ff57ef">getTermDate</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_term_date.html#abcd80f08193c8b82b8d73b8cd5dc8f91">setTermDate</a>(QString value);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif // TERMDATE_H</span></div>
+<div class="ttc" id="class_term_date_html_a3b3afe3647c97ec6057aa6ee13ff57ef"><div class="ttname"><a href="class_term_date.html#a3b3afe3647c97ec6057aa6ee13ff57ef">TermDate::getTermDate</a></div><div class="ttdeci">QString getTermDate() const </div><div class="ttdoc">Récupération de la date d&#39;échéance Récupération de la date d&#39;échéance sous la forme demain...</div><div class="ttdef"><b>Definition:</b> termdate.cpp:22</div></div>
+<div class="ttc" id="class_term_date_html_abcd80f08193c8b82b8d73b8cd5dc8f91"><div class="ttname"><a href="class_term_date.html#abcd80f08193c8b82b8d73b8cd5dc8f91">TermDate::setTermDate</a></div><div class="ttdeci">void setTermDate(QString value)</div><div class="ttdoc">TermDate::setTermDate. </div><div class="ttdef"><b>Definition:</b> termdate.cpp:28</div></div>
+<div class="ttc" id="class_term_date_html_a8d0d279a8d2145fd2795bbe797d9fa40"><div class="ttname"><a href="class_term_date.html#a8d0d279a8d2145fd2795bbe797d9fa40">TermDate::TermDate</a></div><div class="ttdeci">TermDate(QWidget *parent=0)</div><div class="ttdoc">Constructeur Constructeur de la classe TermDate. </div><div class="ttdef"><b>Definition:</b> termdate.cpp:4</div></div>
+<div class="ttc" id="class_term_date_html_a3fe6c46bdc1d8c8cb5e6e0626f1ca090"><div class="ttname"><a href="class_term_date.html#a3fe6c46bdc1d8c8cb5e6e0626f1ca090">TermDate::termDate</a></div><div class="ttdeci">QString termDate</div><div class="ttdef"><b>Definition:</b> termdate.h:23</div></div>
+<div class="ttc" id="class_term_date_html_a52fe690a31e1250ef5b40e3c97559cff"><div class="ttname"><a href="class_term_date.html#a52fe690a31e1250ef5b40e3c97559cff">TermDate::label</a></div><div class="ttdeci">QLabel * label</div><div class="ttdef"><b>Definition:</b> termdate.h:39</div></div>
+<div class="ttc" id="class_term_date_html"><div class="ttname"><a href="class_term_date.html">TermDate</a></div><div class="ttdef"><b>Definition:</b> termdate.h:19</div></div>
+<div class="ttc" id="class_term_date_html_a79d8b9643979f7a820c643fc4ba93f27"><div class="ttname"><a href="class_term_date.html#a79d8b9643979f7a820c643fc4ba93f27">TermDate::layout</a></div><div class="ttdeci">QHBoxLayout * layout</div><div class="ttdef"><b>Definition:</b> termdate.h:40</div></div>
+<div class="ttc" id="class_term_date_html_a6226d4239c87bd84dc7c9a07c6bfb20c"><div class="ttname"><a href="class_term_date.html#a6226d4239c87bd84dc7c9a07c6bfb20c">TermDate::~TermDate</a></div><div class="ttdeci">~TermDate()</div><div class="ttdoc">Destructeur Destructeur de la classe TermDate. </div><div class="ttdef"><b>Definition:</b> termdate.cpp:17</div></div>
+<div class="ttc" id="class_term_date_html_ae5c41c66cb068b10522d81f8c41c6d49"><div class="ttname"><a href="class_term_date.html#ae5c41c66cb068b10522d81f8c41c6d49">TermDate::font</a></div><div class="ttdeci">QFont font</div><div class="ttdef"><b>Definition:</b> termdate.h:41</div></div>
+<div class="ttc" id="class_term_date_html_aeba18b21b95294ebeb4c3501a64a6e76"><div class="ttname"><a href="class_term_date.html#aeba18b21b95294ebeb4c3501a64a6e76">TermDate::STYLE_WARNING</a></div><div class="ttdeci">const QString STYLE_WARNING</div><div class="ttdef"><b>Definition:</b> termdate.h:45</div></div>
+<div class="ttc" id="class_term_date_html_a95221fc08c2ff63e8114dd4ab47feecc"><div class="ttname"><a href="class_term_date.html#a95221fc08c2ff63e8114dd4ab47feecc">TermDate::STYLE_DEFAULT</a></div><div class="ttdeci">const QString STYLE_DEFAULT</div><div class="ttdef"><b>Definition:</b> termdate.h:44</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:41 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

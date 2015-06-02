@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewCalendar/verticalheadercalendar.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_c57bfca84758b236dbddfc236cb3a0de.html">viewCalendar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">verticalheadercalendar.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="verticalheadercalendar_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VERTICALHEADERCALENDAR_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VERTICALHEADERCALENDAR_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calendarcolumn_8h.html">calendarcolumn.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_vertical_header_calendar.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_vertical_header_calendar.html">VerticalHeaderCalendar</a> : <span class="keyword">public</span> <a class="code" href="class_calendar_column.html">CalendarColumn</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_vertical_header_calendar.html#a692d128a60d95f5d811db4099889e691">VerticalHeaderCalendar</a>(QWidget* parent = 0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_vertical_header_calendar.html#a587c16ba10ad564ae5da146ff9834070">~VerticalHeaderCalendar</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // VERTICALHEADERCALENDAR_H</span></div>
+<div class="ttc" id="calendarcolumn_8h_html"><div class="ttname"><a href="calendarcolumn_8h.html">calendarcolumn.h</a></div></div>
+<div class="ttc" id="class_vertical_header_calendar_html"><div class="ttname"><a href="class_vertical_header_calendar.html">VerticalHeaderCalendar</a></div><div class="ttdoc">HeaderVertical du Calendrier. </div><div class="ttdef"><b>Definition:</b> verticalheadercalendar.h:12</div></div>
+<div class="ttc" id="class_vertical_header_calendar_html_a587c16ba10ad564ae5da146ff9834070"><div class="ttname"><a href="class_vertical_header_calendar.html#a587c16ba10ad564ae5da146ff9834070">VerticalHeaderCalendar::~VerticalHeaderCalendar</a></div><div class="ttdeci">~VerticalHeaderCalendar()</div><div class="ttdef"><b>Definition:</b> verticalheadercalendar.cpp:10</div></div>
+<div class="ttc" id="class_calendar_column_html"><div class="ttname"><a href="class_calendar_column.html">CalendarColumn</a></div><div class="ttdoc">Colonne de la grille du calendrier. </div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:19</div></div>
+<div class="ttc" id="class_vertical_header_calendar_html_a692d128a60d95f5d811db4099889e691"><div class="ttname"><a href="class_vertical_header_calendar.html#a692d128a60d95f5d811db4099889e691">VerticalHeaderCalendar::VerticalHeaderCalendar</a></div><div class="ttdeci">VerticalHeaderCalendar(QWidget *parent=0)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> verticalheadercalendar.cpp:3</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

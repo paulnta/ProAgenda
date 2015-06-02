@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewSummary/vsummary.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_d7478872ce5f31339996311b6fbdf643.html">viewSummary</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vsummary.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="vsummary_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VSUMMARY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VSUMMARY_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vsemesterfill_8h.html">vsemesterfill.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vcoursefill_8h.html">vcoursefill.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vcoursedetails_8h.html">vcoursedetails.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vmodule_8h.html">vmodule.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_v_summary.html">VSummary</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_side_bar_tree_view.html">SideBarTreeView</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_v_summary.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_v_summary.html">VSummary</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_v_summary.html#a666fa13dc0dfbbbf0ed6d6333b1b15e1">VSummary</a>(<a class="code" href="class_main_window.html">MainWindow</a>* mainWindow, QWidget *parent = 0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_v_summary.html#ab982dfc42e4b7426cad336ae0c90e9c3">~VSummary</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#adc233cff545f7beb3f0047dbcf8bcab9">switchViews</a>(<span class="keywordtype">bool</span> isSemesterView);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#adfcffe13c1e87c038c96ff3a2911bc68">refreshModules</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#a24b5dd7705aa51a37ce1aea84d3b487f">refreshLessons</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#a6b0e819cffaa9abcc481ef059029bb98">refreshSideBar</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#a8afdb2e5502b5efd17da9357b10f7cc1">emptyVSemesterFill</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#a0fb09de932e7ee68cc2d16f878f188f3">emptyVCourseFill</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#ac78bdda9cc5e106ba18c6af942c41d1b">addCourse</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_v_summary.html#adeeedd22e2552158f3172efb6aba6c1e">addSemester</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">  103</a></span>&#160;    <a class="code" href="class_v_semester_fill.html">VSemesterFill</a> *<a class="code" href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">vSemesterFill</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">  104</a></span>&#160;    <a class="code" href="class_v_course_fill.html">VCourseFill</a> *<a class="code" href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">vCourseFill</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_v_summary.html#a4d94d8c7ae4da41c4a1f93fe9b3489cf">  105</a></span>&#160;    <a class="code" href="class_v_course_details.html">VCourseDetails</a> *<a class="code" href="class_v_summary.html#a4d94d8c7ae4da41c4a1f93fe9b3489cf">vCourseDetails</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_v_summary.html#a949645b0a52702285b62c9d134693bb4">  106</a></span>&#160;    <a class="code" href="class_side_bar_tree_view.html">SideBarTreeView</a> *<a class="code" href="class_v_summary.html#a949645b0a52702285b62c9d134693bb4">ttv</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Ui::VSummary *ui;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_main_window.html">MainWindow</a> *mainWindow;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="class_v_module.html">VModule</a> *vModule;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// Enlève le widget passé en paramètre du layout passé en paramètre</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> removeWidgetInLayout(QLayout *layout, QWidget *widget);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif // VSUMMARY_H</span></div>
+<div class="ttc" id="class_v_summary_html_ab982dfc42e4b7426cad336ae0c90e9c3"><div class="ttname"><a href="class_v_summary.html#ab982dfc42e4b7426cad336ae0c90e9c3">VSummary::~VSummary</a></div><div class="ttdeci">~VSummary()</div><div class="ttdoc">Destructeur de la classe VSummary. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:38</div></div>
+<div class="ttc" id="class_v_summary_html_adfcffe13c1e87c038c96ff3a2911bc68"><div class="ttname"><a href="class_v_summary.html#adfcffe13c1e87c038c96ff3a2911bc68">VSummary::refreshModules</a></div><div class="ttdeci">void refreshModules()</div><div class="ttdoc">Rafraichissement de l&#39;affichage des modules. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:75</div></div>
+<div class="ttc" id="class_v_summary_html_a0fb09de932e7ee68cc2d16f878f188f3"><div class="ttname"><a href="class_v_summary.html#a0fb09de932e7ee68cc2d16f878f188f3">VSummary::emptyVCourseFill</a></div><div class="ttdeci">void emptyVCourseFill()</div><div class="ttdoc">Réinitialise et vide la vue d&#39;ajout/modification des cours et le layout correspondant. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:95</div></div>
+<div class="ttc" id="class_v_summary_html"><div class="ttname"><a href="class_v_summary.html">VSummary</a></div><div class="ttdoc">Classe représentant l&#39;affichage lors du clique sur l&#39;ongle résumé (vue résumé). </div><div class="ttdef"><b>Definition:</b> vsummary.h:25</div></div>
+<div class="ttc" id="namespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:26</div></div>
+<div class="ttc" id="class_v_semester_fill_html"><div class="ttname"><a href="class_v_semester_fill.html">VSemesterFill</a></div><div class="ttdoc">Classe representant la zone de modification des données d&#39;un semestre. </div><div class="ttdef"><b>Definition:</b> vsemesterfill.h:21</div></div>
+<div class="ttc" id="class_v_summary_html_a24b5dd7705aa51a37ce1aea84d3b487f"><div class="ttname"><a href="class_v_summary.html#a24b5dd7705aa51a37ce1aea84d3b487f">VSummary::refreshLessons</a></div><div class="ttdeci">void refreshLessons()</div><div class="ttdoc">Rafraichissement de l&#39;affichage des leçons. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:83</div></div>
+<div class="ttc" id="vsemesterfill_8h_html"><div class="ttname"><a href="vsemesterfill_8h.html">vsemesterfill.h</a></div></div>
+<div class="ttc" id="class_v_summary_html_ac78bdda9cc5e106ba18c6af942c41d1b"><div class="ttname"><a href="class_v_summary.html#ac78bdda9cc5e106ba18c6af942c41d1b">VSummary::addCourse</a></div><div class="ttdeci">void addCourse()</div><div class="ttdoc">Modifie la vue cours pour l&#39;ajout d&#39;un cours et modifie le layout correspondant. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:103</div></div>
+<div class="ttc" id="class_v_summary_html_a8afdb2e5502b5efd17da9357b10f7cc1"><div class="ttname"><a href="class_v_summary.html#a8afdb2e5502b5efd17da9357b10f7cc1">VSummary::emptyVSemesterFill</a></div><div class="ttdeci">void emptyVSemesterFill()</div><div class="ttdoc">Réinitialise et vide la vue d&#39;ajout/modification des semestres et le layout correspondant. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:87</div></div>
+<div class="ttc" id="class_v_summary_html_adeeedd22e2552158f3172efb6aba6c1e"><div class="ttname"><a href="class_v_summary.html#adeeedd22e2552158f3172efb6aba6c1e">VSummary::addSemester</a></div><div class="ttdeci">void addSemester()</div><div class="ttdoc">Modifie la vue cours pour l&#39;ajout d&#39;un cours et le layout correspondant. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:111</div></div>
+<div class="ttc" id="class_v_summary_html_a949645b0a52702285b62c9d134693bb4"><div class="ttname"><a href="class_v_summary.html#a949645b0a52702285b62c9d134693bb4">VSummary::ttv</a></div><div class="ttdeci">SideBarTreeView * ttv</div><div class="ttdef"><b>Definition:</b> vsummary.h:106</div></div>
+<div class="ttc" id="class_v_summary_html_adc233cff545f7beb3f0047dbcf8bcab9"><div class="ttname"><a href="class_v_summary.html#adc233cff545f7beb3f0047dbcf8bcab9">VSummary::switchViews</a></div><div class="ttdeci">void switchViews(bool isSemesterView)</div><div class="ttdoc">Change la vue entre cours et semestre. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:120</div></div>
+<div class="ttc" id="class_v_module_html"><div class="ttname"><a href="class_v_module.html">VModule</a></div><div class="ttdoc">Classe représentant l&#39;affichage des différents modules. </div><div class="ttdef"><b>Definition:</b> vmodule.h:21</div></div>
+<div class="ttc" id="class_v_summary_html_a6d7e0e4e56f9546a012cebd5897dbf70"><div class="ttname"><a href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">VSummary::vSemesterFill</a></div><div class="ttdeci">VSemesterFill * vSemesterFill</div><div class="ttdef"><b>Definition:</b> vsummary.h:103</div></div>
+<div class="ttc" id="class_v_course_details_html"><div class="ttname"><a href="class_v_course_details.html">VCourseDetails</a></div><div class="ttdoc">Classe représentant l&#39;affichage des détails des cours. </div><div class="ttdef"><b>Definition:</b> vcoursedetails.h:28</div></div>
+<div class="ttc" id="vmodule_8h_html"><div class="ttname"><a href="vmodule_8h.html">vmodule.h</a></div></div>
+<div class="ttc" id="class_v_summary_html_a6b0e819cffaa9abcc481ef059029bb98"><div class="ttname"><a href="class_v_summary.html#a6b0e819cffaa9abcc481ef059029bb98">VSummary::refreshSideBar</a></div><div class="ttdeci">void refreshSideBar()</div><div class="ttdoc">Rafraichissement de la side bar (TreeView). </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:43</div></div>
+<div class="ttc" id="class_v_summary_html_a4d94d8c7ae4da41c4a1f93fe9b3489cf"><div class="ttname"><a href="class_v_summary.html#a4d94d8c7ae4da41c4a1f93fe9b3489cf">VSummary::vCourseDetails</a></div><div class="ttdeci">VCourseDetails * vCourseDetails</div><div class="ttdef"><b>Definition:</b> vsummary.h:105</div></div>
+<div class="ttc" id="class_side_bar_tree_view_html"><div class="ttname"><a href="class_side_bar_tree_view.html">SideBarTreeView</a></div><div class="ttdoc">Classe créeant et contenant le TreeView. </div><div class="ttdef"><b>Definition:</b> testtreeview.h:21</div></div>
+<div class="ttc" id="vcoursefill_8h_html"><div class="ttname"><a href="vcoursefill_8h.html">vcoursefill.h</a></div></div>
+<div class="ttc" id="class_v_course_fill_html"><div class="ttname"><a href="class_v_course_fill.html">VCourseFill</a></div><div class="ttdoc">Classe representant la zone de modification des données d&#39;un cours. </div><div class="ttdef"><b>Definition:</b> vcoursefill.h:27</div></div>
+<div class="ttc" id="class_v_summary_html_a3999f25eb90bba2ba9087ff10c7887cb"><div class="ttname"><a href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">VSummary::vCourseFill</a></div><div class="ttdeci">VCourseFill * vCourseFill</div><div class="ttdef"><b>Definition:</b> vsummary.h:104</div></div>
+<div class="ttc" id="class_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:33</div></div>
+<div class="ttc" id="class_v_summary_html_a666fa13dc0dfbbbf0ed6d6333b1b15e1"><div class="ttname"><a href="class_v_summary.html#a666fa13dc0dfbbbf0ed6d6333b1b15e1">VSummary::VSummary</a></div><div class="ttdeci">VSummary(MainWindow *mainWindow, QWidget *parent=0)</div><div class="ttdoc">Constructeur de la classe VSummary. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:12</div></div>
+<div class="ttc" id="vcoursedetails_8h_html"><div class="ttname"><a href="vcoursedetails_8h.html">vcoursedetails.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:41 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

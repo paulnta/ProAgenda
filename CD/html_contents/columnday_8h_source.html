@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewCalendar/columnday.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_c57bfca84758b236dbddfc236cb3a0de.html">viewCalendar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">columnday.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="columnday_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COLUMNDAY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COLUMNDAY_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QPaintEvent&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lessonrect_8h.html">lessonrect.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lesson_8h.html">models/lesson.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calendarcolumn_8h.html">calendarcolumn.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_column_day.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_column_day.html">ColumnDay</a> : <span class="keyword">public</span> <a class="code" href="class_calendar_column.html">CalendarColumn</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> idSelectedLesson;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QDate* date;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QList&lt;LessonRect*&gt; lessPerDay;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QSqlRelationalTableModel *modelLesson;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QSqlRelationalTableModel *modelTask;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_task.html">Task</a>* taskInstance;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_column_day.html#a886037c27b0748990deb631c3829f0bc">ColumnDay</a>(QSqlRelationalTableModel *modelLesson, QDate* date ,QWidget* parent = 0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_column_day.html#a957bdf4f3b97a1210b3503a67e698835">~ColumnDay</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#ad82949d5c6c37418e8eac0f42161ce24">paintEvent</a>(QPaintEvent *event);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#ae4984fc0711289f8eacdbe758c4a3e63">selectLessonByHour</a>(<span class="keywordtype">double</span> hour);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#a6c62f9c742eebdce35ce5eacb1e788ca">updateValues</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#acbfb085a56a57fb09f126113ce6cde7f">deselectLesson</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#a02d9b464e65cf8f49a3a9228ad4bc21d">selectLesson</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_column_day.html#ad3261386b9021b04f10a988af9fe1c81">getDayOfWeek</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;signals:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#a1534edcdf51e974b2b6e6ac1845b54b3">lessonSelected</a>(<span class="keywordtype">int</span> dayOfWeek);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#a1534edcdf51e974b2b6e6ac1845b54b3">lessonSelected</a>(QDate date, QString courseName);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#ac0d2aa68451ff46e887e5468b9f577dc">columnDaySelected</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_column_day.html#a98784166bf783aa671825cb983f5e234">mousePressEvent</a>(QMouseEvent *);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif // COLUMNDAY_H</span></div>
+<div class="ttc" id="class_column_day_html_a6c62f9c742eebdce35ce5eacb1e788ca"><div class="ttname"><a href="class_column_day.html#a6c62f9c742eebdce35ce5eacb1e788ca">ColumnDay::updateValues</a></div><div class="ttdeci">void updateValues()</div><div class="ttdoc">récpuère les éventuels modifications effectuées dans la base de donnée puis met à jour la vue calendr...</div><div class="ttdef"><b>Definition:</b> columnday.cpp:19</div></div>
+<div class="ttc" id="class_column_day_html_a98784166bf783aa671825cb983f5e234"><div class="ttname"><a href="class_column_day.html#a98784166bf783aa671825cb983f5e234">ColumnDay::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *)</div><div class="ttdoc">mousePressEvent redéfinie afin de capturer les événements de clics de souris à l&#39;intérieur d&#39;une colo...</div><div class="ttdef"><b>Definition:</b> columnday.cpp:51</div></div>
+<div class="ttc" id="class_column_day_html_acbfb085a56a57fb09f126113ce6cde7f"><div class="ttname"><a href="class_column_day.html#acbfb085a56a57fb09f126113ce6cde7f">ColumnDay::deselectLesson</a></div><div class="ttdeci">void deselectLesson()</div><div class="ttdoc">désélectionne une leçon </div><div class="ttdef"><b>Definition:</b> columnday.cpp:31</div></div>
+<div class="ttc" id="class_column_day_html_a1534edcdf51e974b2b6e6ac1845b54b3"><div class="ttname"><a href="class_column_day.html#a1534edcdf51e974b2b6e6ac1845b54b3">ColumnDay::lessonSelected</a></div><div class="ttdeci">void lessonSelected(int dayOfWeek)</div><div class="ttdoc">indique qu&#39;une leçon est séléctionnée </div></div>
+<div class="ttc" id="calendarcolumn_8h_html"><div class="ttname"><a href="calendarcolumn_8h.html">calendarcolumn.h</a></div></div>
+<div class="ttc" id="class_column_day_html_ad82949d5c6c37418e8eac0f42161ce24"><div class="ttname"><a href="class_column_day.html#ad82949d5c6c37418e8eac0f42161ce24">ColumnDay::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event)</div><div class="ttdoc">paintEvent est redéfinie afin de pouvoir dessiner les rectangles des leçons </div><div class="ttdef"><b>Definition:</b> columnday.cpp:73</div></div>
+<div class="ttc" id="class_column_day_html_a957bdf4f3b97a1210b3503a67e698835"><div class="ttname"><a href="class_column_day.html#a957bdf4f3b97a1210b3503a67e698835">ColumnDay::~ColumnDay</a></div><div class="ttdeci">~ColumnDay()</div><div class="ttdef"><b>Definition:</b> columnday.cpp:95</div></div>
+<div class="ttc" id="class_column_day_html_ae4984fc0711289f8eacdbe758c4a3e63"><div class="ttname"><a href="class_column_day.html#ae4984fc0711289f8eacdbe758c4a3e63">ColumnDay::selectLessonByHour</a></div><div class="ttdeci">void selectLessonByHour(double hour)</div><div class="ttdoc">séléctionne une leçon affiché sur le calendrier selon une heure </div><div class="ttdef"><b>Definition:</b> columnday.cpp:59</div></div>
+<div class="ttc" id="lessonrect_8h_html"><div class="ttname"><a href="lessonrect_8h.html">lessonrect.h</a></div></div>
+<div class="ttc" id="class_column_day_html"><div class="ttname"><a href="class_column_day.html">ColumnDay</a></div><div class="ttdoc">Colonne d&#39;un jour dans le calendrier. </div><div class="ttdef"><b>Definition:</b> columnday.h:31</div></div>
+<div class="ttc" id="lesson_8h_html"><div class="ttname"><a href="lesson_8h.html">lesson.h</a></div></div>
+<div class="ttc" id="class_calendar_column_html"><div class="ttname"><a href="class_calendar_column.html">CalendarColumn</a></div><div class="ttdoc">Colonne de la grille du calendrier. </div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:19</div></div>
+<div class="ttc" id="class_task_html"><div class="ttname"><a href="class_task.html">Task</a></div><div class="ttdoc">Modèle pour les tâches. </div><div class="ttdef"><b>Definition:</b> task.h:17</div></div>
+<div class="ttc" id="class_column_day_html_ac0d2aa68451ff46e887e5468b9f577dc"><div class="ttname"><a href="class_column_day.html#ac0d2aa68451ff46e887e5468b9f577dc">ColumnDay::columnDaySelected</a></div><div class="ttdeci">void columnDaySelected(int)</div><div class="ttdoc">indique qu&#39;une la colonne à été séléctionnée. Ce signal est envoyé seulement quand uniquement une col...</div></div>
+<div class="ttc" id="class_column_day_html_a886037c27b0748990deb631c3829f0bc"><div class="ttname"><a href="class_column_day.html#a886037c27b0748990deb631c3829f0bc">ColumnDay::ColumnDay</a></div><div class="ttdeci">ColumnDay(QSqlRelationalTableModel *modelLesson, QDate *date, QWidget *parent=0)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> columnday.cpp:7</div></div>
+<div class="ttc" id="class_column_day_html_a02d9b464e65cf8f49a3a9228ad4bc21d"><div class="ttname"><a href="class_column_day.html#a02d9b464e65cf8f49a3a9228ad4bc21d">ColumnDay::selectLesson</a></div><div class="ttdeci">void selectLesson(int id)</div><div class="ttdoc">séléctionne un leçon </div><div class="ttdef"><b>Definition:</b> columnday.cpp:39</div></div>
+<div class="ttc" id="class_column_day_html_ad3261386b9021b04f10a988af9fe1c81"><div class="ttname"><a href="class_column_day.html#ad3261386b9021b04f10a988af9fe1c81">ColumnDay::getDayOfWeek</a></div><div class="ttdeci">int getDayOfWeek()</div><div class="ttdoc">récupère le jour de la semaine courant pour cette colonne </div><div class="ttdef"><b>Definition:</b> columnday.cpp:46</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

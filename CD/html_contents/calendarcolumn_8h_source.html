@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewCalendar/calendarcolumn.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_c57bfca84758b236dbddfc236cb3a0de.html">viewCalendar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">calendarcolumn.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="calendarcolumn_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CALENDARCOLUMN_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CALENDARCOLUMN_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hourcal_8h.html">hourcal.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_calendar_column.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_calendar_column.html">CalendarColumn</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> nbRow;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QGridLayout* layout;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_calendar_column.html#a0fa703a2b78380b060723d2dec85b55d">   27</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_calendar_column.html#a0fa703a2b78380b060723d2dec85b55d">heightHour</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_calendar_column.html#afbd42e30149835aea5a767a4ee1d1cf0">   28</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_calendar_column.html#afbd42e30149835aea5a767a4ee1d1cf0">nbDay</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_calendar_column.html#aa5b77ef4418afdab17bc8029765d1f73">   29</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_calendar_column.html#aa5b77ef4418afdab17bc8029765d1f73">nbHours</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_calendar_column.html#ada77e6e4899e05ae77fdc77bc39db9b6">CalendarColumn</a>(QWidget* parent = 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_calendar_column.html#a590bf1f234a877e5ffe0377ba1cc36e5">addRow</a>(QWidget *widget,Qt::Alignment alignment = 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_calendar_column.html#accc1e8154ec3e109a71ace4a6c16fff8">getDayOfWeek</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_calendar_column.html#a5f164e51646a61eecf6f30ee887e62fb">~CalendarColumn</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_calendar_column.html#af9fa257b861e9446a103351ab9212cbf">setRowsMinimumHeight</a>(<span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // CALENDARCOLUMN_H</span></div>
+<div class="ttc" id="class_calendar_column_html_afbd42e30149835aea5a767a4ee1d1cf0"><div class="ttname"><a href="class_calendar_column.html#afbd42e30149835aea5a767a4ee1d1cf0">CalendarColumn::nbDay</a></div><div class="ttdeci">static int nbDay</div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:28</div></div>
+<div class="ttc" id="class_calendar_column_html_accc1e8154ec3e109a71ace4a6c16fff8"><div class="ttname"><a href="class_calendar_column.html#accc1e8154ec3e109a71ace4a6c16fff8">CalendarColumn::getDayOfWeek</a></div><div class="ttdeci">virtual int getDayOfWeek()</div><div class="ttdoc">numéro du jour de la semaine de la columne </div><div class="ttdef"><b>Definition:</b> calendarcolumn.cpp:24</div></div>
+<div class="ttc" id="class_calendar_column_html_a590bf1f234a877e5ffe0377ba1cc36e5"><div class="ttname"><a href="class_calendar_column.html#a590bf1f234a877e5ffe0377ba1cc36e5">CalendarColumn::addRow</a></div><div class="ttdeci">void addRow(QWidget *widget, Qt::Alignment alignment=0)</div><div class="ttdoc">Ajout d&#39;une ligne. </div><div class="ttdef"><b>Definition:</b> calendarcolumn.cpp:17</div></div>
+<div class="ttc" id="class_calendar_column_html_a5f164e51646a61eecf6f30ee887e62fb"><div class="ttname"><a href="class_calendar_column.html#a5f164e51646a61eecf6f30ee887e62fb">CalendarColumn::~CalendarColumn</a></div><div class="ttdeci">~CalendarColumn()</div><div class="ttdef"><b>Definition:</b> calendarcolumn.cpp:38</div></div>
+<div class="ttc" id="class_calendar_column_html_ada77e6e4899e05ae77fdc77bc39db9b6"><div class="ttname"><a href="class_calendar_column.html#ada77e6e4899e05ae77fdc77bc39db9b6">CalendarColumn::CalendarColumn</a></div><div class="ttdeci">CalendarColumn(QWidget *parent=0)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> calendarcolumn.cpp:8</div></div>
+<div class="ttc" id="class_calendar_column_html_a0fa703a2b78380b060723d2dec85b55d"><div class="ttname"><a href="class_calendar_column.html#a0fa703a2b78380b060723d2dec85b55d">CalendarColumn::heightHour</a></div><div class="ttdeci">static int heightHour</div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:27</div></div>
+<div class="ttc" id="class_calendar_column_html"><div class="ttname"><a href="class_calendar_column.html">CalendarColumn</a></div><div class="ttdoc">Colonne de la grille du calendrier. </div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:19</div></div>
+<div class="ttc" id="class_calendar_column_html_aa5b77ef4418afdab17bc8029765d1f73"><div class="ttname"><a href="class_calendar_column.html#aa5b77ef4418afdab17bc8029765d1f73">CalendarColumn::nbHours</a></div><div class="ttdeci">static int nbHours</div><div class="ttdef"><b>Definition:</b> calendarcolumn.h:29</div></div>
+<div class="ttc" id="class_calendar_column_html_af9fa257b861e9446a103351ab9212cbf"><div class="ttname"><a href="class_calendar_column.html#af9fa257b861e9446a103351ab9212cbf">CalendarColumn::setRowsMinimumHeight</a></div><div class="ttdeci">void setRowsMinimumHeight(int height)</div><div class="ttdoc">taille minimum des lignes </div><div class="ttdef"><b>Definition:</b> calendarcolumn.cpp:29</div></div>
+<div class="ttc" id="hourcal_8h_html"><div class="ttname"><a href="hourcal_8h.html">hourcal.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

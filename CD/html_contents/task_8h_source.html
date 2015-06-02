@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/models/task.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_77d1f46fba2f99f43534be2a62a26427.html">models</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">task.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="task_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TASK_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TASK_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDate&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QLayout&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QSqlRecord&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QSqlRelationalTableModel&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_task.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_task.html">Task</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">   23</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Sorting</a> {<a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5a763baa074b0fab92de372c34993b6292">BY_DATE</a>, <a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5a5271262d90354eaa8b7385e89692f412">BY_COURSE</a>};</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_task.html#a548d964ccbc4aea997eb70e69914883ba016eb8a748c47550eed3c47384ecc00c">   24</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Filter</a> {<a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883ba016eb8a748c47550eed3c47384ecc00c">TODO</a>, <a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883ba0234d70648b2f14f907d90ba90e20de2">DONE</a>};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Instance unique du modèle</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_task.html">Task</a> *instance;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_task.html">Task</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Index du champ de la Foreign Key</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> courseIndex;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> typeIndex;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Modèle de liaison entre cette classe et la base de données</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QSqlRelationalTableModel *model;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Sorting</a> currentSort;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Filter</a> currentFilter;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_task.html#a3ecf499ea35fb4a96853969a1e1cbbce">~Task</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a24671c86f1ac3c021314a950b1d5bc5f">update</a>(<span class="keywordtype">bool</span> needClear = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_task.html">Task</a>* <a class="code" href="class_task.html#aff39c37f1ce7964862db9b8085572250">getInstance</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    QSqlRelationalTableModel *<a class="code" href="class_task.html#a88f0947f900f55982be36f62d9ed2eef">getModel</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_task.html#a67367a93c9aa383ecdd04fffeca8d385">getCourseIndex</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_task.html#a18ef39c6e5df962071b9e44123113ef2">getTypeIndex</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a67484195fdee6ba4f5977a4a9d3f4adb">addTask</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a80980b43884d0f0a25c61eaa04e415e2">removeTask</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> row);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_task.html#a392270ce5bf52f5a136e97ff4b124b0b">rowCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#ab2f7ab7f64b32852f0b1b27e764809e0">sortBy</a>(<a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Sorting</a> sort, <span class="keyword">const</span> Qt::SortOrder &amp;order = Qt::AscendingOrder);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#ade0737297e77319ac268e80289580afb">filterBy</a>(<a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Filter</a> filter);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_task.html#a2c056cb9fc3bc5d74329333e116921cd">  104</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_task.html#a2c056cb9fc3bc5d74329333e116921cd">needRefreshView</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Filter</a> <a class="code" href="class_task.html#af4eb318182b449e86392ce554d9eddc5">getCurrentFilter</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a7356d856f95d0be37b5905f21a4382f2">setCurrentFilter</a>(<span class="keyword">const</span> <a class="code" href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Filter</a> &amp;value);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Sorting</a> <a class="code" href="class_task.html#a1d854b3ce8ff33f76359f9c19c7fb1f0">getCurrentSort</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a037705ff6e80e2bb5a97e7a0045adc28">setCurrentSort</a>(<span class="keyword">const</span> <a class="code" href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Sorting</a> &amp;value);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_task.html#a0de16ed26b2e97723f7e9b5ec1fd2ad2">findRowById</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;signals:</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#a61a1a5fe45da11a41e516d92161b3459">newTask</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#ac8d193e6d4378f058402c2746eb780d4">modelUpdated</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task.html#ab55f01d32bd4d4a1fd1cfc32ff379e58">modelFiltered</a>();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif // TASK_H</span></div>
+<div class="ttc" id="class_task_html_a67484195fdee6ba4f5977a4a9d3f4adb"><div class="ttname"><a href="class_task.html#a67484195fdee6ba4f5977a4a9d3f4adb">Task::addTask</a></div><div class="ttdeci">void addTask()</div><div class="ttdoc">Ajouter une tâche. </div><div class="ttdef"><b>Definition:</b> task.cpp:93</div></div>
+<div class="ttc" id="class_task_html_a037705ff6e80e2bb5a97e7a0045adc28"><div class="ttname"><a href="class_task.html#a037705ff6e80e2bb5a97e7a0045adc28">Task::setCurrentSort</a></div><div class="ttdeci">void setCurrentSort(const Sorting &amp;value)</div><div class="ttdoc">Configurer le tri à utiliser. </div><div class="ttdef"><b>Definition:</b> task.cpp:31</div></div>
+<div class="ttc" id="class_task_html_a548d964ccbc4aea997eb70e69914883ba016eb8a748c47550eed3c47384ecc00c"><div class="ttname"><a href="class_task.html#a548d964ccbc4aea997eb70e69914883ba016eb8a748c47550eed3c47384ecc00c">Task::TODO</a></div><div class="ttdef"><b>Definition:</b> task.h:24</div></div>
+<div class="ttc" id="class_task_html_a3c1286a5a35d0939b5b744ddbb9f77b5a5271262d90354eaa8b7385e89692f412"><div class="ttname"><a href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5a5271262d90354eaa8b7385e89692f412">Task::BY_COURSE</a></div><div class="ttdef"><b>Definition:</b> task.h:23</div></div>
+<div class="ttc" id="class_task_html_a61a1a5fe45da11a41e516d92161b3459"><div class="ttname"><a href="class_task.html#a61a1a5fe45da11a41e516d92161b3459">Task::newTask</a></div><div class="ttdeci">void newTask(int)</div><div class="ttdoc">Signal pour une nouvelle tâche. </div></div>
+<div class="ttc" id="class_task_html_a3c1286a5a35d0939b5b744ddbb9f77b5a763baa074b0fab92de372c34993b6292"><div class="ttname"><a href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5a763baa074b0fab92de372c34993b6292">Task::BY_DATE</a></div><div class="ttdef"><b>Definition:</b> task.h:23</div></div>
+<div class="ttc" id="class_task_html_af4eb318182b449e86392ce554d9eddc5"><div class="ttname"><a href="class_task.html#af4eb318182b449e86392ce554d9eddc5">Task::getCurrentFilter</a></div><div class="ttdeci">Filter getCurrentFilter() const </div><div class="ttdoc">Récupérer le filtre actuellement utilisé </div><div class="ttdef"><b>Definition:</b> task.cpp:36</div></div>
+<div class="ttc" id="class_task_html_a548d964ccbc4aea997eb70e69914883b"><div class="ttname"><a href="class_task.html#a548d964ccbc4aea997eb70e69914883b">Task::Filter</a></div><div class="ttdeci">Filter</div><div class="ttdef"><b>Definition:</b> task.h:24</div></div>
+<div class="ttc" id="class_task_html_a2c056cb9fc3bc5d74329333e116921cd"><div class="ttname"><a href="class_task.html#a2c056cb9fc3bc5d74329333e116921cd">Task::needRefreshView</a></div><div class="ttdeci">bool needRefreshView</div><div class="ttdef"><b>Definition:</b> task.h:104</div></div>
+<div class="ttc" id="class_task_html_aff39c37f1ce7964862db9b8085572250"><div class="ttname"><a href="class_task.html#aff39c37f1ce7964862db9b8085572250">Task::getInstance</a></div><div class="ttdeci">static Task * getInstance()</div><div class="ttdoc">Récupérer l&#39;instance unique (singleton) </div><div class="ttdef"><b>Definition:</b> task.cpp:79</div></div>
+<div class="ttc" id="class_task_html_a24671c86f1ac3c021314a950b1d5bc5f"><div class="ttname"><a href="class_task.html#a24671c86f1ac3c021314a950b1d5bc5f">Task::update</a></div><div class="ttdeci">void update(bool needClear=false)</div><div class="ttdoc">Mettre à jour les données. </div><div class="ttdef"><b>Definition:</b> task.cpp:58</div></div>
+<div class="ttc" id="class_task_html_a88f0947f900f55982be36f62d9ed2eef"><div class="ttname"><a href="class_task.html#a88f0947f900f55982be36f62d9ed2eef">Task::getModel</a></div><div class="ttdeci">QSqlRelationalTableModel * getModel() const </div><div class="ttdoc">Récupérer le modèle de liaison. </div><div class="ttdef"><b>Definition:</b> task.cpp:88</div></div>
+<div class="ttc" id="class_task_html_a0de16ed26b2e97723f7e9b5ec1fd2ad2"><div class="ttname"><a href="class_task.html#a0de16ed26b2e97723f7e9b5ec1fd2ad2">Task::findRowById</a></div><div class="ttdeci">int findRowById(int id)</div><div class="ttdoc">Trouver une tâche en utilisant l&#39;index. </div><div class="ttdef"><b>Definition:</b> task.cpp:160</div></div>
+<div class="ttc" id="class_task_html_ab55f01d32bd4d4a1fd1cfc32ff379e58"><div class="ttname"><a href="class_task.html#ab55f01d32bd4d4a1fd1cfc32ff379e58">Task::modelFiltered</a></div><div class="ttdeci">void modelFiltered()</div><div class="ttdoc">Signal pour appliquer des filtres. </div></div>
+<div class="ttc" id="class_task_html_ac8d193e6d4378f058402c2746eb780d4"><div class="ttname"><a href="class_task.html#ac8d193e6d4378f058402c2746eb780d4">Task::modelUpdated</a></div><div class="ttdeci">void modelUpdated()</div><div class="ttdoc">Signal pour actualiser le modèle. </div></div>
+<div class="ttc" id="class_task_html_a3ecf499ea35fb4a96853969a1e1cbbce"><div class="ttname"><a href="class_task.html#a3ecf499ea35fb4a96853969a1e1cbbce">Task::~Task</a></div><div class="ttdeci">~Task()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> task.cpp:69</div></div>
+<div class="ttc" id="class_task_html_a548d964ccbc4aea997eb70e69914883ba0234d70648b2f14f907d90ba90e20de2"><div class="ttname"><a href="class_task.html#a548d964ccbc4aea997eb70e69914883ba0234d70648b2f14f907d90ba90e20de2">Task::DONE</a></div><div class="ttdef"><b>Definition:</b> task.h:24</div></div>
+<div class="ttc" id="class_task_html_ab2f7ab7f64b32852f0b1b27e764809e0"><div class="ttname"><a href="class_task.html#ab2f7ab7f64b32852f0b1b27e764809e0">Task::sortBy</a></div><div class="ttdeci">void sortBy(Sorting sort, const Qt::SortOrder &amp;order=Qt::AscendingOrder)</div><div class="ttdoc">Trier les données. </div><div class="ttdef"><b>Definition:</b> task.cpp:110</div></div>
+<div class="ttc" id="class_task_html_a392270ce5bf52f5a136e97ff4b124b0b"><div class="ttname"><a href="class_task.html#a392270ce5bf52f5a136e97ff4b124b0b">Task::rowCount</a></div><div class="ttdeci">int rowCount() const </div><div class="ttdoc">Nombre de tâches. </div><div class="ttdef"><b>Definition:</b> task.cpp:155</div></div>
+<div class="ttc" id="class_task_html"><div class="ttname"><a href="class_task.html">Task</a></div><div class="ttdoc">Modèle pour les tâches. </div><div class="ttdef"><b>Definition:</b> task.h:17</div></div>
+<div class="ttc" id="class_task_html_a1d854b3ce8ff33f76359f9c19c7fb1f0"><div class="ttname"><a href="class_task.html#a1d854b3ce8ff33f76359f9c19c7fb1f0">Task::getCurrentSort</a></div><div class="ttdeci">Sorting getCurrentSort() const </div><div class="ttdoc">Récupérer le tri actuellement utilisé </div><div class="ttdef"><b>Definition:</b> task.cpp:26</div></div>
+<div class="ttc" id="class_task_html_a3c1286a5a35d0939b5b744ddbb9f77b5"><div class="ttname"><a href="class_task.html#a3c1286a5a35d0939b5b744ddbb9f77b5">Task::Sorting</a></div><div class="ttdeci">Sorting</div><div class="ttdef"><b>Definition:</b> task.h:23</div></div>
+<div class="ttc" id="class_task_html_ade0737297e77319ac268e80289580afb"><div class="ttname"><a href="class_task.html#ade0737297e77319ac268e80289580afb">Task::filterBy</a></div><div class="ttdeci">void filterBy(Filter filter)</div><div class="ttdoc">Ajouter des filtres aux données. </div><div class="ttdef"><b>Definition:</b> task.cpp:126</div></div>
+<div class="ttc" id="class_task_html_a67367a93c9aa383ecdd04fffeca8d385"><div class="ttname"><a href="class_task.html#a67367a93c9aa383ecdd04fffeca8d385">Task::getCourseIndex</a></div><div class="ttdeci">int getCourseIndex() const </div><div class="ttdoc">Récupérer l&#39;index du champ de la Foreign Key. </div><div class="ttdef"><b>Definition:</b> task.cpp:48</div></div>
+<div class="ttc" id="class_task_html_a18ef39c6e5df962071b9e44123113ef2"><div class="ttname"><a href="class_task.html#a18ef39c6e5df962071b9e44123113ef2">Task::getTypeIndex</a></div><div class="ttdeci">int getTypeIndex() const </div><div class="ttdoc">Récupérer l&#39;index du champ de la Foreign Key. </div><div class="ttdef"><b>Definition:</b> task.cpp:53</div></div>
+<div class="ttc" id="class_task_html_a7356d856f95d0be37b5905f21a4382f2"><div class="ttname"><a href="class_task.html#a7356d856f95d0be37b5905f21a4382f2">Task::setCurrentFilter</a></div><div class="ttdeci">void setCurrentFilter(const Filter &amp;value)</div><div class="ttdoc">Configurer le filtre à utiliser. </div><div class="ttdef"><b>Definition:</b> task.cpp:41</div></div>
+<div class="ttc" id="class_task_html_a80980b43884d0f0a25c61eaa04e415e2"><div class="ttname"><a href="class_task.html#a80980b43884d0f0a25c61eaa04e415e2">Task::removeTask</a></div><div class="ttdeci">void removeTask(const int row)</div><div class="ttdoc">Supprimer une tâche. </div><div class="ttdef"><b>Definition:</b> task.cpp:144</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

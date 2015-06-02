@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewTask/gradedialogbox.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_0a90e0dee8d3ba0dc4b6141cbdefa211.html">viewTask</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">gradedialogbox.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="gradedialogbox_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GRADEDIALOGBOX_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GRADEDIALOGBOX_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDoubleSpinBox&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QFormLayout&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classgradedialogbox.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgradedialogbox.html">gradedialogbox</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classgradedialogbox.html#acb384e502b497d0eace549e1b547a773">gradedialogbox</a>(QWidget * parent);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classgradedialogbox.html#a40f5a7eeb9c86d4ff8e7cf0059121beb">~gradedialogbox</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#a710e294f9734e8bd32a802648d529b2d">   32</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classgradedialogbox.html#a710e294f9734e8bd32a802648d529b2d">getGrade</a>(){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> grade;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#acebf61dfed2735c8dfb45667590e5713">   39</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classgradedialogbox.html#acebf61dfed2735c8dfb45667590e5713">getCoeff</a>(){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> coeff;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span> grade;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> coeff;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QPushButton* ok;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QPushButton* cancel;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QDoubleSpinBox *noteBox;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    QDoubleSpinBox *coeffBox;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QFormLayout *layout;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;signals:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#a09ea96c0b6651e2009056b6d3629ad5f">updateValue</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#aa0fb8ccdc8422fd0f094fa863fe87c47">canceledValue</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#a32d37c3a65ce137fc36e1adb5431fe89">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#a32d37c3a65ce137fc36e1adb5431fe89">setGrade</a>(<span class="keywordtype">double</span> grade ){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        this-&gt;grade = grade;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#a0d0e772d453ac5badb0fa05e29288066">   74</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#a0d0e772d453ac5badb0fa05e29288066">setCoeff</a>(<span class="keywordtype">double</span> coeff){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        this-&gt;coeff = coeff;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#a5aa92a120c2b8a30dca416c19ae51470">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#a5aa92a120c2b8a30dca416c19ae51470">changedValue</a>(){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        emit <a class="code" href="classgradedialogbox.html#a09ea96c0b6651e2009056b6d3629ad5f">updateValue</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classgradedialogbox.html#ab6e3dced7eade749603413d0d7f5bcf0">   86</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgradedialogbox.html#ab6e3dced7eade749603413d0d7f5bcf0">canceled</a>(){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        emit <a class="code" href="classgradedialogbox.html#aa0fb8ccdc8422fd0f094fa863fe87c47">canceledValue</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif // GRADEDIALOGBOX_H</span></div>
+<div class="ttc" id="classgradedialogbox_html_a710e294f9734e8bd32a802648d529b2d"><div class="ttname"><a href="classgradedialogbox.html#a710e294f9734e8bd32a802648d529b2d">gradedialogbox::getGrade</a></div><div class="ttdeci">double getGrade()</div><div class="ttdoc">retourne la valeur de la note </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:32</div></div>
+<div class="ttc" id="classgradedialogbox_html_a32d37c3a65ce137fc36e1adb5431fe89"><div class="ttname"><a href="classgradedialogbox.html#a32d37c3a65ce137fc36e1adb5431fe89">gradedialogbox::setGrade</a></div><div class="ttdeci">void setGrade(double grade)</div><div class="ttdoc">slot récupérant la valeur de la note de la boîte de dialogue </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:67</div></div>
+<div class="ttc" id="classgradedialogbox_html_a5aa92a120c2b8a30dca416c19ae51470"><div class="ttname"><a href="classgradedialogbox.html#a5aa92a120c2b8a30dca416c19ae51470">gradedialogbox::changedValue</a></div><div class="ttdeci">void changedValue()</div><div class="ttdoc">slot emettant un signal avertissant du changement des valeurs </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:80</div></div>
+<div class="ttc" id="classgradedialogbox_html_a09ea96c0b6651e2009056b6d3629ad5f"><div class="ttname"><a href="classgradedialogbox.html#a09ea96c0b6651e2009056b6d3629ad5f">gradedialogbox::updateValue</a></div><div class="ttdeci">void updateValue()</div><div class="ttdoc">signal emis lorsque les note ou coefficient sont modifiés </div></div>
+<div class="ttc" id="classgradedialogbox_html_aa0fb8ccdc8422fd0f094fa863fe87c47"><div class="ttname"><a href="classgradedialogbox.html#aa0fb8ccdc8422fd0f094fa863fe87c47">gradedialogbox::canceledValue</a></div><div class="ttdeci">void canceledValue()</div><div class="ttdoc">signal emis lorsque les note ou coefficient ne sont pas modifiés </div></div>
+<div class="ttc" id="classgradedialogbox_html_ab6e3dced7eade749603413d0d7f5bcf0"><div class="ttname"><a href="classgradedialogbox.html#ab6e3dced7eade749603413d0d7f5bcf0">gradedialogbox::canceled</a></div><div class="ttdeci">void canceled()</div><div class="ttdoc">slot emettant un signal avertissant qu&#39;aucune valeur n&#39;a été changée </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:86</div></div>
+<div class="ttc" id="classgradedialogbox_html"><div class="ttname"><a href="classgradedialogbox.html">gradedialogbox</a></div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:14</div></div>
+<div class="ttc" id="classgradedialogbox_html_a40f5a7eeb9c86d4ff8e7cf0059121beb"><div class="ttname"><a href="classgradedialogbox.html#a40f5a7eeb9c86d4ff8e7cf0059121beb">gradedialogbox::~gradedialogbox</a></div><div class="ttdeci">~gradedialogbox()</div><div class="ttdef"><b>Definition:</b> gradedialogbox.cpp:26</div></div>
+<div class="ttc" id="classgradedialogbox_html_acebf61dfed2735c8dfb45667590e5713"><div class="ttname"><a href="classgradedialogbox.html#acebf61dfed2735c8dfb45667590e5713">gradedialogbox::getCoeff</a></div><div class="ttdeci">double getCoeff()</div><div class="ttdoc">retourne la valeur du coefficient </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:39</div></div>
+<div class="ttc" id="classgradedialogbox_html_a0d0e772d453ac5badb0fa05e29288066"><div class="ttname"><a href="classgradedialogbox.html#a0d0e772d453ac5badb0fa05e29288066">gradedialogbox::setCoeff</a></div><div class="ttdeci">void setCoeff(double coeff)</div><div class="ttdoc">slot récupérant la valeur du coefficient de la boîte de dialogue </div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:74</div></div>
+<div class="ttc" id="classgradedialogbox_html_acb384e502b497d0eace549e1b547a773"><div class="ttname"><a href="classgradedialogbox.html#acb384e502b497d0eace549e1b547a773">gradedialogbox::gradedialogbox</a></div><div class="ttdeci">gradedialogbox(QWidget *parent)</div><div class="ttdef"><b>Definition:</b> gradedialogbox.cpp:3</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:41 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

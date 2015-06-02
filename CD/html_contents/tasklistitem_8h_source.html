@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/tasklistitem.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">tasklistitem.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tasklistitem_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TASKLISTITEM_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TASKLISTITEM_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QCheckBox&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QDataWidgetMapper&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QSqlRelationalTableModel&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="priority_8h.html">priority.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sidebartask_8h.html">sidebartask.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="termdate_8h.html">termdate.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gradedialogbox_8h.html">gradedialogbox.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_task_list_item.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_task_list_item.html">TaskListItem</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_task_list_item.html#a56288d6216f0e7b53b4a398b7f9533b1">TaskListItem</a>(<span class="keywordtype">int</span> row, QWidget* parent = 0);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_task_list_item.html#a77e7187ba5413d3cb10acdd57cb8d7cb">~TaskListItem</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QWidget* taskWidgetWrapper;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QHBoxLayout* taskLayout;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> row;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> QString defaultCSS;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> QString selectedCSS;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QCheckBox* checkbox;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QLabel* taskName;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_priority.html">Priority</a>* priority;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QLabel* course;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QLabel* desc;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classgradedialogbox.html">gradedialogbox</a> *dialogNote;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QDataWidgetMapper* mapper;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QSqlRelationalTableModel* model;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> setUpLayout();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;signals:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#a69c64586c655979fa824da9da951bddc">editTask</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#a068caa9c6eb37201ec327b680bc31b20">needRefreshTask</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#aef4d813b206e4d4f194e6841cbb76e41">updateTaskWidget</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#adfc3484363dd54c386b15bc65e23cd7c">checkboxChecked</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#ac734d18e694c0d5164d3cbc4613254a6">checkBoxClicked</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#aa2b3d9f03901b29bdae79e24ded913c1">getGradeAndCoeff</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_task_list_item.html#a9efa72a5443dca4ea26d3960c819359a">changedCanceled</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // TASKLISTITEM_H</span></div>
+<div class="ttc" id="class_task_list_item_html_a56288d6216f0e7b53b4a398b7f9533b1"><div class="ttname"><a href="class_task_list_item.html#a56288d6216f0e7b53b4a398b7f9533b1">TaskListItem::TaskListItem</a></div><div class="ttdeci">TaskListItem(int row, QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:12</div></div>
+<div class="ttc" id="class_task_list_item_html_adfc3484363dd54c386b15bc65e23cd7c"><div class="ttname"><a href="class_task_list_item.html#adfc3484363dd54c386b15bc65e23cd7c">TaskListItem::checkboxChecked</a></div><div class="ttdeci">void checkboxChecked(int)</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:71</div></div>
+<div class="ttc" id="class_task_list_item_html_a9efa72a5443dca4ea26d3960c819359a"><div class="ttname"><a href="class_task_list_item.html#a9efa72a5443dca4ea26d3960c819359a">TaskListItem::changedCanceled</a></div><div class="ttdeci">void changedCanceled()</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:106</div></div>
+<div class="ttc" id="class_task_list_item_html_aef4d813b206e4d4f194e6841cbb76e41"><div class="ttname"><a href="class_task_list_item.html#aef4d813b206e4d4f194e6841cbb76e41">TaskListItem::updateTaskWidget</a></div><div class="ttdeci">void updateTaskWidget()</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:65</div></div>
+<div class="ttc" id="class_task_list_item_html"><div class="ttname"><a href="class_task_list_item.html">TaskListItem</a></div><div class="ttdef"><b>Definition:</b> tasklistitem.h:19</div></div>
+<div class="ttc" id="class_task_list_item_html_ac734d18e694c0d5164d3cbc4613254a6"><div class="ttname"><a href="class_task_list_item.html#ac734d18e694c0d5164d3cbc4613254a6">TaskListItem::checkBoxClicked</a></div><div class="ttdeci">void checkBoxClicked(bool)</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:82</div></div>
+<div class="ttc" id="class_task_list_item_html_aa2b3d9f03901b29bdae79e24ded913c1"><div class="ttname"><a href="class_task_list_item.html#aa2b3d9f03901b29bdae79e24ded913c1">TaskListItem::getGradeAndCoeff</a></div><div class="ttdeci">void getGradeAndCoeff()</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:95</div></div>
+<div class="ttc" id="class_task_list_item_html_a69c64586c655979fa824da9da951bddc"><div class="ttname"><a href="class_task_list_item.html#a69c64586c655979fa824da9da951bddc">TaskListItem::editTask</a></div><div class="ttdeci">void editTask(int)</div></div>
+<div class="ttc" id="termdate_8h_html"><div class="ttname"><a href="termdate_8h.html">termdate.h</a></div></div>
+<div class="ttc" id="class_task_list_item_html_a77e7187ba5413d3cb10acdd57cb8d7cb"><div class="ttname"><a href="class_task_list_item.html#a77e7187ba5413d3cb10acdd57cb8d7cb">TaskListItem::~TaskListItem</a></div><div class="ttdeci">~TaskListItem()</div><div class="ttdef"><b>Definition:</b> tasklistitem.cpp:60</div></div>
+<div class="ttc" id="classgradedialogbox_html"><div class="ttname"><a href="classgradedialogbox.html">gradedialogbox</a></div><div class="ttdef"><b>Definition:</b> gradedialogbox.h:14</div></div>
+<div class="ttc" id="gradedialogbox_8h_html"><div class="ttname"><a href="gradedialogbox_8h.html">gradedialogbox.h</a></div></div>
+<div class="ttc" id="sidebartask_8h_html"><div class="ttname"><a href="sidebartask_8h.html">sidebartask.h</a></div></div>
+<div class="ttc" id="priority_8h_html"><div class="ttname"><a href="priority_8h.html">priority.h</a></div></div>
+<div class="ttc" id="class_priority_html"><div class="ttname"><a href="class_priority.html">Priority</a></div><div class="ttdef"><b>Definition:</b> priority.h:11</div></div>
+<div class="ttc" id="class_task_list_item_html_a068caa9c6eb37201ec327b680bc31b20"><div class="ttname"><a href="class_task_list_item.html#a068caa9c6eb37201ec327b680bc31b20">TaskListItem::needRefreshTask</a></div><div class="ttdeci">void needRefreshTask()</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewSummary/testtreeview.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_d7478872ce5f31339996311b6fbdf643.html">viewSummary</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">testtreeview.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="testtreeview_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TESTTREEVIEW_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TESTTREEVIEW_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QSqlTableModel&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QStandardItemModel&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;sqlconnection.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="treemodel_8h.html">treemodel.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="treeview_8h.html">treeview.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vsummary_8h.html">vsummary.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_side_bar_tree_view.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_side_bar_tree_view.html">SideBarTreeView</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_side_bar_tree_view.html#a0775bebb5ae7418cdb8a2c88b1c47981">SideBarTreeView</a>(QWidget *parent = 0, <a class="code" href="class_v_summary.html">VSummary</a>* vSummary = 0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_side_bar_tree_view.html#a51852baa1b7fd27d2c8634ffed1ab4db">refresh</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_side_bar_tree_view.html#a764cfe19becbcfd992b6e5ef596f7992">   44</a></span>&#160;    <a class="code" href="class_tree_view.html">TreeView</a>* <a class="code" href="class_side_bar_tree_view.html#a764cfe19becbcfd992b6e5ef596f7992">getTreeView</a>() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> treeView;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_side_bar_tree_view.html#aa1d6b44922e043ca28e84d89a8026e8b">   53</a></span>&#160;    <a class="code" href="class_tree_model.html">TreeModel</a>* <a class="code" href="class_side_bar_tree_view.html#aa1d6b44922e043ca28e84d89a8026e8b">getTreeModel</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> treeModel;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_tree_view.html">TreeView</a>* treeView = NULL;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_tree_model.html">TreeModel</a>* treeModel = NULL;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif // TESTTREEVIEW_H</span></div>
+<div class="ttc" id="class_tree_model_html"><div class="ttname"><a href="class_tree_model.html">TreeModel</a></div><div class="ttdoc">Classe héritée de QStandardItemModel et qui correspond au model pour le TreeView. ...</div><div class="ttdef"><b>Definition:</b> treemodel.h:11</div></div>
+<div class="ttc" id="class_side_bar_tree_view_html_a764cfe19becbcfd992b6e5ef596f7992"><div class="ttname"><a href="class_side_bar_tree_view.html#a764cfe19becbcfd992b6e5ef596f7992">SideBarTreeView::getTreeView</a></div><div class="ttdeci">TreeView * getTreeView()</div><div class="ttdoc">Getter sur le TreeView. </div><div class="ttdef"><b>Definition:</b> testtreeview.h:44</div></div>
+<div class="ttc" id="class_v_summary_html"><div class="ttname"><a href="class_v_summary.html">VSummary</a></div><div class="ttdoc">Classe représentant l&#39;affichage lors du clique sur l&#39;ongle résumé (vue résumé). </div><div class="ttdef"><b>Definition:</b> vsummary.h:25</div></div>
+<div class="ttc" id="class_side_bar_tree_view_html_a51852baa1b7fd27d2c8634ffed1ab4db"><div class="ttname"><a href="class_side_bar_tree_view.html#a51852baa1b7fd27d2c8634ffed1ab4db">SideBarTreeView::refresh</a></div><div class="ttdeci">void refresh()</div><div class="ttdoc">Rafraîchit la SideBar et le TreeView. </div></div>
+<div class="ttc" id="class_tree_view_html"><div class="ttname"><a href="class_tree_view.html">TreeView</a></div><div class="ttdoc">Classe héritée de QTreeView représentant un TreeView. </div><div class="ttdef"><b>Definition:</b> treeview.h:15</div></div>
+<div class="ttc" id="treeview_8h_html"><div class="ttname"><a href="treeview_8h.html">treeview.h</a></div></div>
+<div class="ttc" id="vsummary_8h_html"><div class="ttname"><a href="vsummary_8h.html">vsummary.h</a></div></div>
+<div class="ttc" id="class_side_bar_tree_view_html"><div class="ttname"><a href="class_side_bar_tree_view.html">SideBarTreeView</a></div><div class="ttdoc">Classe créeant et contenant le TreeView. </div><div class="ttdef"><b>Definition:</b> testtreeview.h:21</div></div>
+<div class="ttc" id="class_side_bar_tree_view_html_a0775bebb5ae7418cdb8a2c88b1c47981"><div class="ttname"><a href="class_side_bar_tree_view.html#a0775bebb5ae7418cdb8a2c88b1c47981">SideBarTreeView::SideBarTreeView</a></div><div class="ttdeci">SideBarTreeView(QWidget *parent=0, VSummary *vSummary=0)</div><div class="ttdoc">Constructeur de la classe SideBarTreeView. </div><div class="ttdef"><b>Definition:</b> testtreeview.cpp:3</div></div>
+<div class="ttc" id="treemodel_8h_html"><div class="ttname"><a href="treemodel_8h.html">treemodel.h</a></div></div>
+<div class="ttc" id="class_side_bar_tree_view_html_aa1d6b44922e043ca28e84d89a8026e8b"><div class="ttname"><a href="class_side_bar_tree_view.html#aa1d6b44922e043ca28e84d89a8026e8b">SideBarTreeView::getTreeModel</a></div><div class="ttdeci">TreeModel * getTreeModel()</div><div class="ttdoc">Getter sur le TreeModel. </div><div class="ttdef"><b>Definition:</b> testtreeview.h:53</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

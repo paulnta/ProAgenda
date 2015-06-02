@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewCalendar/lessonrect.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_c57bfca84758b236dbddfc236cb3a0de.html">viewCalendar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lessonrect.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lessonrect_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LESSONRECT_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LESSONRECT_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSqlRecord&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QVariant&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QTime&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lesson_8h.html">models/lesson.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_lesson_rect.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_lesson_rect.html">LessonRect</a>: <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QSqlRecord record;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> startTimeInHours;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span> endTimeInHours;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_lesson_rect.html#a5753f5261f5bad4dd38a3e231f20b781">LessonRect</a>(<span class="keyword">const</span> QSqlRecord&amp;, QObject* parent = 0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_lesson_rect.html#a227aef07aa412441e4881353927bb1e8">~LessonRect</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_lesson_rect.html#a6afefd305c25b84f5009f7f91a0e0cf1">getStartTimeInHours</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_lesson_rect.html#ae33d693e74c2117acf954f013bad962f">getEndTimeInHours</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_lesson_rect.html#a81b7ddd31f35c5782af2f56de17bd580">getHeight</a>(<span class="keywordtype">double</span> heightForHours) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_lesson_rect.html#a5a40e7344efd9c3e4f96148971aa2f25">getY</a>(<span class="keywordtype">double</span> heightForHours) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_lesson_rect.html#a90743076cfffcbe365d1c01c01c3ba22">intersect</a>(<span class="keywordtype">double</span> hour) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_lesson_rect.html#a275fab00ba20e6c3820b799df93ca594">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    QString <a class="code" href="class_lesson_rect.html#aeddde1655f33943c314a479d6566eba7">getName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QString <a class="code" href="class_lesson_rect.html#a3d74c4e9d3e05cf3a2db4e29a117dfc1">getCourseName</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif // LESSONRECT_H</span></div>
+<div class="ttc" id="class_lesson_rect_html_a81b7ddd31f35c5782af2f56de17bd580"><div class="ttname"><a href="class_lesson_rect.html#a81b7ddd31f35c5782af2f56de17bd580">LessonRect::getHeight</a></div><div class="ttdeci">double getHeight(double heightForHours) const </div><div class="ttdoc">Calcule et retourne la taille en pixel de la leçon dans le calendrier. </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:27</div></div>
+<div class="ttc" id="class_lesson_rect_html_a227aef07aa412441e4881353927bb1e8"><div class="ttname"><a href="class_lesson_rect.html#a227aef07aa412441e4881353927bb1e8">LessonRect::~LessonRect</a></div><div class="ttdeci">~LessonRect()</div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:12</div></div>
+<div class="ttc" id="class_lesson_rect_html_a90743076cfffcbe365d1c01c01c3ba22"><div class="ttname"><a href="class_lesson_rect.html#a90743076cfffcbe365d1c01c01c3ba22">LessonRect::intersect</a></div><div class="ttdeci">bool intersect(double hour) const </div><div class="ttdoc">Test si l&#39;heure passé en paramètre se trouve dans entre l&#39;heure de début de la leçon et son heure de ...</div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:37</div></div>
+<div class="ttc" id="class_lesson_rect_html_a275fab00ba20e6c3820b799df93ca594"><div class="ttname"><a href="class_lesson_rect.html#a275fab00ba20e6c3820b799df93ca594">LessonRect::getId</a></div><div class="ttdeci">int getId() const </div><div class="ttdoc">récupère l&#39;id stocké dans la base de donnée de la leçon. Cette valeure est utilisée comme identifiant...</div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:44</div></div>
+<div class="ttc" id="class_lesson_rect_html_a6afefd305c25b84f5009f7f91a0e0cf1"><div class="ttname"><a href="class_lesson_rect.html#a6afefd305c25b84f5009f7f91a0e0cf1">LessonRect::getStartTimeInHours</a></div><div class="ttdeci">double getStartTimeInHours() const </div><div class="ttdoc">récupère l&#39;heure de début de la leçon en heure (décimale) </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:17</div></div>
+<div class="ttc" id="class_lesson_rect_html_a3d74c4e9d3e05cf3a2db4e29a117dfc1"><div class="ttname"><a href="class_lesson_rect.html#a3d74c4e9d3e05cf3a2db4e29a117dfc1">LessonRect::getCourseName</a></div><div class="ttdeci">QString getCourseName()</div><div class="ttdoc">récupère le nom du cours auquel appartient la leçon </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:54</div></div>
+<div class="ttc" id="class_lesson_rect_html_a5753f5261f5bad4dd38a3e231f20b781"><div class="ttname"><a href="class_lesson_rect.html#a5753f5261f5bad4dd38a3e231f20b781">LessonRect::LessonRect</a></div><div class="ttdeci">LessonRect(const QSqlRecord &amp;, QObject *parent=0)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:3</div></div>
+<div class="ttc" id="class_lesson_rect_html"><div class="ttname"><a href="class_lesson_rect.html">LessonRect</a></div><div class="ttdoc">LessonRect représente une leçon du calendrier. </div><div class="ttdef"><b>Definition:</b> lessonrect.h:19</div></div>
+<div class="ttc" id="class_lesson_rect_html_ae33d693e74c2117acf954f013bad962f"><div class="ttname"><a href="class_lesson_rect.html#ae33d693e74c2117acf954f013bad962f">LessonRect::getEndTimeInHours</a></div><div class="ttdeci">double getEndTimeInHours() const </div><div class="ttdoc">récupère l&#39;heure de fin de la leçon en heure (décimale) </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:22</div></div>
+<div class="ttc" id="class_lesson_rect_html_aeddde1655f33943c314a479d6566eba7"><div class="ttname"><a href="class_lesson_rect.html#aeddde1655f33943c314a479d6566eba7">LessonRect::getName</a></div><div class="ttdeci">QString getName() const </div><div class="ttdoc">récupère le nom d&#39;une leçon </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:49</div></div>
+<div class="ttc" id="lesson_8h_html"><div class="ttname"><a href="lesson_8h.html">lesson.h</a></div></div>
+<div class="ttc" id="class_lesson_rect_html_a5a40e7344efd9c3e4f96148971aa2f25"><div class="ttname"><a href="class_lesson_rect.html#a5a40e7344efd9c3e4f96148971aa2f25">LessonRect::getY</a></div><div class="ttdeci">double getY(double heightForHours) const </div><div class="ttdoc">Retourne la position y en pixel du rectangle de la leçon. </div><div class="ttdef"><b>Definition:</b> lessonrect.cpp:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

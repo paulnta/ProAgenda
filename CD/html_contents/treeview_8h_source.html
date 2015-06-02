@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Agenda étudiant:  Fichier source de Agenda/viewSummary/treeview.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="calendrier_resize.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Agenda étudiant
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Agenda étudiant gérant tâches, calendrier, notes, moyennes et plus encore !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_53058e5340eb3f471c0e86b3f5abe432.html">Agenda</a></li><li class="navelem"><a class="el" href="dir_d7478872ce5f31339996311b6fbdf643.html">viewSummary</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">treeview.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="treeview_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TREEVIEW</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TREEVIEW</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QSqlRecord&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSqlTableModel&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QTreeView&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vsummary_8h.html">vsummary.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_tree_view.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree_view.html">TreeView</a> : <span class="keyword">public</span> QTreeView {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_v_semester_fill.html">VSemesterFill</a>* vSemesterFill;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_v_course_fill.html">VCourseFill</a>* vCourseFill;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_v_summary.html">VSummary</a>* vSummary;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QSqlTableModel* sqlTableModel;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_tree_view.html#a3b0c823711e03af014dee93ef5f980e0">   33</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_tree_view.html#a3b0c823711e03af014dee93ef5f980e0">TreeView</a>(QWidget* parent = 0, <a class="code" href="class_v_summary.html">VSummary</a>* vSummary = 0) : QTreeView(parent), vSummary(vSummary) {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_tree_view.html#a9131ac3d332c721b2aa8e3202e7cc305">   38</a></span>&#160;    <a class="code" href="class_tree_view.html#a9131ac3d332c721b2aa8e3202e7cc305">~TreeView</a>(){}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_tree_view.html#a68561d3d9c25594e41c63f8467b9d193">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tree_view.html#a68561d3d9c25594e41c63f8467b9d193">setSqlTableModel</a>(QSqlTableModel* sqlTableModel) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        this-&gt;sqlTableModel = sqlTableModel;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;signals:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">protected</span> slots:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Fonction appelé à chaque clique sur un élément du TreeView</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_tree_view.html#aff280424b71225291b0645ce7f171800">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tree_view.html#aff280424b71225291b0645ce7f171800">currentChanged</a>(<span class="keyword">const</span> QModelIndex &amp;current, <span class="keyword">const</span> QModelIndex &amp;previous)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// On récupère le semestre sélectionné</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        QSqlRecord semester = sqlTableModel-&gt;record(current.row());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(!current.parent().isValid()) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Lorsqu&#39;on est dans un semestre, on modifie les vues en conséquences</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#adc233cff545f7beb3f0047dbcf8bcab9">switchViews</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">vSemesterFill</a>-&gt;<a class="code" href="class_v_semester_fill.html#a8e384a271870ae54ef6ee888a84fd397">setEditionMode</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">vSemesterFill</a>-&gt;<a class="code" href="class_v_semester_fill.html#afb011c0944ddda2b481f0de320227cae">setFieldsValue</a>(semester.value(<span class="stringliteral">&quot;id&quot;</span>).toInt(), semester.value(<span class="stringliteral">&quot;name&quot;</span>).toString(), QDate::fromString(semester.value(<span class="stringliteral">&quot;startDate&quot;</span>).toString(), <span class="stringliteral">&quot;dd.MM.yyyy&quot;</span>), QDate::fromString(semester.value(<span class="stringliteral">&quot;endDate&quot;</span>).toString(), <span class="stringliteral">&quot;dd.MM.yyyy&quot;</span>));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">// Lorsqu&#39;on est dans un cours, on sélectionne le cours correspondant</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#adc233cff545f7beb3f0047dbcf8bcab9">switchViews</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            semester = sqlTableModel-&gt;record(current.parent().row());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            QSqlQueryModel queryModel;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            queryModel.setQuery(<span class="stringliteral">&quot;SELECT * FROM Course WHERE semesterId = &quot;</span> + semester.value(<span class="stringliteral">&quot;id&quot;</span>).toString() + <span class="stringliteral">&quot; AND name = &#39;&quot;</span> + current.data().toString() + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            QSqlRecord course = queryModel.record(0);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">// et on modifie les vues en conséquences</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">vCourseFill</a>-&gt;<a class="code" href="class_v_course_fill.html#ae9f85802ac132df285751c9ce4e8df2c">setEditionMode</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">vCourseFill</a>-&gt;<a class="code" href="class_v_course_fill.html#ab8556eaff1b1bcf81a1149e9b7fcb157">setFieldsValue</a>(course.value(<span class="stringliteral">&quot;id&quot;</span>).toInt(), course.value(<span class="stringliteral">&quot;name&quot;</span>).toString(), course.value(<span class="stringliteral">&quot;description&quot;</span>).toString(), course.value(<span class="stringliteral">&quot;threshold&quot;</span>).toFloat(), course.value(<span class="stringliteral">&quot;weighting&quot;</span>).toFloat(), course.value(<span class="stringliteral">&quot;color&quot;</span>).toString(), course.value(<span class="stringliteral">&quot;semesterId&quot;</span>).toInt(), course.value(<span class="stringliteral">&quot;moduleId&quot;</span>).toInt());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            vSummary-&gt;<a class="code" href="class_v_summary.html#a4d94d8c7ae4da41c4a1f93fe9b3489cf">vCourseDetails</a>-&gt;<a class="code" href="class_v_course_details.html#ac886a95d1e9c48aa33685974ae04a99f">prepare</a>(course);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // TREEVIEW</span></div>
+<div class="ttc" id="class_v_semester_fill_html_afb011c0944ddda2b481f0de320227cae"><div class="ttname"><a href="class_v_semester_fill.html#afb011c0944ddda2b481f0de320227cae">VSemesterFill::setFieldsValue</a></div><div class="ttdeci">void setFieldsValue(int id, QString name, QDate startDate, QDate endDate)</div><div class="ttdoc">Rempli les champs de l&#39;interface. </div><div class="ttdef"><b>Definition:</b> vsemesterfill.cpp:69</div></div>
+<div class="ttc" id="class_v_summary_html"><div class="ttname"><a href="class_v_summary.html">VSummary</a></div><div class="ttdoc">Classe représentant l&#39;affichage lors du clique sur l&#39;ongle résumé (vue résumé). </div><div class="ttdef"><b>Definition:</b> vsummary.h:25</div></div>
+<div class="ttc" id="class_tree_view_html_a3b0c823711e03af014dee93ef5f980e0"><div class="ttname"><a href="class_tree_view.html#a3b0c823711e03af014dee93ef5f980e0">TreeView::TreeView</a></div><div class="ttdeci">TreeView(QWidget *parent=0, VSummary *vSummary=0)</div><div class="ttdoc">Constructeur de la classe TreeView. </div><div class="ttdef"><b>Definition:</b> treeview.h:33</div></div>
+<div class="ttc" id="class_tree_view_html"><div class="ttname"><a href="class_tree_view.html">TreeView</a></div><div class="ttdoc">Classe héritée de QTreeView représentant un TreeView. </div><div class="ttdef"><b>Definition:</b> treeview.h:15</div></div>
+<div class="ttc" id="class_v_semester_fill_html"><div class="ttname"><a href="class_v_semester_fill.html">VSemesterFill</a></div><div class="ttdoc">Classe representant la zone de modification des données d&#39;un semestre. </div><div class="ttdef"><b>Definition:</b> vsemesterfill.h:21</div></div>
+<div class="ttc" id="class_tree_view_html_a9131ac3d332c721b2aa8e3202e7cc305"><div class="ttname"><a href="class_tree_view.html#a9131ac3d332c721b2aa8e3202e7cc305">TreeView::~TreeView</a></div><div class="ttdeci">~TreeView()</div><div class="ttdoc">Destructeur de la classe TreeView. </div><div class="ttdef"><b>Definition:</b> treeview.h:38</div></div>
+<div class="ttc" id="class_tree_view_html_aff280424b71225291b0645ce7f171800"><div class="ttname"><a href="class_tree_view.html#aff280424b71225291b0645ce7f171800">TreeView::currentChanged</a></div><div class="ttdeci">void currentChanged(const QModelIndex &amp;current, const QModelIndex &amp;previous)</div><div class="ttdef"><b>Definition:</b> treeview.h:55</div></div>
+<div class="ttc" id="class_v_summary_html_adc233cff545f7beb3f0047dbcf8bcab9"><div class="ttname"><a href="class_v_summary.html#adc233cff545f7beb3f0047dbcf8bcab9">VSummary::switchViews</a></div><div class="ttdeci">void switchViews(bool isSemesterView)</div><div class="ttdoc">Change la vue entre cours et semestre. </div><div class="ttdef"><b>Definition:</b> vsummary.cpp:120</div></div>
+<div class="ttc" id="class_v_summary_html_a6d7e0e4e56f9546a012cebd5897dbf70"><div class="ttname"><a href="class_v_summary.html#a6d7e0e4e56f9546a012cebd5897dbf70">VSummary::vSemesterFill</a></div><div class="ttdeci">VSemesterFill * vSemesterFill</div><div class="ttdef"><b>Definition:</b> vsummary.h:103</div></div>
+<div class="ttc" id="class_v_course_details_html_ac886a95d1e9c48aa33685974ae04a99f"><div class="ttname"><a href="class_v_course_details.html#ac886a95d1e9c48aa33685974ae04a99f">VCourseDetails::prepare</a></div><div class="ttdeci">void prepare(QSqlRecord course)</div><div class="ttdoc">Prépare les informations à afficher. </div><div class="ttdef"><b>Definition:</b> vcoursedetails.cpp:20</div></div>
+<div class="ttc" id="vsummary_8h_html"><div class="ttname"><a href="vsummary_8h.html">vsummary.h</a></div></div>
+<div class="ttc" id="class_v_summary_html_a4d94d8c7ae4da41c4a1f93fe9b3489cf"><div class="ttname"><a href="class_v_summary.html#a4d94d8c7ae4da41c4a1f93fe9b3489cf">VSummary::vCourseDetails</a></div><div class="ttdeci">VCourseDetails * vCourseDetails</div><div class="ttdef"><b>Definition:</b> vsummary.h:105</div></div>
+<div class="ttc" id="class_v_course_fill_html_ab8556eaff1b1bcf81a1149e9b7fcb157"><div class="ttname"><a href="class_v_course_fill.html#ab8556eaff1b1bcf81a1149e9b7fcb157">VCourseFill::setFieldsValue</a></div><div class="ttdeci">void setFieldsValue(int id, QString name, QString description, float threshold, float weighting, QString color, int semesterId, int moduleId)</div><div class="ttdoc">Rempli les champs de l&#39;interface. </div><div class="ttdef"><b>Definition:</b> vcoursefill.cpp:22</div></div>
+<div class="ttc" id="class_v_course_fill_html_ae9f85802ac132df285751c9ce4e8df2c"><div class="ttname"><a href="class_v_course_fill.html#ae9f85802ac132df285751c9ce4e8df2c">VCourseFill::setEditionMode</a></div><div class="ttdeci">void setEditionMode(bool value)</div><div class="ttdoc">Modifie l&#39;état de la vue (ajout ou édition). </div><div class="ttdef"><b>Definition:</b> vcoursefill.cpp:69</div></div>
+<div class="ttc" id="class_v_course_fill_html"><div class="ttname"><a href="class_v_course_fill.html">VCourseFill</a></div><div class="ttdoc">Classe representant la zone de modification des données d&#39;un cours. </div><div class="ttdef"><b>Definition:</b> vcoursefill.h:27</div></div>
+<div class="ttc" id="class_v_summary_html_a3999f25eb90bba2ba9087ff10c7887cb"><div class="ttname"><a href="class_v_summary.html#a3999f25eb90bba2ba9087ff10c7887cb">VSummary::vCourseFill</a></div><div class="ttdeci">VCourseFill * vCourseFill</div><div class="ttdef"><b>Definition:</b> vsummary.h:104</div></div>
+<div class="ttc" id="class_tree_view_html_a68561d3d9c25594e41c63f8467b9d193"><div class="ttname"><a href="class_tree_view.html#a68561d3d9c25594e41c63f8467b9d193">TreeView::setSqlTableModel</a></div><div class="ttdeci">void setSqlTableModel(QSqlTableModel *sqlTableModel)</div><div class="ttdoc">Setter pour le champs sqlTableModel. </div><div class="ttdef"><b>Definition:</b> treeview.h:45</div></div>
+<div class="ttc" id="class_v_semester_fill_html_a8e384a271870ae54ef6ee888a84fd397"><div class="ttname"><a href="class_v_semester_fill.html#a8e384a271870ae54ef6ee888a84fd397">VSemesterFill::setEditionMode</a></div><div class="ttdeci">void setEditionMode(bool value)</div><div class="ttdoc">Modifie l&#39;état de la vue (ajout ou édition). </div><div class="ttdef"><b>Definition:</b> vsemesterfill.cpp:76</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 2 Juin 2015 13:01:40 pour Agenda étudiant par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>
